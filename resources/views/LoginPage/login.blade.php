@@ -30,7 +30,7 @@
                     <h5>D'AsLab</h5>
                 </div>
                 <div class="  d-flex justify-content-center" style="margin-top: 12rem">
-                    <form action="" method="post">@csrf
+                    <form action="{{ url('/admin/dashboard') }}" method="get">@csrf
                         <div>
                             <h3 class="text-center text-uppercase">Login</h3>
                         </div>
