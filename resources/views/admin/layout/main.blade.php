@@ -159,7 +159,8 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Admin</a>
@@ -303,17 +304,7 @@
                             </div>
                         </div>
                         <!-- end card 5 -->
-                        <!-- card 6 -->
-                        <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                            <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and
-                                    make up the
-                                    bulk of the card's content.</p>
-                            </div>
-                        </div>
-                        <!-- card 6 -->
+
                 </section>
                 <!-- /.content -->
         </div>

@@ -61,7 +61,7 @@
             <!-- Brand Logo -->
             <a href="/" class="brand-link">
                 <img src="{{ url('img/uskLogo.png') }}" alt="usk logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+                    style="opacity: .8; height: 160px;">
                 <span class="brand-text font-weight-light">D'AsLab</span>
             </a>
 
@@ -159,7 +159,8 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Admin</a>
@@ -199,7 +200,7 @@
                 <div class="text-right">
                     <button type="button" class="btn btn-success ">Tambah Data</button>
                 </div>
-                <div class="container-fluid d-flex  text-dark">
+                <div class="container-fluid d-flex flex-wrap justify-content-center text-dark mt-3">
                     <!-- card 1 -->
                     <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
                         <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
@@ -208,123 +209,158 @@
                             <p class="card-text">Some quick example text to build on the card title and
                                 make up the
                                 bulk of the card's content.</p>
-                            <div class="d-flex">
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="d-flex justify-content-center">
+                                <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
+                                <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
                             </div>
                         </div>
                     </div>
+                    <!-- end card -->
                     <!-- card 2 -->
-                    <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
+                    <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
                         <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and
                                 make up the
                                 bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="d-flex justify-content-center">
+                                <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
+                                <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
+                            </div>
                         </div>
                     </div>
-                    <!-- card 3-->
-                    <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
+                    <!-- end card -->
+                    <!-- card 3 -->
+                    <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
                         <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and
                                 make up the
                                 bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="d-flex justify-content-center">
+                                <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
+                                <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
+                            </div>
                         </div>
                     </div>
+                    <!-- end card -->
                     <!-- card 4 -->
-                    <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
+                    <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
                         <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and
                                 make up the
                                 bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="d-flex justify-content-center">
+                                <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
+                                <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
+                            </div>
                         </div>
                     </div>
+                    <!-- end card -->
                     <!-- card 5 -->
-                    <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
+                    <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
                         <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and
                                 make up the
                                 bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="d-flex justify-content-center">
+                                <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
+                                <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
+                            </div>
                         </div>
                     </div>
-                    <!-- end card 5 -->
+                    <!-- end card -->
                     <!-- card 6 -->
-                    <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
+                    <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
                         <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and
                                 make up the
                                 bulk of the card's content.</p>
+                            <div class="d-flex justify-content-center">
+                                <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
+                                <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
+                            </div>
                         </div>
                     </div>
-                    <!-- card 6 -->
+                    <!-- end card -->
+                    <!-- card 7 -->
+                    <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
+                        <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and
+                                make up the
+                                bulk of the card's content.</p>
+                            <div class="d-flex justify-content-center">
+                                <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
+                                <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end card -->
 
                 </div>
             </section>
 
 
-
-            <!-- /.content-wrapper -->
-            <footer class="main-footer">
-                <strong>Copyright &copy; 2022 <a href="#">Ikhsan&Daffa</a>.</strong>
-                All rights reserved.
-                <div class="float-right d-none d-sm-inline-block">
-                    <b>Version</b> 3.2.0
-                </div>
-            </footer>
-
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <!-- Control sidebar content goes here -->
-            </aside>
-            <!-- /.control-sidebar -->
         </div>
-        <!-- ./wrapper -->
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2022 <a href="#">Ikhsan&Daffa</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.2.0
+            </div>
+        </footer>
 
-        <!-- jQuery -->
-        <script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
-        <!-- jQuery UI 1.11.4 -->
-        <script src="{{ url('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-        <script>
-            $.widget.bridge('uibutton', $.ui.button)
-        </script>
-        <!-- Bootstrap 4 -->
-        <script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <!-- ChartJS -->
-        <script src="{{ url('plugins/chart.js/Chart.min.js') }}"></script>
-        <!-- Sparkline -->
-        <script src="{{ url('plugins/sparklines/sparkline.js') }}"></script>
-        <!-- JQVMap -->
-        <script src="{{ url('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
-        <script src="{{ url('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="{{ url('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
-        <!-- daterangepicker -->
-        <script src="{{ url('plugins/moment/moment.min.js') }}"></script>
-        <script src="{{ url('plugins/daterangepicker/daterangepicker.js') }}"></script>
-        <!-- Tempusdominus Bootstrap 4 -->
-        <script src="{{ url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-        <!-- Summernote -->
-        <script src="{{ url('plugins/summernote/summernote-bs4.min.js') }}"></script>
-        <!-- overlayScrollbars -->
-        <script src="{{ url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-        <!-- AdminLTE App -->
-        <script src="{{ url('dist/js/adminlte.js') }}"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{ url('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- ChartJS -->
+    <script src="{{ url('plugins/chart.js/Chart.min.js') }}"></script>
+    <!-- Sparkline -->
+    <script src="{{ url('plugins/sparklines/sparkline.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ url('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+    <script src="{{ url('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{{ url('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+    <!-- daterangepicker -->
+    <script src="{{ url('plugins/moment/moment.min.js') }}"></script>
+    <script src="{{ url('plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{{ url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <!-- Summernote -->
+    <script src="{{ url('plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{{ url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ url('dist/js/adminlte.js') }}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
 </body>
 
 </html>
