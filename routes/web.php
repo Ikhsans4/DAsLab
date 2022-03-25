@@ -16,3 +16,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function () {
     return view('LoginPage/login');
 });
+
+Route::get('/dashboard/admin', function () {
+    return view('admin.layout.main');
+});
+Route::get('/', function () {
+    return view('user.layout.main');
+});
+Route::get('/kelas', function () {
+    return view('user.layout.main');
+});
+Route::get('/daftar', function () {
+    return view('user.layout.daftar');
+});
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.layout.main');
+});
+Route::get('/admin/kelas', function () {
+    return view('admin.layout.kelas');
+});
+Route::get('/admin/pendaftar', function () {
+    return view('admin.layout.pendaftar');
+});
