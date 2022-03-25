@@ -17,8 +17,8 @@ Route::get('/login', function () {
     return view('LoginPage/login');
 });
 
-Route::get('/dashboard/admin', function () {
-    return view('admin.layout.main');
+Route::get('/admin/dashboard', function () {
+    return view('admin.layout.dashboard');
 });
 Route::get('/', function () {
     return view('user.layout.main');
@@ -30,9 +30,7 @@ Route::get('/daftar', function () {
     return view('user.layout.daftar');
 });
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.layout.main');
-});
+
 Route::get('/admin/kelas', function () {
     return view('admin.layout.kelas');
 });
