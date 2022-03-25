@@ -34,9 +34,9 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        {{-- <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-        </div> --}}
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="{{ url('/img/1.png') }}" alt="D'AsLab" height="60" width="60">
+        </div>
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-dark" style="background-color: #272A37;">
