@@ -2,6 +2,7 @@
 
 @section('title', 'Dashboard')
 @section('head', 'Dashboard')
+@section('active', 'active')
 
 @section('container')
 

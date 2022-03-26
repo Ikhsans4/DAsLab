@@ -1,9 +1,7 @@
-@extends('Layout/main')
+@extends('Layout.user')
 
-@section('title', 'Kelas')
+@section('title', 'Mata Kuliah')
 @section('head', 'Mata Kuliah')
-
-<!-- Main content -->
 @section('container')
 
     <section class="content" style="background-color: #272A37;">
@@ -19,10 +17,7 @@
                     <p class="card-text">Some quick example text to build on the card title and
                         make up the
                         bulk of the card's content.</p>
-                    <div class="d-flex justify-content-center">
-                        <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
-                        <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
-                    </div>
+
                 </div>
             </div>
             <!-- end card -->
@@ -34,10 +29,7 @@
                     <p class="card-text">Some quick example text to build on the card title and
                         make up the
                         bulk of the card's content.</p>
-                    <div class="d-flex justify-content-center">
-                        <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
-                        <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
-                    </div>
+
                 </div>
             </div>
             <!-- end card -->
@@ -49,10 +41,7 @@
                     <p class="card-text">Some quick example text to build on the card title and
                         make up the
                         bulk of the card's content.</p>
-                    <div class="d-flex justify-content-center">
-                        <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
-                        <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
-                    </div>
+
                 </div>
             </div>
             <!-- end card -->
@@ -64,10 +53,7 @@
                     <p class="card-text">Some quick example text to build on the card title and
                         make up the
                         bulk of the card's content.</p>
-                    <div class="d-flex justify-content-center">
-                        <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
-                        <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
-                    </div>
+
                 </div>
             </div>
             <!-- end card -->
@@ -79,10 +65,7 @@
                     <p class="card-text">Some quick example text to build on the card title and
                         make up the
                         bulk of the card's content.</p>
-                    <div class="d-flex justify-content-center">
-                        <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
-                        <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
-                    </div>
+
                 </div>
             </div>
             <!-- end card -->
@@ -94,10 +77,7 @@
                     <p class="card-text">Some quick example text to build on the card title and
                         make up the
                         bulk of the card's content.</p>
-                    <div class="d-flex justify-content-center">
-                        <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
-                        <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
-                    </div>
+
                 </div>
             </div>
             <!-- end card -->
@@ -109,10 +89,7 @@
                     <p class="card-text">Some quick example text to build on the card title and
                         make up the
                         bulk of the card's content.</p>
-                    <div class="d-flex justify-content-center">
-                        <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
-                        <button href="#" class="btn btn-primary btn-sm" style="margin: 2px;">Update</button>
-                    </div>
+
                 </div>
             </div>
             <!-- end card -->
