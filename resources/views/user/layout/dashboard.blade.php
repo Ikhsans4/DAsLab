@@ -2,6 +2,7 @@
 
 
 @section('title', "D'AsLab")
+@section('head', 'Dashboard')
 
 
 

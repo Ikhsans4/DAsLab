@@ -34,8 +34,8 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ url('/img/uskLogo.png') }}" alt="D'AsLab" height="60" width="60">
+        <div class="preloader flex-column justify-content-center align-items-center" style="background-color: #272A37;">
+            <img class=" animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
         </div>
 
         <!-- Navbar -->
@@ -119,8 +119,8 @@
                         <li class="nav-header">MENU</li>
 
                         <li class="nav-item ">
-                            <a href="{{ url('/admin/dashboard') }}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                            <a href="{{ url('/admin/dashboard') }}" class="nav-link @yield('active')">
+                                <i class="nav-icon"><img src="{{ url('img/sidebars/home.png') }}" alt=""></i>
                                 <p>
                                     Home
                                 </p>
@@ -129,24 +129,27 @@
 
                         <li class="nav-item ">
                             <a href="{{ url('/admin/pendaftar') }}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/pendaftar.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>
                                     Pendaftar
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/admin/kelas') }}" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
+                            <a href="{{ url('/admin/matakuliah') }}" class="nav-link">
+                                <i class="nav-icon"><img src="{{ url('img/sidebars/kelas.png') }}" alt=""
+                                        style="width: 25px;"></i>
                                 <p>
-                                    Kelas
+                                    Mata Kuliah
                                 </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
+                                <i class="nav-icon"><img src="{{ url('img/sidebars/about.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>About</p>
                             </a>
                         </li>

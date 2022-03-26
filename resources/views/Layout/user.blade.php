@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
+
+    <!-- Fav icon -->
+    <link rel="icon" type="image/x-icon" href="{{ url('img/uskLogo.png') }}" style="width: 2px">
+
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -34,10 +39,9 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ url('/img/uskLogo.png') }}" alt="D'AsLab" height="60" width="60">
+        <div class="preloader flex-column justify-content-center align-items-center" style="background-color: #272A37;">
+            <img class=" animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
         </div>
-
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-dark" style="background-color: #272A37;">
             <!-- Left navbar links -->
@@ -120,7 +124,8 @@
 
                         <li class="nav-item ">
                             <a href="{{ url('/') }}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/home.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>
                                     Home
                                 </p>
@@ -129,24 +134,27 @@
 
                         <li class="nav-item ">
                             <a href="{{ url('/daftar') }}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/daftar.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>
                                     Daftar
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/kelas') }}" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
+                            <a href="{{ url('/matakuliah') }}" class="nav-link">
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/Kelas.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>
-                                    Kelas
+                                    Mata Kuliah
                                 </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/about.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>About</p>
                             </a>
                         </li>
@@ -197,8 +205,8 @@
             <!-- end main content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2022 <a href="#">Ikhsan&Daffa</a>.</strong>
+        <footer class="main-footer" style="background-color: #272A37;">
+            <strong>Copyright &copy; 2022 <a href=" #">Ikhsan&Daffa</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0

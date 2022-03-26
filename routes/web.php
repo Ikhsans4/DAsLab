@@ -22,8 +22,8 @@ Route::get('/admin/dashboard', function () {
     return view('admin.layout.dashboard');
 });
 
-Route::get('/admin/kelas', function () {
-    return view('admin.layout.kelas');
+Route::get('/admin/matakuliah', function () {
+    return view('admin.layout.mataKuliah');
 });
 Route::get('/admin/pendaftar', function () {
     return view('admin.layout.pendaftar');
@@ -34,8 +34,8 @@ Route::get('/admin/pendaftar', function () {
 Route::get('/', function () {
     return view('user.layout.dashboard');
 });
-Route::get('/kelas', function () {
-    return view('user.layout.kelas');
+Route::get('/matakuliah', function () {
+    return view('user.layout.mataKuliah');
 });
 Route::get('/daftar', function () {
     return view('user.layout.daftar');

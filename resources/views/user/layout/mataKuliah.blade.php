@@ -1,7 +1,7 @@
 @extends('Layout.user')
 
 @section('title', 'Mata Kuliah')
-
+@section('head', 'Mata Kuliah')
 @section('container')
 
     <section class="content" style="background-color: #272A37;">
