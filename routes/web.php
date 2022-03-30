@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +31,15 @@ Route::get('/admin/pendaftar', function () {
 });
 
 // user
-
 Route::get('/', function () {
     return view('user.layout.dashboard');
 });
+Route::GET('/daftar/{$id}', [RegisterController::class, 'show']);
+Route::POST('/daftar', [RegisterController::class, 'store']);
+Route::GET('/daftar', [RegisterController::class, 'index']);
+
+
+
 Route::get('/matakuliah', function () {
     return view('user.layout.mataKuliah');
 });

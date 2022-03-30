@@ -7,92 +7,77 @@
     <!-- Main content -->
     <section class="content pb-5">
         <div class="container-fluid">
-            <!-- start form pendaftaran -->
-            <form>
 
-                <table>
-                    <tr>
+            <div class="row">
+                <div class="col-md-4 ml-4">
+                    <!-- start form pendaftaran -->
+                    <form action="{{ url('/daftar') }}" method="post">
+                        @csrf
+                        {{-- @method('PUT') --}}
                         <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control @if ($errors->has('nama')) is-invalid @endif"
+                                id="nama" name="nama" placeholder="Nama Lengkap">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                {{ $errors->first('nama') }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="npm">NPM</label>
+                            <input type="text" class="form-control" id="npm" name="npm" placeholder="NPM">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
 
-                            <td>
-                                <label for="nama">Nama</label>
-                            </td>
-                            <td><label for="" style="padding: 1rem 2rem;"> : </label></td>
-                            <td>
-                                <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap">
-                            </td>
-                        </div>
-                    </tr>
-                    <tr>
                         <div class="form-group">
-                            <td><label for="npm">NPM</label></td>
-                            <td><label for="" style="padding: 1rem 2rem;"> : </label></td>
-                            <td><input type="text" class="form-control" id="npm" placeholder="NPM"></td>
-                    </tr>
-                    <tr>
-                        <div class="form-group">
-                            <td> <label for="email">Email</label> </td>
-                            <td><label for="" style="padding: 1rem 2rem;"> : </label></td>
-                            <td> <input type="email" class="form-control" id="email" placeholder="Email"> </td>
+                            <label for="noHP">No HP</label>
+                            <input type="text" class="form-control" id="noHP" name="nohp" placeholder="Nomor HP">
                         </div>
-                    </tr>
-                    <tr>
+
+                        <!-- jurusan -->
                         <div class="form-group">
-                            <td> <label for="noHP">No HP</label> </td>
-                            <td><label for="" style="padding: 1rem 2rem;"> : </label></td>
-                            <td> <input type="text" class="form-control" id="noHP" placeholder="Nomor HP"> </td>
-                        </div>
-                    </tr>
-                    <!-- jurusan -->
-                    <div class="form-group">
-                        <td> <label for="exampleFormControlSelect1">Jurusan</label> </td>
-                        <td><label for="" style="padding: 1rem 2rem;"> : </label></td>
-                        <td> <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Informatika</option>
+                            <label for="exampleFormControlSelect1">Jurusan</label>
+                            <select class="form-control" name="jurusan" id="exampleFormControlSelect1">
+                                <option value="Informatika">Informatika</option>
                                 <option>Matematika</option>
                                 <option>Kimia</option>
                                 <option>Fisika</option>
                                 <option>Statistika</option>
-                            </select> </td>
-                    </div>
-                    <!-- end jurusan -->
+                            </select>
+                        </div>
+                        <!-- end jurusan -->
 
-                    <tr>
                         <!-- matakuliah -->
                         <div class="form-group">
-                            <td> <label for="exampleFormControlSelect1">Jurusan</label> </td>
-                            <td><label for="" style="padding: 1rem 2rem;"> : </label></td>
-                            <td> <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Pemrograman Dasar</option>
-                                    <option>Pemrograman Berbasis WEB</option>
-                                    <option>Kimia</option>
-                                    <option>Fisika</option>
-                                    <option>Statistika</option>
-                                </select>
-                            </td>
+                            <label for="exampleFormControlSelect1">Mata Kuliah</label>
+                            <select class="form-control" name="mataKuliah" id="exampleFormControlSelect1">
+                                <option value="Pemrograman Dasar">Pemrograman Dasar</option>
+                                <option>Pemrograman Berbasis WEB</option>
+                                <option>Kimia</option>
+                                <option>Fisika</option>
+                                <option>Statistika</option>
+                            </select>
+
                         </div>
                         <!-- end matakuliah -->
-                    </tr>
 
-
-
-
-
-
-
-                </table>
-
-
-
-
-                <!-- button submit -->
-                <button type="button" class="btn btn-success">Kirim</button>
-                <!-- end button submit -->
-
-
-            </form>
-            <!-- end form -->
+                        <!-- button submit -->
+                        <button type="submit" class="btn btn-success">Kirim</button>
+                        <!-- end button submit -->
+                    </form>
+                    <!-- end form -->
+                </div>
+            </div>
         </div>
         <!-- /.container-fluid -->
     </section>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @if (session('status'))
+        <script>
+            swal("Good job!", "You clicked the button!", "success");
+        </script>
+    @endif
 @endsection
