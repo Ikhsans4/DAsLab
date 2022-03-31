@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('registers', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('npm')->unique();
+            $table->string('npm')->unique();
             $table->string('email')->unique();
             $table->string('jurusan');
             $table->string('mataKuliah');

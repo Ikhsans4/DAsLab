@@ -12,9 +12,9 @@
         <!-- tabel -->
         <div class="text-right pe-4">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahdatamodal">
+            <a href="{{ url('/admin/tambah') }}" class="btn btn-success">
                 Tambah Data
-            </button>
+            </a>
         </div>
 
         <table class="table table-striped table-dark">

@@ -37,7 +37,7 @@ class RegisterController extends Controller
         // validasi data
         $credentials = $request->validate([
             'nama' => 'required|max:255',
-            'npm' => 'required|unique:registers,npm|numeric',
+            'npm' => 'required|unique:registers,npm|numeric|integer|max:255',
             'email' => 'required|unique:registers,email',
             'nohp' => 'required|numeric',
             'jurusan' => 'required',

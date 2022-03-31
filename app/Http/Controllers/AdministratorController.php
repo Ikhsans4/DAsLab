@@ -14,6 +14,20 @@ class AdministratorController extends Controller
      */
     public function index()
     {
+
+        return view('admin.layout.dashboard', [
+            'pendaftar' => Register::count(),
+            'asisten' => Register::where('status', 1)->count()
+        ]);
+    }
+
+    /**
+     * menampilkan data asisten yang mendaftar dari database
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pendaftar()
+    {
         return view('admin.layout.pendaftar', [
             'registers' => Register::all()
         ]);
@@ -25,7 +39,7 @@ class AdministratorController extends Controller
      */
     public function asisten()
     {
-        $data = Register::all();
+        $data = Register::where('status', 1)->get();
         return view('admin.layout.asisten', ['registers' => $data]);
     }
 
@@ -36,7 +50,7 @@ class AdministratorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.layout.tambahAsisten');
     }
 
     /**
@@ -47,7 +61,18 @@ class AdministratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validasi data
+        $credentials = $request->validate([
+            'nama' => 'required|max:255',
+            'npm' => 'required|unique:registers,npm|numeric',
+            'email' => 'required|unique:registers,email',
+            'nohp' => 'required|numeric',
+            'jurusan' => 'required',
+            'mataKuliah' => 'required',
+        ]);
+        // menambah data ke dalam database
+        Register::create($credentials);
+        return redirect('/daftar')->with('status', 'Berhasil');
     }
 
     /**

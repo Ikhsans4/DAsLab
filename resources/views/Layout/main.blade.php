@@ -39,7 +39,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center" style="background-color: #272A37;">
-            <img class=" animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
+            <img class="animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
         </div>
 
         <!-- Navbar -->
@@ -141,20 +141,20 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/admin/matakuliah') }}" class="nav-link">
-                                <i class="nav-icon"><img src="{{ url('img/sidebars/kelas.png') }}" alt=""
-                                        style="width: 25px;"></i>
-                                <p>
-                                    Mata Kuliah
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{ url('/admin/asisten') }}" class="nav-link">
                                 <i class="nav-icon"><img src="{{ url('img/sidebars/asisten.png') }}" alt=""
                                         style="width: 25px;"></i>
                                 <p>
                                     Asisten
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/admin/matakuliah') }}" class="nav-link">
+                                <i class="nav-icon"><img src="{{ url('img/sidebars/kelas.png') }}" alt=""
+                                        style="width: 25px;"></i>
+                                <p>
+                                    Mata Kuliah
                                 </p>
                             </a>
                         </li>
@@ -213,8 +213,8 @@
             <!-- end main content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2022 <a href="#">Ikhsan&Daffa</a>.</strong>
+        <footer class="main-footer " style="background-color: #272A37;>
+            <strong>Copyright &copy; 2022 <a href=" #">Ikhsan&Daffa</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0
