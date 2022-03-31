@@ -44,13 +44,13 @@ Route::get('/', function () {
 });
 Route::GET('/daftar/{$id}', [RegisterController::class, 'show']);
 Route::POST('/daftar', [RegisterController::class, 'store']);
-Route::GET('/daftar', [RegisterController::class, 'index']);
+Route::GET('/daftar', [RegisterController::class, 'create']);
 
 
 
 Route::get('/matakuliah', function () {
     return view('user.layout.mataKuliah');
 });
-Route::get('/daftar', function () {
-    return view('user.layout.daftar');
-});
+// Route::get('/daftar', function () {
+//     return view('user.layout.daftar');
+// });

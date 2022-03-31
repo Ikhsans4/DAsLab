@@ -23,7 +23,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.layout.daftar');
     }
 
     /**
@@ -35,14 +35,22 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         // validasi data
-        $credentials = $request->validate([
+        $request->validate([
             'nama' => 'required|max:255',
-            'npm' => 'required|unique:registers,npm|numeric|integer|max:255',
+            'npm' => 'required|unique:registers,npm|numeric',
             'email' => 'required|unique:registers,email',
             'nohp' => 'required|numeric',
             'jurusan' => 'required',
             'mataKuliah' => 'required',
         ]);
+        $credentials = [
+            'nama' => $request->nama,
+            'npm' => $request->npm,
+            'email' => $request->email,
+            'nohp' => $request->nohp,
+            'jurusan' => $request->jurusan,
+            'mataKuliah' => $request->mataKuliah,
+        ];
         Register::create($credentials);
         return redirect('/daftar')->with('status', 'Berhasil');
     }

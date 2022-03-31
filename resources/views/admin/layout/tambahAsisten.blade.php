@@ -33,7 +33,7 @@
 
                         <div class="form-group">
                             <label for="noHP">No HP</label>
-                            <input type="text" class="form-control" id="noHP" name="nohp" placeholder="Nomor HP">
+                            <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Nomor HP">
                         </div>
 
                         <!-- jurusan -->
@@ -74,10 +74,5 @@
         <!-- /.container-fluid -->
     </section>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @if (session('status'))
-        <script>
-            swal("Good job!", "You clicked the button!", "success");
-        </script>
-    @endif
+
 @endsection

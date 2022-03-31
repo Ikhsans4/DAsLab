@@ -62,7 +62,7 @@ class AdministratorController extends Controller
     public function store(Request $request)
     {
         // validasi data
-        $credentials = $request->validate([
+        $request->validate([
             'nama' => 'required|max:255',
             'npm' => 'required|unique:registers,npm|numeric',
             'email' => 'required|unique:registers,email',
@@ -70,9 +70,19 @@ class AdministratorController extends Controller
             'jurusan' => 'required',
             'mataKuliah' => 'required',
         ]);
+        // mengisi data ke dalam database
+        $credentials = [
+            'nama' => $request->nama,
+            'npm' => $request->npm,
+            'email' => $request->email,
+            'nohp' => $request->nohp,
+            'jurusan' => $request->jurusan,
+            'mataKuliah' => $request->mataKuliah,
+            'status' => True,
+        ];
         // menambah data ke dalam database
         Register::create($credentials);
-        return redirect('/daftar')->with('status', 'Berhasil');
+        return redirect('/admin/asisten')->with('status', 'Berhasil');
     }
 
     /**

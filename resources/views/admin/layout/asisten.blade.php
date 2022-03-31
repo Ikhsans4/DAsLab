@@ -47,4 +47,12 @@
         </table>
 
         <!-- /.tabel -->
+        <!-- notif -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        @if (session('status'))
+            <script>
+                swal("Good job!", "You clicked the button!", "success");
+            </script>
+        @endif
+        <!-- end notif -->
     @endsection
