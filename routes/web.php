@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdministratorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 
@@ -26,9 +27,13 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/matakuliah', function () {
     return view('admin.layout.mataKuliah');
 });
-Route::get('/admin/pendaftar', function () {
-    return view('admin.layout.pendaftar');
-});
+// Route::get('/admin/pendaftar', function () {
+//     return view('admin.layout.pendaftar');
+// });
+Route::GET('/admin/pendaftar', [AdministratorController::class, 'index']);
+Route::GET('/admin/asisten', [AdministratorController::class, 'asisten']);
+Route::PUT('/admin/pendaftar/{id}', [AdministratorController::class, 'terima']);
+Route::DELETE('/admin/pendaftar/{id}', [AdministratorController::class, 'tolak']);
 
 // user
 Route::get('/', function () {

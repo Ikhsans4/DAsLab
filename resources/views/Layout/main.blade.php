@@ -149,6 +149,15 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/admin/asisten') }}" class="nav-link">
+                                <i class="nav-icon"><img src="{{ url('img/sidebars/asisten.png') }}" alt=""
+                                        style="width: 25px;"></i>
+                                <p>
+                                    Asisten
+                                </p>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a href="https://adminlte.io/docs/3.1/" class="nav-link">

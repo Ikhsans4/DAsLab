@@ -7,12 +7,7 @@
 @section('container')
 
     <section class="content" style="background-color: #272A37;">
-        <div class="text-right pe-4">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahdatamodal">
-                Tambah Data
-            </button>
-        </div>
+
         <div class="container-fluid d-flex flex-wrap justify-content-center text-dark mt-3">
             <!-- card 1 -->
             <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
@@ -22,13 +17,7 @@
                     <p class="card-text">Some quick example text to build on the card title and
                         make up the
                         bulk of the card's content.</p>
-                    <div class="d-flex justify-content-center">
-                        <button href="#" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button>
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#updatedatamodal" style="margin: 2px;">
-                            update
-                        </button>
-                    </div>
+
                 </div>
             </div>
             <!-- end card -->

@@ -41,10 +41,10 @@
                             <label for="exampleFormControlSelect1">Jurusan</label>
                             <select class="form-control" name="jurusan" id="exampleFormControlSelect1">
                                 <option value="Informatika">Informatika</option>
-                                <option>Matematika</option>
-                                <option>Kimia</option>
-                                <option>Fisika</option>
-                                <option>Statistika</option>
+                                <option value="Matematika">Matematika</option>
+                                <option value="Kimia">Kimia</option>
+                                <option value="Fisika">Fisika</option>
+                                <option value="Statistika">Statistika</option>
                             </select>
                         </div>
                         <!-- end jurusan -->
@@ -54,10 +54,10 @@
                             <label for="exampleFormControlSelect1">Mata Kuliah</label>
                             <select class="form-control" name="mataKuliah" id="exampleFormControlSelect1">
                                 <option value="Pemrograman Dasar">Pemrograman Dasar</option>
-                                <option>Pemrograman Berbasis WEB</option>
-                                <option>Kimia</option>
-                                <option>Fisika</option>
-                                <option>Statistika</option>
+                                <option value="Pemrograman Berbasis WEB">Pemrograman Berbasis WEB</option>
+                                <option value="Kimia">Kimia</option>
+                                <option value="Fisika">Fisika</option>
+                                <option value="Statistika">Statistika</option>
                             </select>
 
                         </div>
