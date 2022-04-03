@@ -37,11 +37,13 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center" style="background-color: #272A37;">
-            <img class=" animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
-        </div>
+        @if (!session('status'))
+            <!-- Preloader -->
+            <div class="preloader flex-column justify-content-center align-items-center"
+                style="background-color: #272A37;">
+                <img class=" animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
+            </div>
+        @endif
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-dark" style="background-color: #272A37;">
             <!-- Left navbar links -->

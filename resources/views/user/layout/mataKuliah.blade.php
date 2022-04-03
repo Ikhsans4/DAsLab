@@ -5,9 +5,7 @@
 @section('container')
 
     <section class="content" style="background-color: #272A37;">
-        <div class="text-right">
-            <button type="button" class="btn btn-success ">Tambah Data</button>
-        </div>
+
         <div class="container-fluid d-flex flex-wrap justify-content-center text-dark mt-3">
             <!-- card 1 -->
             <div class="card " style="width: 18rem; padding: 1rem; margin: 5px;">
