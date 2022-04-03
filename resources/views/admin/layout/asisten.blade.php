@@ -1,13 +1,21 @@
 @extends('Layout/main')
 
-@section('title', 'Data Pendaftar')
-@section('head', 'Data Mahasiswa yang Mendaftar Sebagai Asisten')
+@section('title', "D'AsLab | Asisten")
+@section('head', 'Asisten Laboratorium')
+
+<!-- Main content -->
 @section('container')
 
 
 
     <section class="content" style="background-color: #272A37;">
         <!-- tabel -->
+        <div class="text-right pe-4">
+            <!-- Button trigger modal -->
+            <a href="{{ url('/admin/tambah') }}" class="btn btn-success">
+                Tambah Data
+            </a>
+        </div>
 
         <table class="table table-striped table-dark">
             <thead class="text-center">
@@ -18,7 +26,6 @@
                     <th scope="col">Email</th>
                     <th scope="col">Jurusan</th>
                     <th scope="col">Mata Kuliah</th>
-                    <th scope="col">Aksi</th>
                 </tr>
             </thead>
 
@@ -31,18 +38,7 @@
                         <td>{{ $register['email'] }}</td>
                         <td>{{ $register['jurusan'] }}</td>
                         <td>{{ $register['mataKuliah'] }}</td>
-                        <td>
-                            <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger">Tolak</button>
-                            </form>
-                            <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
-                                @csrf
-                                @method('PUT')
-                                <button type="submit" class="btn btn-primary">Terima</button>
-                            </form>
-                        </td>
+
                     </tr>
                 @endforeach
 
@@ -51,4 +47,12 @@
         </table>
 
         <!-- /.tabel -->
+        <!-- notif -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        @if (session('status'))
+            <script>
+                swal("Good job!", "You clicked the button!", "success");
+            </script>
+        @endif
+        <!-- end notif -->
     @endsection

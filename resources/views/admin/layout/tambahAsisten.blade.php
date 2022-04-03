@@ -1,7 +1,7 @@
-@extends('Layout.user')
-@section('title', 'Pendaftaran Asisten')
-@section('head', 'Pendaftaran Asisten Laboratorium')
+@extends('Layout.main')
 
+@section('title', 'Tambah Asisten')
+@section('head', 'Tambah Asisten Laboratorium')
 
 @section('container')
     <!-- Main content -->
@@ -10,8 +10,8 @@
 
             <div class="row">
                 <div class="col-md-4 ml-4">
-                    <!-- start form pendaftaran -->
-                    <form action="{{ url('/daftar') }}" method="post">
+                    <!-- start form tambah data -->
+                    <form action="{{ url('/admin/tambah') }}" method="post">
                         @csrf
                         {{-- @method('PUT') --}}
                         <div class="form-group">
@@ -33,7 +33,7 @@
 
                         <div class="form-group">
                             <label for="noHP">No HP</label>
-                            <input type="text" class="form-control" id="noHP" name="nohp" placeholder="Nomor HP">
+                            <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Nomor HP">
                         </div>
 
                         <!-- jurusan -->
@@ -74,10 +74,5 @@
         <!-- /.container-fluid -->
     </section>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @if (session('status'))
-        <script>
-            swal("Good job!", "You clicked the button!", "success");
-        </script>
-    @endif
+
 @endsection

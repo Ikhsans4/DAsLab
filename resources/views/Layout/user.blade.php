@@ -4,7 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>D'AsLab</title>
+    <title>@yield('title')</title>
+
+
+    <!-- Fav icon -->
+    <link rel="icon" type="image/x-icon" href="{{ url('img/icon/uskLogo.png') }}" style="width: 2px">
+
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -32,12 +37,13 @@
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
-        <!-- Preloader -->
-        {{-- <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-        </div> --}}
-
+        @if (!session('status'))
+            <!-- Preloader -->
+            <div class="preloader flex-column justify-content-center align-items-center"
+                style="background-color: #272A37;">
+                <img class=" animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
+            </div>
+        @endif
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-dark" style="background-color: #272A37;">
             <!-- Left navbar links -->
@@ -59,9 +65,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #272A37;">
             <!-- Brand Logo -->
-            <a href="/" class="brand-link">
-                <img src="{{ url('img/uskLogo.png') }}" alt="usk logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+            <a href="{{ url('/') }}" class="brand-link">
+                <img src="{{ url('img/icon/uskLogo.png') }}" alt="usk logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">D'AsLab</span>
             </a>
 
@@ -119,8 +125,9 @@
                         <li class="nav-header">MENU</li>
 
                         <li class="nav-item ">
-                            <a href="{{ url('/admin/dashboard') }}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                            <a href="{{ url('/') }}" class="nav-link">
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/home.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>
                                     Home
                                 </p>
@@ -128,25 +135,28 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a href="{{ url('/admin/pendaftar') }}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                            <a href="{{ url('/daftar') }}" class="nav-link">
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/daftar.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>
-                                    Pendaftar
+                                    Daftar
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/admin/kelas') }}" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
+                            <a href="{{ url('/matakuliah') }}" class="nav-link">
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/Kelas.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>
-                                    Kelas
+                                    Mata Kuliah
                                 </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                                <i class="nav-icon fas fa-file"></i>
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/about.png') }}"
+                                        style="width: 25px;" alt=""></i>
                                 <p>About</p>
                             </a>
                         </li>
@@ -159,7 +169,8 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Admin</a>
@@ -178,7 +189,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">@yield('head')</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -192,134 +203,12 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-
-            <section class="content" style="background-color: #272A37;">
-                <!-- head -->
-                <div class="row">
-                    <!-- total user -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>150</h3>
-
-                                <p>Total User</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-bag"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- end total user -->
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                <p>Jumlah Asisten</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>44</h3>
-
-                                <p>User Registrations</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-person-add"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- end head -->
-                <section class="content text-dark">
-                    <div class="container-fluid d-flex ">
-                        <!-- card 1 -->
-                        <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                            <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and
-                                    make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <!-- card 2 -->
-                        <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                            <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and
-                                    make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <!-- card 3-->
-                        <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                            <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and
-                                    make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <!-- card 4 -->
-                        <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                            <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and
-                                    make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <!-- card 5 -->
-                        <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                            <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and
-                                    make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <!-- end card 5 -->
-                        <!-- card 6 -->
-                        <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                            <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and
-                                    make up the
-                                    bulk of the card's content.</p>
-                            </div>
-                        </div>
-                        <!-- card 6 -->
-                </section>
-                <!-- /.content -->
+            @yield('container')
+            <!-- end main content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2022 <a href="#">Ikhsan&Daffa</a>.</strong>
+        <footer class="main-footer" style="background-color: #272A37;">
+            <strong>Copyright &copy; 2022 <a href=" #">Ikhsan&Daffa</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0
