@@ -51,6 +51,11 @@ Route::GET('/daftar', [RegisterController::class, 'create']);
 Route::get('/matakuliah', function () {
     return view('user.layout.mataKuliah');
 });
+
+Route::get('/about', function () {
+    return view('user.layout.about');
+});
+
 // Route::get('/daftar', function () {
 //     return view('user.layout.daftar');
 // });
