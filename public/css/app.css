@@ -1,3 +1,11 @@
 .bg-main {
-    color: #272a37;
+    background-color: #272a37;
+}
+
+.bg-optional {
+    background-color: #323644;
+}
+
+.r-60 {
+    border-radius: 60px;
 }
