@@ -20,6 +20,10 @@ Route::get('/login', function () {
     return view('LoginPage/login');
 });
 
+Route::get('/signup', function () {
+    return view('LoginPage/signup');
+});
+
 // Route::get('/admin/dashboard', function () {
 //     return view('admin.layout.dashboard');
 // });
