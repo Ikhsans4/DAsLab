@@ -55,7 +55,7 @@
                             <select class="form-control" name="mataKuliah" id="exampleFormControlSelect1">
                                 <option value="Pemrograman Dasar">Pemrograman Dasar</option>
                                 <option value="Pemrograman Berbasis WEB">Pemrograman Berbasis WEB</option>
-                                <option value="Kimia">Kimia</option>
+                                <option value="Pemrograman OOP">OOP</option>
                                 <option value="Fisika">Fisika</option>
                                 <option value="Statistika">Statistika</option>
                             </select>

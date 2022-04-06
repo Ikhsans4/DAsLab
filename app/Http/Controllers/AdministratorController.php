@@ -145,15 +145,16 @@ class AdministratorController extends Controller
         // $response = Http::post('http://127.0.0.1:8000/api/login');
         // $response = Http::withBasicAuth('ikhsan@gmail.com', '123')->post('http://127.0.0.1:8000/api/login');
         $response = Http::post('http://127.0.0.1:8000/api/login', [
-            'email' => 'ikhsan@gmail.com',
+            'npm' => '123457',
             'password' => '123',
         ]);
         $response = $response->json();
         $response = $response['token'];
         // return dd($response);
         $response = Http::withToken($response)->get('http://127.0.0.1:8000/api/data');
-        return dd($response->json());
-        return view('admin.layout.mataKuliah');
+        $response = $response->json();
+        // return dd($response->json());
+        return view('admin.layout.mataKuliah', ['mata_kuliah' => $response, 'asisten' => Register::all()]);
     }
 
 

@@ -8,19 +8,30 @@
 
 
 
-    <section class="content" id="list-mk" style="background-color: #272A37;">
-        <div class="card" style="width: 18rem;">
-            <img src="" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+    <section class="content text-dark" id="list-mk" style="background-color: #272A37;">
+        @foreach ($mata_kuliah as $mk)
+            <div class="card" style="width: 18rem;">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $mk['mata_kuliah'] }}</h5>
+                    <p class="card-text">
+                        Asisten : <br>
+                        @foreach ($asisten as $aslab)
+                            @if ($aslab['mataKuliah'] === $mk['mata_kuliah'])
+                                {{ $loop->iteration }}. {{ $aslab['nama'] }} <br>
+                            @else
+                                Tidak ada asisten yang mendaftar
+                            @break
+                        @endif
+                    @endforeach
+                </p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
+    @endforeach
 
 
 
 
-    </section>
+</section>
 @endsection
