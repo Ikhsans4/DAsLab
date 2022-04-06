@@ -28,9 +28,9 @@ Route::get('/signup', function () {
 //     return view('admin.layout.dashboard');
 // });
 
-Route::get('/admin/matakuliah', function () {
-    return view('admin.layout.mataKuliah');
-});
+// Route::get('/admin/matakuliah', function () {
+//     return view('admin.layout.mataKuliah');
+// });
 // Route::get('/admin/pendaftar', function () {
 //     return view('admin.layout.pendaftar');
 // });
@@ -41,6 +41,7 @@ Route::GET('/admin/tambah', [AdministratorController::class, 'create']);
 Route::POST('/admin/tambah', [AdministratorController::class, 'store']);
 Route::PUT('/admin/pendaftar/{id}', [AdministratorController::class, 'terima']);
 Route::DELETE('/admin/pendaftar/{id}', [AdministratorController::class, 'tolak']);
+Route::GET('/admin/matakuliah', [AdministratorController::class, 'mataKuliah']);
 
 // user
 Route::get('/', function () {
