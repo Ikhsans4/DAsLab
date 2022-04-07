@@ -154,7 +154,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+                            <a href="{{ url('/about') }}" class="nav-link">
                                 <i class="nav-icon"> <img src="{{ url('img/sidebars/about.png') }}"
                                         style="width: 25px;" alt=""></i>
                                 <p>About</p>
