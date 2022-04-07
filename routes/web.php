@@ -21,6 +21,10 @@ use App\Http\Controllers\RegisterController;
 //     return view('LoginPage/login');
 // });
 
+Route::get('/signup', function () {
+    return view('LoginPage/signup');
+});
+
 // Route::get('/admin/dashboard', function () {
 //     return view('admin.layout.dashboard');
 // });
@@ -62,6 +66,11 @@ Route::GET('/daftar', [RegisterController::class, 'create']);
 Route::get('/matakuliah', function () {
     return view('user.layout.mataKuliah');
 });
+
+Route::get('/about', function () {
+    return view('user.layout.about');
+});
+
 // Route::get('/daftar', function () {
 //     return view('user.layout.daftar');
 // });
