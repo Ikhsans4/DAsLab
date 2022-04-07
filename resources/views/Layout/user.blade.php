@@ -16,8 +16,6 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ url('plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- My CSS -->
-    <link rel="stylesheet" href="{{ url('css/app.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
@@ -37,7 +35,7 @@
     <link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed bg-main">
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         @if (!session('status'))
             <!-- Preloader -->
@@ -156,7 +154,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('/about') }}" class="nav-link">
+                            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
                                 <i class="nav-icon"> <img src="{{ url('img/sidebars/about.png') }}"
                                         style="width: 25px;" alt=""></i>
                                 <p>About</p>
