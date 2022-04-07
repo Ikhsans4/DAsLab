@@ -35,7 +35,8 @@
                 </div>
                 <!-- Content-->
                 <div class="d-flex justify-content-center" style="margin-top: 12rem">
-                    <form action="{{ url('/admin/dashboard') }}" method="get">@csrf
+                    <form action="{{ url('login') }}" method="post">
+                        @csrf
                         <div>
                             <h3 class="text-center text-uppercase">Login</h3>
                         </div>

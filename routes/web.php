@@ -20,6 +20,7 @@ use App\Http\Controllers\UserController;
 
 //  login page
 Route::GET('login', [LoginController::class, 'index'])->middleware('guest');
+Route::POST('login', [LoginController::class, 'authentication']);
 
 
 // Admin
