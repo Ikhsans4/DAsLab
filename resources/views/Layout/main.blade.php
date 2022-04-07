@@ -11,15 +11,13 @@
 
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ url('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet"
-        href="{{ url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->
@@ -39,10 +37,9 @@
 
         <!-- Preloader -->
         @if (!session('status'))
-            <div class="preloader flex-column justify-content-center align-items-center"
-                style="background-color: #272A37;">
-                <img class="animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
-            </div>
+        <div class="preloader flex-column justify-content-center align-items-center" style="background-color: #272A37;">
+            <img class="animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
+        </div>
         @endif
 
         <!-- Navbar -->
@@ -50,8 +47,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
-                            class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="index3.html" class="nav-link">Home</a>
@@ -67,8 +63,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #272A37;">
             <!-- Brand Logo -->
             <a href="{{ url('/admin/dashboard') }}" class="brand-link">
-                <img src="{{ url('img/icon/uskLogo.png') }}" alt="usk logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{ url('img/icon/uskLogo.png') }}" alt="usk logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">D'AsLab</span>
             </a>
 
@@ -79,8 +74,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         {{-- <li class="nav-item menu-open">
@@ -136,8 +130,7 @@
 
                         <li class="nav-item ">
                             <a href="{{ url('/admin/pendaftar') }}" class="nav-link">
-                                <i class="nav-icon"> <img src="{{ url('img/sidebars/pendaftar.png') }}"
-                                        style="width: 25px;" alt=""></i>
+                                <i class="nav-icon"> <img src="{{ url('img/sidebars/pendaftar.png') }}" style="width: 25px;" alt=""></i>
                                 <p>
                                     Pendaftar
                                 </p>
@@ -145,8 +138,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/asisten') }}" class="nav-link">
-                                <i class="nav-icon"><img src="{{ url('img/sidebars/asisten.png') }}" alt=""
-                                        style="width: 25px;"></i>
+                                <i class="nav-icon"><img src="{{ url('img/sidebars/asisten.png') }}" alt="" style="width: 25px;"></i>
                                 <p>
                                     Asisten
                                 </p>
@@ -154,8 +146,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/matakuliah') }}" class="nav-link">
-                                <i class="nav-icon"><img src="{{ url('img/sidebars/kelas.png') }}" alt=""
-                                        style="width: 25px;"></i>
+                                <i class="nav-icon"><img src="{{ url('img/sidebars/kelas.png') }}" alt="" style="width: 25px;"></i>
                                 <p>
                                     Mata Kuliah
                                 </p>
@@ -164,8 +155,7 @@
 
                         <li class="nav-item">
                             <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                                <i class="nav-icon"><img src="{{ url('img/sidebars/about.png') }}"
-                                        style="width: 25px;" alt=""></i>
+                                <i class="nav-icon"><img src="{{ url('img/sidebars/about.png') }}" style="width: 25px;" alt=""></i>
                                 <p>About</p>
                             </a>
                         </li>
@@ -215,7 +205,7 @@
             <!-- end main content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer " style="background-color: #272A37;>
+        <footer class="main-footer " style="background-color: #272A37;">
             <strong>Copyright &copy; 2022 <a href=" #">Ikhsan&Daffa</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
