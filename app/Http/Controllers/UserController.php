@@ -15,4 +15,9 @@ class UserController extends Controller
     {
         return view('user.layout.mataKuliah');
     }
+
+    public function about()
+    {
+        return view('user.layout.about');
+    }
 }
