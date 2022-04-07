@@ -5,6 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{{ url('img/icon/uskLogo.png') }}" style="width: 2px">
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,7 +32,8 @@
                     <h5>D'AsLab</h5>
                 </div>
                 <div class="  d-flex justify-content-center" style="margin-top: 12rem">
-                    <form action="{{ url('/admin/dashboard') }}" method="get">@csrf
+                    <form action="{{ url('/login') }}" method="POST">
+                        @csrf
                         <div>
                             <h3 class="text-center text-uppercase">Login</h3>
                         </div>

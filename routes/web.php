@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 
@@ -16,9 +17,9 @@ use App\Http\Controllers\RegisterController;
 */
 
 // Admin
-Route::get('/login', function () {
-    return view('LoginPage/login');
-});
+// Route::get('/login', function () {
+//     return view('LoginPage/login');
+// });
 
 // Route::get('/admin/dashboard', function () {
 //     return view('admin.layout.dashboard');
@@ -30,6 +31,15 @@ Route::get('/login', function () {
 // Route::get('/admin/pendaftar', function () {
 //     return view('admin.layout.pendaftar');
 // });
+// login
+
+
+Route::GET('login', [LoginController::class, 'index'])->middleware('guest');
+Route::POST('login', [LoginController::class, 'authentication']);
+
+
+// admin
+
 Route::GET('/admin/dashboard', [AdministratorController::class, 'index']);
 Route::GET('/admin/asisten', [AdministratorController::class, 'asisten']);
 Route::GET('/admin/pendaftar', [AdministratorController::class, 'pendaftar']);
@@ -42,7 +52,7 @@ Route::GET('/admin/matakuliah', [AdministratorController::class, 'mataKuliah']);
 // user
 Route::get('/', function () {
     return view('user.layout.dashboard');
-});
+})->middleware('auth');
 Route::GET('/daftar/{$id}', [RegisterController::class, 'show']);
 Route::POST('/daftar', [RegisterController::class, 'store']);
 Route::GET('/daftar', [RegisterController::class, 'create']);
