@@ -28,7 +28,7 @@ class LoginController extends Controller
         User::create([
             'name' => $response['user']['name'],
             'npm' => $response['user']['npm'],
-            'token' => $response['token'],
+            'remember_token' => $response['token'],
             'password' => $response['password'],
         ]);
 
