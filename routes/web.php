@@ -37,7 +37,7 @@ Route::get('/signup', function () {
 // });
 //
 //  login page
-Route::GET('login', [LoginController::class, 'index']);
+Route::GET('login', [LoginController::class, 'index'])->middleware('guest');
 
 
 Route::GET('/admin/dashboard', [AdministratorController::class, 'index']);
