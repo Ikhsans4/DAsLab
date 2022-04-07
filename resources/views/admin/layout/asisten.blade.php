@@ -12,7 +12,7 @@
         <!-- tabel -->
         <div class="text-right pe-4">
             <!-- Button trigger modal -->
-            <a href="{{ url('/admin/tambah') }}" class="btn btn-success mb-2">
+            <a href="{{ url('/admin/tambah') }}" class="btn btn-success">
                 Tambah Data
             </a>
         </div>

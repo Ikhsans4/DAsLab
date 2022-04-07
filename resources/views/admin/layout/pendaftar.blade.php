@@ -31,8 +31,8 @@
                         <td>{{ $register['email'] }}</td>
                         <td>{{ $register['jurusan'] }}</td>
                         <td>{{ $register['mataKuliah'] }}</td>
-                        <td class="row justify-content-center">
-                            <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST" style="margin-right: 1rem;">
+                        <td>
+                            <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger">Tolak</button>

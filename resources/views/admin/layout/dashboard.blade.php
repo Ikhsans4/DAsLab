@@ -3,6 +3,8 @@
 @section('title', 'Dashboard')
 @section('head', 'Dashboard')
 @section('active', 'active')
+@section('user', $data['image'])
+@section('username', $data['username'])
 
 @section('container')
 
