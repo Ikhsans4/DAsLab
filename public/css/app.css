@@ -1,3 +1,39 @@
 .bg-main {
-    color: #272a37;
+    background-color: #272a37;
+}
+
+.bg-optional {
+    background-color: #323644;
+}
+
+.r-60 {
+    border-radius: 60px;
+}
+
+.r-10 {
+    border-radius: 10px;
+}
+
+.padd-button {
+    padding: 0.5em 3em 0.5em 3em;
+}
+
+input[type="tel"] {
+    background-color: #323644;
+    color: white;
+}
+input[type="tel"]:focus {
+    background-color: #323644;
+    color: white;
+    border: 2px solid #1f8beb;
+}
+
+input[type="password"] {
+    background-color: #323644;
+    color: white;
+}
+input[type="password"]:focus {
+    background-color: #323644;
+    color: white;
+    border: 2px solid #1f8beb;
 }
