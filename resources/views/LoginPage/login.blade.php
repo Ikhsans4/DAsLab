@@ -7,6 +7,7 @@
     <form action="{{ url('/admin/dashboard') }}" method="get">@csrf
         <div>
             <h3 class="text-center text-uppercase">Login</h3>
+
         </div>
         <div class="mb-3">
             <label for="npm" class="form-label">NPM</label>
