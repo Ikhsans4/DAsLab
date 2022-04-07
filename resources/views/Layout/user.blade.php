@@ -33,9 +33,12 @@
     <link rel="stylesheet" href="{{ url('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url('css/app.css') }}">
+
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed bg-main">
     <div class="wrapper">
         @if (!session('status'))
             <!-- Preloader -->
@@ -72,7 +75,7 @@
             </a>
 
             <!-- Sidebar -->
-            <div class="sidebar" style="background-color: #272A37;">
+            <div class="sidebar">
 
 
 
