@@ -64,7 +64,7 @@
 
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="text-light dropdown-item">
+                    <button type="submit" class="text-light btn">
                         <img width="20px" src="https://img.icons8.com/ios/50/ffffff/exit.png" />
                         Logout</button>
                 </form>
