@@ -62,7 +62,7 @@
                 {{-- <div class="d-flex justify-content-center col">
                 </div> --}}
             </div>
-            <div class="col-md-6" style="background-image :  url('img/login.jpg'); background-size: cover;">
+            <div class="col-md-6 opacity-25" style="background-image: url('img/login.jpg'); background-size: cover;">
             </div>
 
         </div>
