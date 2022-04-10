@@ -4,8 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-
 
 class EnsureLoginIsValid
 {
@@ -18,17 +16,6 @@ class EnsureLoginIsValid
      */
     public function handle(Request $request, Closure $next)
     {
-        $response = Http::post('http://127.0.0.1:8000/api/login', [
-            'npm' => $request->npm,
-            'password' => $request->password,
-        ]);
-        $response = $response->json();
-        // return dd($response['status']);
-        if ($response === Null) {
-            abort(403);
-        }
-
-        // return redirect('/admin/dashboard');
         return $next($request);
     }
 }

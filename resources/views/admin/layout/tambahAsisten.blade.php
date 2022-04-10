@@ -2,6 +2,9 @@
 
 @section('title', 'Tambah Asisten')
 @section('head', 'Tambah Asisten Laboratorium')
+@section('active', 'active')
+@section('user', $data['image'])
+@section('username', $data['username'])
 
 @section('container')
     <!-- Main content -->

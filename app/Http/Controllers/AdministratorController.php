@@ -18,12 +18,17 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        $response = Http::get('https://dummyjson.com/users/1');
+        // $response = Http::get('https://dummyjson.com/users/1');
+        $response = [
+            'username' => 'Admin',
+            'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
+        ];
 
         return view('admin.layout.dashboard', [
             'pendaftar' => Register::count(),
             'asisten' => Register::where('status', 1)->count(),
-            'data' => $response->json()
+            'data' => $response,
+            'active' => 'home'
         ]);
     }
 
@@ -34,8 +39,14 @@ class AdministratorController extends Controller
      */
     public function pendaftar()
     {
+        $response = [
+            'username' => 'Admin',
+            'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
+        ];
         return view('admin.layout.pendaftar', [
-            'registers' => Register::all()
+            'registers' => Register::all(),
+            'data' => $response,
+            'active' => 'pendaftar'
         ]);
     }
     /**
@@ -45,8 +56,12 @@ class AdministratorController extends Controller
      */
     public function asisten()
     {
+        $response = [
+            'username' => 'Admin',
+            'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
+        ];
         $data = Register::where('status', 1)->get();
-        return view('admin.layout.asisten', ['registers' => $data]);
+        return view('admin.layout.asisten', ['registers' => $data, 'data' => $response, 'active' => 'asisten']);
     }
 
     /**
@@ -56,7 +71,7 @@ class AdministratorController extends Controller
      */
     public function create()
     {
-        return view('admin.layout.tambahAsisten');
+        return view('admin.layout.tambahAsisten', ['active' => 'asisten']);
     }
 
     /**
@@ -144,17 +159,27 @@ class AdministratorController extends Controller
 
         // $response = Http::post('http://127.0.0.1:8000/api/login');
         // $response = Http::withBasicAuth('ikhsan@gmail.com', '123')->post('http://127.0.0.1:8000/api/login');
-        $response = Http::post('http://127.0.0.1:8000/api/login', [
-            'npm' => '123457',
-            'password' => '123',
-        ]);
-        $response = $response->json();
-        $response = $response['token'];
-        // return dd($response);
-        $response = Http::withToken($response)->get('http://127.0.0.1:8000/api/data');
-        $response = $response->json();
+        // $response = Http::post('http://127.0.0.1:8000/api/login', [
+        //     'npm' => '123457',
+        //     'password' => '123',
+        // ]);
+        // $response = $response->json();
+        // $response = $response['token'];
+        // // return dd($response);
+        // $response = Http::withToken($response)->get('http://127.0.0.1:8000/api/data');
+        // $response = $response->json();
         // return dd($response->json());
-        return view('admin.layout.mataKuliah', ['mata_kuliah' => $response, 'asisten' => Register::all()]);
+        $response = [
+            "id" => 1,
+            "mata_kuliah" => "Pemrograman Dasar",
+            "nip_dosen" => "1234567899",
+            "jurusan" => "Informatika",
+        ];
+        $data = [
+            'username' => 'Admin',
+            'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
+        ];
+        return view('admin.layout.mataKuliah', ['mata_kuliah' => $response, 'data' => $data, 'asisten' => Register::all(), 'active' => 'matakuliah']);
     }
 
 

@@ -2,6 +2,9 @@
 
 @section('title', "D'AsLab | Asisten")
 @section('head', 'Asisten Laboratorium')
+@section('active', 'active')
+@section('user', $data['image'])
+@section('username', $data['username'])
 
 <!-- Main content -->
 @section('container')
