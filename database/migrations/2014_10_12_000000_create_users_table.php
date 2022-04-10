@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('npm');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('token');
             $table->rememberToken();
             $table->timestamps();
         });

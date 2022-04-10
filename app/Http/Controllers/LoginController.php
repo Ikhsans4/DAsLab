@@ -19,25 +19,42 @@ class LoginController extends Controller
     public function authentication(Request $request)
     {
 
-        $response = Http::post('http://127.0.0.1:8000/api/login', [
-            'npm' => $request->npm,
-            'password' => $request->password,
-        ]);
-        $response = $response->json();
+        // $response = Http::post('http://127.0.0.1:8000/api/login', [
+        //     'npm' => $request->npm,
+        //     'password' => $request->password,
+        // ]);
+        // $response = $response->json();
 
-        User::create([
-            'name' => $response['user']['name'],
-            'npm' => $response['user']['npm'],
-            'remember_token' => $response['token'],
-            'password' => $response['password'],
-        ]);
+        // if ($response === NUll) {
+        //     abort(403);
+        // }
+        // User::create([
+        //     'name' => $response['user']['name'],
+        //     'npm' => $response['user']['npm'],
+        //     'token' => $response['token'],
+        //     'password' => $response['password'],
+        // ]);
 
         if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
 
             $request->session()->regenerate();
-            return redirect()->intended('');
+            return redirect()->intended('admin/dashboard');
         }
 
-        return dd($response->json());
+        return back()->with(
+            'error',
+            'Login gagal'
+        );
+    }
+
+    public function logout()
+    {
+        // $request = User::all();
+        Auth::logout();
+        request()->session()->invalidate();
+
+        request()->session()->regenerateToken();
+        // User::destroy($request->id);
+        return redirect('login');
     }
 }
