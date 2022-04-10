@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::factory(10)->create();
+        User::factory(5)->create();
 
         Matakuliah::create([
             'kode_mk' => 'INF108',
