@@ -19,11 +19,13 @@ use App\Http\Controllers\UserController;
 
 
 //  login page
-Route::GET('login', [LoginController::class, 'index'])->middleware('guest');
+Route::GET('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::POST('login', [LoginController::class, 'authentication']);
+Route::post('logout', [LoginController::class, 'logout']);
 
 
 // Admin
-Route::GET('/admin/dashboard', [AdministratorController::class, 'index']);
+Route::GET('/admin/dashboard', [AdministratorController::class, 'index'])->middleware('auth');
 Route::GET('/admin/asisten', [AdministratorController::class, 'asisten']);
 Route::GET('/admin/pendaftar', [AdministratorController::class, 'pendaftar']);
 Route::GET('/admin/tambah', [AdministratorController::class, 'create']);
@@ -34,7 +36,7 @@ Route::GET('/admin/matakuliah', [AdministratorController::class, 'mataKuliah']);
 
 // user
 
-Route::GET('/', [UserController::class, 'index']);
+Route::GET('/', [UserController::class, 'index'])->middleware('auth');
 Route::GET('/matakuliah', [UserController::class, 'mataKuliah']);
 Route::GET('/about', [UserController::class, 'about']);
 
