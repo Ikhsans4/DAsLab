@@ -23,24 +23,25 @@ Route::GET('login', [LoginController::class, 'index'])->name('login')->middlewar
 Route::POST('login', [LoginController::class, 'authentication']);
 Route::post('logout', [LoginController::class, 'logout']);
 
+Route::middleware('auth')->group(function () {
 
-// Admin
-Route::GET('/admin/dashboard', [AdministratorController::class, 'index'])->middleware('auth');
-Route::GET('/admin/asisten', [AdministratorController::class, 'asisten']);
-Route::GET('/admin/pendaftar', [AdministratorController::class, 'pendaftar']);
-Route::GET('/admin/tambah', [AdministratorController::class, 'create']);
-Route::POST('/admin/tambah', [AdministratorController::class, 'store']);
-Route::PUT('/admin/pendaftar/{id}', [AdministratorController::class, 'terima']);
-Route::DELETE('/admin/pendaftar/{id}', [AdministratorController::class, 'tolak']);
-Route::GET('/admin/matakuliah', [AdministratorController::class, 'mataKuliah']);
+    // Admin
+    Route::GET('/admin/dashboard', [AdministratorController::class, 'index']);
+    Route::GET('/admin/asisten', [AdministratorController::class, 'asisten']);
+    Route::GET('/admin/pendaftar', [AdministratorController::class, 'pendaftar']);
+    Route::GET('/admin/tambah', [AdministratorController::class, 'create']);
+    Route::POST('/admin/tambah', [AdministratorController::class, 'store']);
+    Route::PUT('/admin/pendaftar/{id}', [AdministratorController::class, 'terima']);
+    Route::DELETE('/admin/pendaftar/{id}', [AdministratorController::class, 'tolak']);
+    Route::GET('/admin/matakuliah', [AdministratorController::class, 'mataKuliah']);
+    // user
 
-// user
-
-Route::GET('/', [UserController::class, 'index'])->middleware('auth');
-Route::GET('/matakuliah', [UserController::class, 'mataKuliah']);
-Route::GET('/about', [UserController::class, 'about']);
+    Route::GET('/', [UserController::class, 'index'])->middleware('auth');
+    Route::GET('/matakuliah', [UserController::class, 'mataKuliah']);
+    Route::GET('/about', [UserController::class, 'about']);
 
 
-Route::GET('/daftar/{$id}', [RegisterController::class, 'show']);
-Route::POST('/daftar', [RegisterController::class, 'store']);
-Route::GET('/daftar', [RegisterController::class, 'create']);
+    Route::GET('/daftar/{$id}', [RegisterController::class, 'show']);
+    Route::POST('/daftar', [RegisterController::class, 'store']);
+    Route::GET('/daftar', [RegisterController::class, 'create']);
+});
