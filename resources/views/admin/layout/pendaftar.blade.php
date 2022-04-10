@@ -3,6 +3,9 @@
 @section('title', 'Data Pendaftar')
 @section('head', 'Data Mahasiswa yang Mendaftar Sebagai Asisten')
 @section('container')
+@section('active', 'active')
+@section('user', $data['image'])
+@section('username', $data['username'])
 
 
 
@@ -24,26 +27,27 @@
 
         <tbody class="text-center">
             @foreach ($registers as $register)
-            <tr>
-                <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $register['nama'] }}</td>
-                <td>{{ $register['npm'] }}</td>
-                <td>{{ $register['email'] }}</td>
-                <td>{{ $register['jurusan'] }}</td>
-                <td>{{ $register['mataKuliah'] }}</td>
-                <td class="row justify-content-center">
-                    <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST" style="margin-right: 1rem;">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger">Tolak</button>
-                    </form>
-                    <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <button type="submit" class="btn btn-primary">Terima</button>
-                    </form>
-                </td>
-            </tr>
+                <tr>
+                    <th scope="row">{{ $loop->iteration }}</th>
+                    <td>{{ $register['nama'] }}</td>
+                    <td>{{ $register['npm'] }}</td>
+                    <td>{{ $register['email'] }}</td>
+                    <td>{{ $register['jurusan'] }}</td>
+                    <td>{{ $register['mataKuliah'] }}</td>
+                    <td class="row justify-content-center">
+                        <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST"
+                            style="margin-right: 1rem;">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger">Tolak</button>
+                        </form>
+                        <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" class="btn btn-primary">Terima</button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
 
         </tbody>
@@ -51,4 +55,4 @@
     </table>
 
     <!-- /.tabel -->
-    @endsection
+@endsection

@@ -64,7 +64,7 @@
 
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="text-light dropdown-item">
+                    <button type="submit" class="text-light btn">
                         <img width="20px" src="https://img.icons8.com/ios/50/ffffff/exit.png" />
                         Logout</button>
                 </form>
@@ -99,7 +99,8 @@
                         <li class="nav-header">MENU</li>
 
                         <li class="nav-item ">
-                            <a href="{{ url('/admin/dashboard') }}" class="nav-link @yield('active')">
+                            <a href="{{ url('/admin/dashboard') }}"
+                                class="nav-link @if ($active === 'home') active @endif">
                                 <i class="nav-icon"><img src="{{ url('img/sidebars/home.png') }}" alt=""></i>
                                 <p>
                                     Home
@@ -108,8 +109,9 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a href="{{ url('/admin/pendaftar') }}" class="nav-link">
-                                <i class="nav-icon"> <img src="{{ url('img/sidebars/pendaftar.png') }}"
+                            <a href="{{ url('/admin/pendaftar') }}"
+                                class="nav-link @if ($active === 'pendaftar') active @endif">
+                                <i class="nav-icon "> <img src="{{ url('img/sidebars/pendaftar.png') }}"
                                         style="width: 25px;" alt=""></i>
                                 <p>
                                     Pendaftar
@@ -117,7 +119,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/admin/asisten') }}" class="nav-link">
+                            <a href="{{ url('/admin/asisten') }}"
+                                class="nav-link @if ($active === 'asisten') active @endif">
                                 <i class="nav-icon"><img src="{{ url('img/sidebars/asisten.png') }}" alt=""
                                         style="width: 25px;"></i>
                                 <p>
@@ -126,7 +129,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/admin/matakuliah') }}" class="nav-link">
+                            <a href="{{ url('/admin/matakuliah') }}"
+                                class="nav-link @if ($active === 'matakuliah') active @endif">
                                 <i class="nav-icon"><img src="{{ url('img/sidebars/kelas.png') }}" alt=""
                                         style="width: 25px;"></i>
                                 <p>
@@ -135,13 +139,6 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                                <i class="nav-icon"><img src="{{ url('img/sidebars/about.png') }}"
-                                        style="width: 25px;" alt=""></i>
-                                <p>About</p>
-                            </a>
-                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
