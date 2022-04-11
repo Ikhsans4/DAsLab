@@ -13,7 +13,7 @@ class MatkulSeeder extends Seeder
      *
      * @return void
      */
-    public static function run()
+    public function run()
     {
         Matakuliah::create([
             'kode_mk' => 'INF108',
