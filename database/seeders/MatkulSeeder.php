@@ -102,5 +102,13 @@ class MatkulSeeder extends Seeder
             'semester' => 4,
             'dosen_pengampu' => 'Muhammad Iqbal'
         ]);
+
+        Matakuliah::create([
+            'kode_mk' => 'INF224',
+            'nama_mk' => 'Pemrograman Berbasis Web',
+            'sks' => 3,
+            'semester' => 4,
+            'dosen_pengampu' => 'Kurnia Saputra'
+        ]);
     }
 }
