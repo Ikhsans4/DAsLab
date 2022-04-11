@@ -22,5 +22,13 @@ class MatkulSeeder extends Seeder
             'semester' => 2,
             'dosen_pengampu' => 'Irvanizam Zamanhuri'
         ]);
+
+        Matakuliah::create([
+            'kode_mk' => 'INF112',
+            'nama_mk' => 'Jaringan Komputer',
+            'sks' => 3,
+            'semester' => 2,
+            'dosen_pengampu' => 'Arie Budiansyah'
+        ]);
     }
 }
