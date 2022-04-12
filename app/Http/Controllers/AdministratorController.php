@@ -62,6 +62,7 @@ class AdministratorController extends Controller
             'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
         ];
         $data = Register::where('status', 1)->get();
+        // return dd($data);
         return view('admin.layout.asisten', ['registers' => $data, 'data' => $response, 'active' => 'asisten']);
     }
 
