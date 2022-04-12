@@ -62,6 +62,14 @@
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
+            <ul class="navbar-nav ml-auto text-light">
+
+                <form action="{{ url('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout</button>
+                </form>
+            </ul>
         </nav>
         <!-- /.navbar -->
 
@@ -85,84 +93,43 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        {{-- <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Dashboard
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./index.html" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./index2.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v2</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./index3.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
-                                    </a>
-                                </li> --}}
-                        {{-- </ul>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Widgets
-                                    <span class="right badge badge-danger">New</span>
-                                </p>
-                            </a>
-                        </li> --}}
+
 
 
                         <li class="nav-header">MENU</li>
 
                         <li class="nav-item ">
-                            <a href="{{ url('/') }}" class="nav-link">
-                                <i class="nav-icon"> <img src="{{ url('img/sidebars/home.png') }}"
-                                        style="width: 25px;" alt=""></i>
-                                <p>
-                                    Home
-                                </p>
+                            <a href="{{ url('') }}"
+                                class="nav-link @if ($active === 'home') active @endif">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>Home</p>
+
                             </a>
                         </li>
 
                         <li class="nav-item ">
-                            <a href="{{ url('/daftar') }}" class="nav-link">
-                                <i class="nav-icon"> <img src="{{ url('img/sidebars/daftar.png') }}"
-                                        style="width: 25px;" alt=""></i>
-                                <p>
-                                    Daftar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/matakuliah') }}" class="nav-link">
-                                <i class="nav-icon"> <img src="{{ url('img/sidebars/Kelas.png') }}"
-                                        style="width: 25px;" alt=""></i>
-                                <p>
-                                    Mata Kuliah
-                                </p>
+                            <a href="{{ url('daftar') }}"
+                                class="nav-link @if ($active === 'daftar') active @endif">
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>Daftar</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('/about') }}" class="nav-link">
-                                <i class="nav-icon"> <img src="{{ url('img/sidebars/about.png') }}"
-                                        style="width: 25px;" alt=""></i>
+                            <a href="{{ url('matakuliah') }}"
+                                class="nav-link @if ($active === 'matakuliah') active @endif">
+                                <i class="nav-icon fas fa-swatchbook"></i>
+                                <p>Mata Kuliah</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('about') }}"
+                                class="nav-link @if ($active === 'about') active @endif">
+                                <i class="nav-icon fas fa-info-circle"></i>
                                 <p>About</p>
                             </a>
                         </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

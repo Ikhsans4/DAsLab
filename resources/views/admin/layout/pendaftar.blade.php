@@ -21,7 +21,6 @@
                     <th scope="col">Email</th>
                     <th scope="col">Jurusan</th>
                     <th scope="col">Mata Kuliah</th>
-                    <th scope="col">Aksi</th>
                 </tr>
             </thead>
 
@@ -35,17 +34,23 @@
                         <td>{{ $register['jurusan'] }}</td>
                         <td>{{ $register['mataKuliah'] }}</td>
                         <td class="row justify-content-center">
-                            <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST"
-                                style="margin-right: 1rem;">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger">Tolak</button>
-                            </form>
-                            <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
-                                @csrf
-                                @method('PUT')
-                                <button type="submit" class="btn btn-primary">Terima</button>
-                            </form>
+                            @if ($register['status'] === null)
+                                <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST"
+                                    style="margin-right: 1rem;">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">Tolak</button>
+                                </form>
+                                <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="btn btn-primary">Terima</button>
+                                </form>
+                            @elseif ($register['status'] == 1)
+                                <p class="btn btn-success">Diterima</p>
+                            @else
+                                <p class="btn btn-danger">Ditolak</p>
+                            @endif
                         </td>
                     </tr>
                 @endforeach
