@@ -21,7 +21,6 @@ use App\Http\Controllers\UserController;
 //  login page
 Route::GET('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::POST('login', [LoginController::class, 'authentication']);
-Route::post('logout', [LoginController::class, 'logout']);
 
 Route::middleware('auth')->group(function () {
 
@@ -39,9 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::GET('/', [UserController::class, 'index'])->middleware('auth');
     Route::GET('/matakuliah', [UserController::class, 'mataKuliah']);
     Route::GET('/about', [UserController::class, 'about']);
-
-
     Route::GET('/daftar/{$id}', [RegisterController::class, 'show']);
     Route::POST('/daftar', [RegisterController::class, 'store']);
     Route::GET('/daftar', [RegisterController::class, 'create']);
+
+    // logout
+    Route::POST('logout', [LoginController::class, 'logout']);
 });
