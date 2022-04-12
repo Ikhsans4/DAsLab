@@ -23,7 +23,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('user.layout.daftar');
+        return view('user.layout.daftar', ['active' => 'daftar']);
     }
 
     /**
