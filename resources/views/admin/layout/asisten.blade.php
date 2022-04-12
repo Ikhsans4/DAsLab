@@ -29,7 +29,7 @@
                                         <th>Mata Kuliah</th>
                                     </tr>
                                 </thead>
-                                <tbody class="">
+                                <tbody>
 
                                     @foreach ($registers as $register)
                                         <tr>

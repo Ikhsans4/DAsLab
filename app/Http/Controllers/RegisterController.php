@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Matakuliah;
 use Illuminate\Http\Request;
 use App\Models\Register;
 
@@ -23,7 +24,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('user.layout.daftar', ['active' => 'daftar']);
+        return view('user.layout.daftar', ['active' => 'daftar', 'lessons' => MataKuliah::all()]);
     }
 
     /**
