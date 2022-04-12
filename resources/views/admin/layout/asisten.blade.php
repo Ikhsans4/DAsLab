@@ -1,7 +1,7 @@
 @extends('Layout.main')
 
-@section('title', "D'AsLab | Asisten")
-@section('head', 'Asisten Laboratorium')
+@section('title', "D'AsLab | Asisten Laboratorium")
+@section('head', 'Daftar Asisten Laboratorium')
 @section('active', 'active')
 @section('user', $data['image'])
 @section('username', $data['username'])
@@ -30,15 +30,17 @@
                                     </tr>
                                 </thead>
                                 <tbody class="">
-                                    <tr>
-                                        <td>1</td>
-                                        <td>M. Ikhsan Fikri</td>
-                                        <td>2008107010020
-                                        </td>
-                                        <td>Ikhsan@gmail.com</td>
-                                        <td>Informatika</td>
-                                        <td>Pemrograman Dasar</td>
-                                    </tr>
+
+                                    @foreach ($registers as $register)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $register['nama'] }}</td>
+                                            <td>{{ $register['npm'] }} </td>
+                                            <td>{{ $register['email'] }}</td>
+                                            <td>{{ $register['jurusan'] }}</td>
+                                            <td>{{ $register['mataKuliah'] }}</td>
+                                        </tr>
+                                    @endforeach
 
                                 </tbody>
                                 <tfoot>
