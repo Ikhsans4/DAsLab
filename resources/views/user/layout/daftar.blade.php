@@ -1,5 +1,5 @@
 @extends('Layout.user')
-@section('title', 'Pendaftaran Asisten')
+@section('title', "D'AsLab | Daftar Asisten")
 @section('head', 'Pendaftaran Asisten Laboratorium')
 
 
