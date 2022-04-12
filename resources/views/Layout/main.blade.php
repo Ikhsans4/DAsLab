@@ -228,7 +228,7 @@
     <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ url('js/script.js') }}"></script>
-    @yield('table-script')
+    @yield('table')
 </body>
 
 </html>

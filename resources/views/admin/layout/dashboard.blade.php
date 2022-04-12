@@ -1,6 +1,6 @@
 @extends('layout/main')
 
-@section('title', 'Dashboard')
+@section('title', "D'AsLab | Admin")
 @section('head', 'Dashboard')
 @section('active', 'active')
 @section('user', $data['image'])
@@ -65,7 +65,7 @@
         </div>
         <!-- end head -->
         <section class="content text-dark">
-            <div class="container-fluid d-flex ">
+            <div class="container-fluid  d-flex flex-wrap ">
                 <!-- card 1 -->
                 <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
                     <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
