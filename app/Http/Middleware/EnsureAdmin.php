@@ -16,8 +16,8 @@ class EnsureAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth()->check() || Auth()->user->isAdmin === False) {
-            abort(403)
+        if (!Auth()->check() || Auth()->user()->isAdmin === False) {
+            abort(403);
         }
         return $next($request);
     }
