@@ -16,7 +16,7 @@ class EnsureUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth()->check() || Auth()->user()->isAdmin === True) {
+        if (!Auth()->check() || Auth()->user()->isAdmin === True) {
             return redirect('admin/dashboard');
         }
         return $next($request);
