@@ -65,9 +65,9 @@
         </div>
         <!-- end head -->
         <section class="content text-dark">
-            <div class="container-fluid  d-flex flex-wrap ">
+            <div class="container-fluid  d-flex flex-wrap justify-content-center">
                 <!-- card 1 -->
-                <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
+                <div class="card" style="width: 14rem; padding: 1rem; margin: 5px;">
                     <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
