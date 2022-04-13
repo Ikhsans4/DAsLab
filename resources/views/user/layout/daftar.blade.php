@@ -1,5 +1,5 @@
 @extends('Layout.user')
-@section('title', 'Pendaftaran Asisten')
+@section('title', "D'AsLab | Daftar Asisten")
 @section('head', 'Pendaftaran Asisten Laboratorium')
 
 
@@ -52,12 +52,10 @@
                         <!-- matakuliah -->
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Mata Kuliah</label>
-                            <select class="form-control" name="mataKuliah" id="exampleFormControlSelect1">
-                                <option value="Pemrograman Dasar">Pemrograman Dasar</option>
-                                <option value="Pemrograman Berbasis WEB">Pemrograman Berbasis WEB</option>
-                                <option value="Kimia">Kimia</option>
-                                <option value="Fisika">Fisika</option>
-                                <option value="Statistika">Statistika</option>
+                            <select class="form-control text-dark" name="mataKuliah" id="exampleFormControlSelect1">
+                                @foreach ($lessons as $lesson)
+                                    <option value="{{ $lesson['nama_mk'] }}">{{ $lesson['nama_mk'] }}</option>
+                                @endforeach
                             </select>
 
                         </div>

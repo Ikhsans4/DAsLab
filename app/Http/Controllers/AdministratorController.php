@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Matakuliah;
 use App\Models\Register;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -61,6 +62,7 @@ class AdministratorController extends Controller
             'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
         ];
         $data = Register::where('status', 1)->get();
+        // return dd($data);
         return view('admin.layout.asisten', ['registers' => $data, 'data' => $response, 'active' => 'asisten']);
     }
 
@@ -169,12 +171,9 @@ class AdministratorController extends Controller
         // $response = Http::withToken($response)->get('http://127.0.0.1:8000/api/data');
         // $response = $response->json();
         // return dd($response->json());
-        $response = [
-            "id" => 1,
-            "mata_kuliah" => "Pemrograman Dasar",
-            "nip_dosen" => "1234567899",
-            "jurusan" => "Informatika",
-        ];
+        $response = Matakuliah::all();
+        // return dd($response);
+
         $data = [
             'username' => 'Admin',
             'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'

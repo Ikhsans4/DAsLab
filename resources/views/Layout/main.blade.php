@@ -32,6 +32,10 @@
     <link rel="stylesheet" href="{{ url('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -64,9 +68,8 @@
 
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="text-light btn">
-                        <img width="20px" src="https://img.icons8.com/ios/50/ffffff/exit.png" />
-                        Logout</button>
+                    <button type="submit" class="nav-link btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout</button>
                 </form>
             </ul>
         </nav>
@@ -101,41 +104,31 @@
                         <li class="nav-item ">
                             <a href="{{ url('/admin/dashboard') }}"
                                 class="nav-link @if ($active === 'home') active @endif">
-                                <i class="nav-icon"><img src="{{ url('img/sidebars/home.png') }}" alt=""></i>
-                                <p>
-                                    Home
-                                </p>
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>Home</p>
+
                             </a>
                         </li>
 
                         <li class="nav-item ">
                             <a href="{{ url('/admin/pendaftar') }}"
                                 class="nav-link @if ($active === 'pendaftar') active @endif">
-                                <i class="nav-icon "> <img src="{{ url('img/sidebars/pendaftar.png') }}"
-                                        style="width: 25px;" alt=""></i>
-                                <p>
-                                    Pendaftar
-                                </p>
+                                <i class="nav-icon fas fa-clipboard-list"></i>
+                                <p>Pendaftar</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/asisten') }}"
                                 class="nav-link @if ($active === 'asisten') active @endif">
-                                <i class="nav-icon"><img src="{{ url('img/sidebars/asisten.png') }}" alt=""
-                                        style="width: 25px;"></i>
-                                <p>
-                                    Asisten
-                                </p>
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>Asisten</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/matakuliah') }}"
                                 class="nav-link @if ($active === 'matakuliah') active @endif">
-                                <i class="nav-icon"><img src="{{ url('img/sidebars/kelas.png') }}" alt=""
-                                        style="width: 25px;"></i>
-                                <p>
-                                    Mata Kuliah
-                                </p>
+                                <i class="nav-icon fas fa-swatchbook"></i>
+                                <p>Mata Kuliah</p>
                             </a>
                         </li>
 
@@ -235,7 +228,7 @@
     <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ url('js/script.js') }}"></script>
-
+    @yield('table')
 </body>
 
 </html>
