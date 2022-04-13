@@ -25,5 +25,14 @@ class UsersSeeder extends Seeder
             ]
 
         );
+        DB::table('users')->insert(
+            [
+                'name' => 'ikhsan',
+                'npm' => '123456',
+                'password' => Hash::make('123'),
+                'is_admin' => True,
+            ]
+
+        );
     }
 }

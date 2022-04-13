@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class EnsureAdmin
+class EnsureUser
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class EnsureAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth()->check() || Auth()->user()->isAdmin === False) {
-            return redirect('');
+        if (!Auth()->check() || Auth()->user()->isAdmin === True) {
+            return redirect('admin/dashboard');
         }
         return $next($request);
     }

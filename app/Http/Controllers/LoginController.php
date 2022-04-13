@@ -35,9 +35,12 @@ class LoginController extends Controller
         // ]);
 
         if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
-
             $request->session()->regenerate();
-            return redirect()->intended('admin/dashboard');
+            if (User::where('npm', $request->npm)->first()->is_admin == 1) {
+                return redirect()->intended('admin/dashboard');
+            } else {
+                return redirect()->intended('');
+            }
         }
 
         return back()->with(
