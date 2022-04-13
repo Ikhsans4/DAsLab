@@ -33,7 +33,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::PUT('/admin/pendaftar/{id}', [AdministratorController::class, 'terima']);
     Route::DELETE('/admin/pendaftar/{id}', [AdministratorController::class, 'tolak']);
     Route::GET('/admin/matakuliah', [AdministratorController::class, 'mataKuliah']);
+});
 
+Route::middleware(['auth', 'user'])->group(function () {
     // user
     Route::GET('/', [UserController::class, 'index']);
     Route::GET('/matakuliah', [UserController::class, 'mataKuliah']);
@@ -41,7 +43,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::GET('/daftar/{$id}', [RegisterController::class, 'show']);
     Route::POST('/daftar', [RegisterController::class, 'store']);
     Route::GET('/daftar', [RegisterController::class, 'create']);
-
-    // logout
-    Route::POST('logout', [LoginController::class, 'logout']);
 });
+// logout
+Route::POST('logout', [LoginController::class, 'logout'])->middleware('auth');
