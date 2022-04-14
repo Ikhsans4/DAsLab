@@ -22,7 +22,7 @@ use App\Http\Controllers\UserController;
 Route::GET('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::POST('login', [LoginController::class, 'authentication']);
 
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware('admin')->group(function () {
 
     // Admin
     Route::GET('admin/dashboard', [AdministratorController::class, 'index']);
@@ -35,7 +35,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::GET('/admin/matakuliah', [AdministratorController::class, 'mataKuliah']);
 });
 
-Route::middleware(['auth', 'user'])->group(function () {
+Route::middleware('user')->group(function () {
     // user
     Route::GET('/', [UserController::class, 'index']);
     Route::GET('/matakuliah', [UserController::class, 'mataKuliah']);

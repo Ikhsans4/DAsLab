@@ -34,11 +34,13 @@ class LoginController extends Controller
         //     'password' => $response['password'],
         // ]);
 
+        // return  User::where('npm', $request->npm)->first()->is_admin;
         if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
-            $request->session()->regenerate();
-            if (User::where('npm', $request->npm)->first()->is_admin == 1) {
+            if ((User::where('npm', $request->npm)->first()->is_admin) === 1) {
+                $request->session()->regenerate();
                 return redirect()->intended('admin/dashboard');
-            } else {
+            } else if (User::where('npm', $request->npm)->first()->is_admin !== 1) {
+                $request->session()->regenerate();
                 return redirect()->intended('');
             }
         }
