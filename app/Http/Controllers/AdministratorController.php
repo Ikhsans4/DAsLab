@@ -6,6 +6,7 @@ use App\Models\Matakuliah;
 use App\Models\Register;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\Response;
 
@@ -24,6 +25,17 @@ class AdministratorController extends Controller
             'username' => 'Admin',
             'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
         ];
+
+        $mk = Matakuliah::paginate(4);
+        return view('admin.layout.dashboard', [
+            'pendaftar' => Register::count(),
+            'jumlahAsisten' => Register::where('status', 1)->count(),
+            'mata_kuliah' => $mk,
+            'data' => $response,
+            'asisten' => Register::all(),
+            'active' => 'home',
+
+        ]);
 
         return view('admin.layout.dashboard', [
             'pendaftar' => Register::count(),
@@ -62,6 +74,7 @@ class AdministratorController extends Controller
             'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
         ];
         $data = Register::where('status', 1)->get();
+        // return dd(now());
         // return dd($data);
         return view('admin.layout.asisten', ['registers' => $data, 'data' => $response, 'active' => 'asisten']);
     }
