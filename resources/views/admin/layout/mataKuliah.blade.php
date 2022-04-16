@@ -5,6 +5,7 @@
 @section('active', 'active')
 @section('user', $data['image'])
 @section('username', $data['username'])
+@section('link', 'Mata Kuliah')
 
 <!-- Main content -->
 @section('container')
