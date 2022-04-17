@@ -57,7 +57,8 @@ class LoginController extends Controller
 
     public function logout()
     {
-        $id = User::all()->last();
+        $id = auth()->user()->id;
+        $id = User::where('id', $id)->first();
         Auth::logout();
         request()->session()->invalidate();
 

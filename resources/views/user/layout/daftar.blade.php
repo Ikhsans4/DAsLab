@@ -17,18 +17,19 @@
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control @if ($errors->has('nama')) is-invalid @endif"
-                                id="nama" name="nama" placeholder="Nama Lengkap">
+                                id="nama" name="nama" placeholder="Nama Lengkap" value="{{ auth()->user()->name }}">
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 {{ $errors->first('nama') }}
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="npm">NPM</label>
-                            <input type="text" class="form-control" id="npm" name="npm" placeholder="NPM">
+                            <input type="text" class="form-control" id="npm" name="npm" placeholder="NPM"
+                                value="{{ auth()->user()->npm }}">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="">
                         </div>
 
                         <div class="form-group">
@@ -39,7 +40,8 @@
                         <!-- jurusan -->
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Jurusan</label>
-                            <select class="form-control" name="jurusan" id="exampleFormControlSelect1">
+                            <select class="form-control" name="jurusan" id="exampleFormControlSelect1"
+                                value="{{ auth()->user()->npm }}">
                                 <option value="Informatika">Informatika</option>
                                 <option value="Matematika">Matematika</option>
                                 <option value="Kimia">Kimia</option>
