@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\UserAuth;
 use Illuminate\Support\Facades\Http;
 
 
@@ -43,6 +44,8 @@ class LoginController extends Controller
                 $request->session()->regenerate();
                 return redirect()->intended('');
             }
+        } elseif (UserAuth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
+            # code...
         }
 
         return back()->with(
