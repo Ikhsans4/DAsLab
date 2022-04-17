@@ -22,6 +22,8 @@ class User extends Authenticatable
         'npm',
         'token',
         'password',
+        'image',
+        'jurusan'
     ];
 
     /**
