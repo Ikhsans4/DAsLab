@@ -186,11 +186,8 @@ class AdministratorController extends Controller
         $response = Matakuliah::all();
         // return dd($response);
 
-        $data = [
-            'username' => 'Admin',
-            'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
-        ];
-        return view('admin.layout.mataKuliah', ['mata_kuliah' => $response, 'data' => $data, 'asisten' => Register::all(), 'active' => 'matakuliah']);
+
+        return view('admin.layout.mataKuliah', ['mata_kuliah' => $response,  'asisten' => Register::all(), 'active' => 'matakuliah']);
     }
 
 
