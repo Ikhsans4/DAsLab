@@ -22,7 +22,7 @@ class UsersSeeder extends Seeder
                 'name' => 'daffa',
                 'npm' => '123457',
                 'password' => Hash::make('123'),
-                'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png',
+                'image' => 'https://img.icons8.com/color/48/000000/user.png',
             ]
 
         );
