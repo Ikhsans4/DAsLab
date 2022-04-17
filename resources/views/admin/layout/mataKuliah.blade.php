@@ -25,13 +25,13 @@
                                 $i = 1;
                             @endphp
                             @foreach ($asisten as $aslab)
-                                {{-- @if ($aslab['mataKuliah'] !== $mk['nama_mk']) --}}
-                                @continue($aslab['mataKuliah'] !== $mk['nama_mk'])
-                                {{ $i }}. {{ $aslab['nama'] }} <br>
-                                @php
-                                    $i += 1;
-                                @endphp
-                                {{-- @endif --}}
+                                @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] === 1)
+                                    {{-- @continue($aslab['mataKuliah'] !== $mk['nama_mk'] && ($aslab['status'] === 0 || $aslab === null )) --}}
+                                    {{ $i }}. {{ $aslab['nama'] }} <br>
+                                    @php
+                                        $i += 1;
+                                    @endphp
+                                @endif
                             @endforeach
                         </p>
 
