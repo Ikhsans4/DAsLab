@@ -57,14 +57,15 @@ class LoginController extends Controller
 
     public function logout()
     {
-        $id = User::all()->last();
+        $id = auth()->user()->id;
+        $id = User::where('id', $id)->first();
         Auth::logout();
         request()->session()->invalidate();
 
         request()->session()->regenerateToken();
         if ($id->is_admin === 0) {
             User::destroy($id->id);
-            return redirect('login');
         }
+        return redirect('login');
     }
 }
