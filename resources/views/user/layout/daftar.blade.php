@@ -40,14 +40,8 @@
                         <!-- jurusan -->
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Jurusan</label>
-                            <select class="form-control" name="jurusan" id="exampleFormControlSelect1"
-                                value="{{ auth()->user()->npm }}">
-                                <option value="Informatika">Informatika</option>
-                                <option value="Matematika">Matematika</option>
-                                <option value="Kimia">Kimia</option>
-                                <option value="Fisika">Fisika</option>
-                                <option value="Statistika">Statistika</option>
-                            </select>
+                            <input type="text" class="form-control" id="jurusan" name="jurusan"
+                                value="{{ auth()->user()->jurusan }}" readonly>
                         </div>
                         <!-- end jurusan -->
 
