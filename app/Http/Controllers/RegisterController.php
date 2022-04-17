@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Matakuliah;
 use Illuminate\Http\Request;
 use App\Models\Register;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -52,6 +53,7 @@ class RegisterController extends Controller
             'jurusan' => $request->jurusan,
             'mataKuliah' => $request->mataKuliah,
         ];
+
         Register::create($credentials);
         return redirect('/daftar')->with('status', 'Berhasil');
     }
