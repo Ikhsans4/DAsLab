@@ -18,7 +18,7 @@ class LoginController extends Controller
     public function authentication(Request $request)
     {
 
-        $response = Http::post('http://127.0.0.1:8000/api/login', [
+        $response = Http::post('https://apidatamahasiswa.000webhostapp.com/api/login', [
             'npm' => $request->npm,
             'password' => $request->password,
         ]);
