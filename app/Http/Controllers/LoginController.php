@@ -18,30 +18,33 @@ class LoginController extends Controller
     public function authentication(Request $request)
     {
 
-        $response = Http::post('https://apidatamahasiswa.000webhostapp.com/api/login', [
-            'npm' => $request->npm,
-            'password' => $request->password,
-        ]);
-        $response = $response->json();
 
-        if ($response === NUll) {
-            abort(403);
-        }
-        User::create([
-            'name' => $response['user']['name'],
-            'npm' => $response['user']['npm'],
-            'token' => $response['token'],
-            'password' => $response['password'],
-            'image' => $response['user']['image'],
-            'jurusan' => $response['user']['jurusan'],
-        ]);
 
-        // return  User::where('npm', $request->npm)->first()->is_admin;
         if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
             if ((User::where('npm', $request->npm)->first()->is_admin) === 1) {
                 $request->session()->regenerate();
                 return redirect()->intended('admin/dashboard');
-            } else if (User::where('npm', $request->npm)->first()->is_admin !== 1) {
+            }
+        } else {
+            $response = Http::post('https://apidatamahasiswa.000webhostapp.com/api/login', [
+                'npm' => $request->npm,
+                'password' => $request->password,
+            ]);
+            $response = $response->json();
+
+            if ($response === NUll) {
+                abort(403);
+            }
+            User::create([
+                'name' => $response['user']['name'],
+                'npm' => $response['user']['npm'],
+                'token' => $response['token'],
+                'password' => $response['password'],
+                'image' => $response['user']['image'],
+                'jurusan' => $response['user']['jurusan'],
+            ]);
+            if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
+
                 $request->session()->regenerate();
                 return redirect()->intended('');
             }
