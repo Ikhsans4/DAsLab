@@ -65,7 +65,7 @@ class LoginController extends Controller
         request()->session()->regenerateToken();
         if ($id->is_admin === 0) {
             User::destroy($id->id);
-            return redirect('login');
         }
+        return redirect('login');
     }
 }
