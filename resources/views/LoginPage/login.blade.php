@@ -46,7 +46,7 @@
                         <div class="mb-3">
                             <label for="npm" class="form-label">NPM</label>
                             <input type="tel" class="form-control r-10" id="npm" name="npm" placeholder="NPM"
-                                style="width: 400px;" autofocus required>
+                                style="width: 400px;" autofocus required autocomplete="off">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
