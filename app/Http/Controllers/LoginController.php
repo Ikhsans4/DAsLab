@@ -18,21 +18,23 @@ class LoginController extends Controller
     public function authentication(Request $request)
     {
 
-        // $response = Http::post('http://127.0.0.1:8000/api/login', [
-        //     'npm' => $request->npm,
-        //     'password' => $request->password,
-        // ]);
-        // $response = $response->json();
+        $response = Http::post('http://127.0.0.1:8000/api/login', [
+            'npm' => $request->npm,
+            'password' => $request->password,
+        ]);
+        $response = $response->json();
 
-        // if ($response === NUll) {
-        //     abort(403);
-        // }
-        // User::create([
-        //     'name' => $response['user']['name'],
-        //     'npm' => $response['user']['npm'],
-        //     'token' => $response['token'],
-        //     'password' => $response['password'],
-        // ]);
+        if ($response === NUll) {
+            abort(403);
+        }
+        User::create([
+            'name' => $response['user']['name'],
+            'npm' => $response['user']['npm'],
+            'token' => $response['token'],
+            'password' => $response['password'],
+            'image' => $response['user']['image'],
+            'jurusan' => $response['user']['jurusan'],
+        ]);
 
         // return  User::where('npm', $request->npm)->first()->is_admin;
         if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
@@ -44,21 +46,22 @@ class LoginController extends Controller
                 return redirect()->intended('');
             }
         }
-
         return back()->with(
             'error',
             'Login gagal'
         );
     }
 
-    public function logout()
+    public function logout(Request $id)
     {
-        // $request = User::all();
+        $request = User::find($id)->first();
         Auth::logout();
         request()->session()->invalidate();
 
         request()->session()->regenerateToken();
-        // User::destroy($request->id);
+        if ($request->is_admin !== 1) {
+            User::destroy($request->id);
+        }
         return redirect('login');
     }
 }
