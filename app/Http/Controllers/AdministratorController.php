@@ -22,7 +22,6 @@ class AdministratorController extends Controller
     {
         // $response = Http::get('https://dummyjson.com/users/1');
         $response = [
-            'username' => 'Admin',
             'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
         ];
 

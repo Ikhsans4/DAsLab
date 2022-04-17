@@ -3,8 +3,6 @@
 @section('title', "D'AsLab | Admin")
 @section('head', 'Dashboard')
 @section('active', 'active')
-@section('user', $data['image'])
-@section('username', $data['username'])
 @section('link', 'Dashboard')
 
 @section('container')
@@ -14,22 +12,7 @@
     <section class="content" style="background-color: #272A37;">
         <!-- head -->
         <div class="row">
-            <!-- total user -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3>150</h3>
 
-                        <p>Total User</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <!-- end total user -->
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
