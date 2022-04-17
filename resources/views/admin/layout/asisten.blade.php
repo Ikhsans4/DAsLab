@@ -5,6 +5,7 @@
 @section('active', 'active')
 @section('user', $data['image'])
 @section('username', $data['username'])
+@section('link', 'Asisten')
 
 @section('container')
     <!-- Main content -->
@@ -18,7 +19,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table id="example1" class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>No.</th>
@@ -43,16 +44,7 @@
                                     @endforeach
 
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Nama</th>
-                                        <th>NPM</th>
-                                        <th>Email</th>
-                                        <th>Jurusan</th>
-                                        <th>Mata Kuliah</th>
-                                    </tr>
-                                </tfoot>
+
                             </table>
                         </div>
                         <!-- /.card-body -->

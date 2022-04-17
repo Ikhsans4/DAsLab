@@ -21,6 +21,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Jurusan</th>
                     <th scope="col">Mata Kuliah</th>
+                    <th></th>
                 </tr>
             </thead>
 

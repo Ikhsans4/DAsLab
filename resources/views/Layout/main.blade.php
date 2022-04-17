@@ -60,9 +60,7 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ url('admin/dashboard') }}" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block ">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
+
             </ul>
             <ul class="navbar-nav ml-auto text-light">
 
@@ -141,10 +139,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="@yield('user')" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ auth()->user()->image }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">@yield('username')</a>
+                        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
                     </div>
                 </div>
 
@@ -165,7 +163,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Beranda</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item active">@yield('link')</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
