@@ -60,7 +60,7 @@
                                 <br>
                                 Asisten : <br>
                                 @foreach ($asisten as $aslab)
-                                    @if ($aslab['mataKuliah'] === $mk['nama_mk'])
+                                    @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] == true)
                                         {{ $loop->iteration }}. {{ $aslab['nama'] }} <br>
                                     @else
                                         Tidak ada asisten yang mendaftar
