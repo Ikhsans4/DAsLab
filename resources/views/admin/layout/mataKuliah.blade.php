@@ -25,7 +25,6 @@
                                 $i = 1;
                             @endphp
                             @foreach ($asisten as $aslab)
-<<<<<<< Updated upstream
                                 {{-- @if ($aslab['mataKuliah'] !== $mk['nama_mk']) --}}
                                 @continue($aslab['mataKuliah'] !== $mk['nama_mk'])
                                 {{ $i }}. {{ $aslab['nama'] }} <br>
@@ -37,17 +36,6 @@
                         </p>
 
                     </div>
-=======
-                                @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] == true)
-                                    {{ $loop->iteration }}. {{ $aslab['nama'] }} <br>
-                                @else
-                                    Tidak ada asisten yang mendaftar
-                                @break
-                            @endif
-                        @endforeach
-                    </p>
-
->>>>>>> Stashed changes
                 </div>
             @endforeach
         </div>
