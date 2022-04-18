@@ -39,7 +39,7 @@ class UsersSeeder extends Seeder
 
         DB::table('users')->insert(
             [
-                'name' => 'apip',
+                'name' => 'al-karim',
                 'npm' => '123789',
                 'password' => Hash::make('123'),
                 'image' => 'https://img.icons8.com/color/48/000000/user.png',

@@ -59,15 +59,25 @@
                                 Dosen Pengampu : <br>{{ $mk['dosen_pengampu'] }}
                                 <br>
                                 Asisten : <br>
+                                
+                                @php
+                                    $i = 1;
+                                @endphp
+
                                 @foreach ($asisten as $aslab)
                                     @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] == true)
-                                        {{ $loop->iteration }}. {{ $aslab['nama'] }} <br>
+                                        {{ $i }}. {{ $aslab['nama'] }}
+                                        @php
+                                            $i += 1;
+                                        @endphp
+                                        <br>
+                                    @elseif ($aslab['status'] == false)
+                                        @continue
                                     @else
-                                        Tidak ada asisten yang mendaftar
-                                    @break
-                                @endif
-                            @endforeach
-                        </p>
+                                        Belum ada asisten
+                                    @endif
+                                @endforeach
+                            </p>
 
                     </div>
                 </div>
