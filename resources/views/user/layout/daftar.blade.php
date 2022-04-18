@@ -24,17 +24,28 @@
                         </div>
                         <div class="form-group">
                             <label for="npm">NPM</label>
-                            <input type="text" class="form-control" id="npm" name="npm" placeholder="NPM"
-                                value="{{ auth()->user()->npm }}">
+                            <input type="text" class="form-control @if ($errors->has('npm')) is-invalid @endif"
+                                id="npm" name="npm" placeholder="NPM" value="{{ auth()->user()->npm }}">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                {{ $errors->first('npm') }}
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="">
+                            <input type="email" class="form-control @if ($errors->has('email')) is-invalid @endif"
+                                id="email" name="email" placeholder="Email" value="">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                {{ $errors->first('email') }}
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="noHP">No HP</label>
-                            <input type="text" class="form-control" id="noHP" name="nohp" placeholder="Nomor HP">
+                            <input type="text" class="form-control @if ($errors->has('nohp')) is-invalid @endif"
+                                id="noHP" name="nohp" placeholder="Nomor HP">
+                            <div id="validationServer03Feedback" class="invalid-feedback">
+                                {{ $errors->first('nohp') }}
+                            </div>
                         </div>
 
                         <!-- jurusan -->
@@ -71,7 +82,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if (session('status'))
         <script>
-            swal("Good job!", "You clicked the button!", "success");
+            swal("Pendaftara Berhasil!", "Silahkan Cek Halaman Mata Kuliah Untuk Pengumuman!", "success");
         </script>
     @endif
 @endsection
