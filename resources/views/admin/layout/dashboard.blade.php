@@ -59,6 +59,7 @@
                                 Dosen Pengampu : <br>{{ $mk['dosen_pengampu'] }}
                                 <br>
                                 Asisten : <br>
+
                                 @php
                                     $i = 1;
                                     $status = 0;
@@ -75,6 +76,7 @@
                                 @if ($status !== 1)
                                     Tidak ada Asisten
                                 @endif
+
                             </p>
 
                         </div>

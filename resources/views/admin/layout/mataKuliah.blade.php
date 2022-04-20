@@ -29,6 +29,7 @@
                                 $status = 0;
                             @endphp
                             @foreach ($asisten as $aslab)
+
                                 @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] === 1)
                                     {{ $i }}. {{ $aslab['nama'] }}
                                     @php
@@ -36,6 +37,7 @@
                                         $status = 1;
                                     @endphp
                                 @endif
+
                             @endforeach
                             @if ($status !== 1)
                                 Tidak ada Asisten
