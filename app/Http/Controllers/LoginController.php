@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
-
+use PhpParser\Node\Expr\Isset_;
 
 class LoginController extends Controller
 {
@@ -32,8 +32,11 @@ class LoginController extends Controller
             ]);
             $response = $response->json();
 
-            if ($response === NUll) {
-                abort(403);
+            if (isset($response['message'])) {
+                return back()->with(
+                    'status',
+                    'Login gagal'
+                );
             }
             User::create([
                 'name' => $response['user']['name'],
@@ -49,8 +52,9 @@ class LoginController extends Controller
                 return redirect()->intended('');
             }
         }
+
         return back()->with(
-            'error',
+            'status',
             'Login gagal'
         );
     }
