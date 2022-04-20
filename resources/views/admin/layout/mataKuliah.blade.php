@@ -20,7 +20,8 @@
                         <p class="card-text">
                             Dosen Pengampu : <br>{{ $mk['dosen_pengampu'] }}
                             <br>
-                            Asisten : <br>
+                            Asisten :
+                            <br>
                             @php
                                 $i = 1;
                             @endphp
