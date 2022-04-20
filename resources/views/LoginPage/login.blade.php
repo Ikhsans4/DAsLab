@@ -60,9 +60,6 @@
                         </div>
                     </form>
                 </div>
-                <button type="button" class="btn btn-danger   toastrDefaultError  text-light bg-light">
-                    Launch Error Toast
-                </button>
                 <!-- End Content -->
                 {{-- <div class="d-flex justify-content-center col">
                 </div> --}}
