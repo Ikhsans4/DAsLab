@@ -25,7 +25,7 @@
                         <div class="form-group">
                             <label for="npm">NPM</label>
                             <input type="text" class="form-control @if ($errors->has('npm')) is-invalid @endif"
-                                id="npm" name="npm" placeholder="NPM" value="{{ auth()->user()->npm }}">
+                                id="npm" name="npm" placeholder="NPM" value="{{ auth()->user()->npm }}" readonly>
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 {{ $errors->first('npm') }}
                             </div>
@@ -69,7 +69,7 @@
                         <!-- end matakuliah -->
 
                         <!-- button submit -->
-                        <button type="submit" class="btn btn-success ">Kirim</button>
+                        <button type="submit" class="btn btn-success">Kirim</button>
                         <!-- end button submit -->
                     </form>
                     <!-- end form -->
