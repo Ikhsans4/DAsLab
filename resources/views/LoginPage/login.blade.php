@@ -18,15 +18,17 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{ url('/plugins/toastr/toastr.min.css') }}">
 
     <title>D'AsLab | Login</title>
 </head>
 
 
 <body class="bg-main">
-    {{-- <button type="button" class="btn btn-danger toastrDefaultError text-light">
-        Launch Error Toast
-    </button> --}}
+
 
     <div class="container-fluid">
         <div class="row" style="position: fixed; bottom: 0; top:0; left: 0;right: 0;">
@@ -54,10 +56,13 @@
                                 placeholder="Password" required>
                         </div>
                         <div class="text-center" style="margin-top: 2em;">
-                            <button type="submit" class="btn btn-primary padd-button rounded-pill">LOGIN</button>
+                            <button type="submit" class="btn btn-primary padd-button rounded-pill ">LOGIN</button>
                         </div>
                     </form>
                 </div>
+                <button type="button" class="btn btn-danger   toastrDefaultError  text-light bg-light">
+                    Launch Error Toast
+                </button>
                 <!-- End Content -->
                 {{-- <div class="d-flex justify-content-center col">
                 </div> --}}
@@ -74,6 +79,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <!-- jQuery -->
+    <script src="{{ url('/plugins/jquery/jquery.min.js') }}"></script>
+    <!-- SweetAlert2 -->
+    <script src="{{ url('/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+    <!-- Toastr -->
+    <script src="{{ url('/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @if (session('status'))
+        <script>
+            swal({
+                title: "Login gagal!",
+                text: "NPM atau Password Salah!",
+                icon: "error",
+            });
+        </script>
+    @endif
+
 
 
 

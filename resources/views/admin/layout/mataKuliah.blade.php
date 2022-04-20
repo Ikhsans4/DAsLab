@@ -13,27 +13,33 @@
     <section class="content text-dark " id=" list-mk" style="background-color: #272A37;">
         <div class="d-flex flex-wrap justify-content-center ">
             @foreach ($mata_kuliah as $mk)
-                <div class="card mx-2 p-2" style="width: 14rem;">
+                <div class="card mx-2 p-2" style="width: 17rem;">
                     <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $mk['nama_mk'] }}</h5>
+                        <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
                         <p class="card-text">
                             Dosen Pengampu : <br>{{ $mk['dosen_pengampu'] }}
-                            <br>
+                        </p>
+                        <p>
                             Asisten :
-                            <br>
+                        </p>
+                        <p>
                             @php
                                 $i = 1;
+                                $status = 0;
                             @endphp
                             @foreach ($asisten as $aslab)
                                 @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] === 1)
-                                    {{-- @continue($aslab['mataKuliah'] !== $mk['nama_mk'] && ($aslab['status'] === 0 || $aslab === null )) --}}
-                                    {{ $i }}. {{ $aslab['nama'] }} <br>
+                                    {{ $i }}. {{ $aslab['nama'] }}
                                     @php
                                         $i += 1;
+                                        $status = 1;
                                     @endphp
                                 @endif
                             @endforeach
+                            @if ($status !== 1)
+                                Tidak ada Asisten
+                            @endif
                         </p>
 
                     </div>
