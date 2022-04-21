@@ -3,8 +3,6 @@
 @section('title', "D'AsLab | Asisten Laboratorium")
 @section('head', 'Daftar Asisten Laboratorium')
 @section('active', 'active')
-@section('user', $data['image'])
-@section('username', $data['username'])
 @section('link', 'Asisten')
 
 @section('container')
@@ -58,15 +56,11 @@
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-    </div>
     <!-- /.content-wrapper -->
 @endsection
 
 @section('table')
-    <!-- jQuery -->
-    <script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
-    <!-- Bootstrap 4 -->
-    <script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
     <!-- DataTables  & Plugins -->
     <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -80,10 +74,7 @@
     <script src="{{ url('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ url('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{ url('dist/js/adminlte.min.js') }}"></script>
-    <!-- AdminLTE for demo purposes -->
-    {{-- <script src="{{ url('/dist/js/demo.js') }}"></script> --}}
+
     <!-- Page specific script -->
     <script>
         $(function() {

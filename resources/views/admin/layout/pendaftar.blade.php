@@ -3,8 +3,6 @@
 @section('title', "D'AsLab | Pendaftar")
 @section('head', 'Data Mahasiswa yang Mendaftar Sebagai Asisten')
 @section('active', 'active')
-@section('user', $data['image'])
-@section('username', $data['username'])
 
 
 @section('container')
@@ -40,7 +38,8 @@
                                     style="margin-right: 1rem;">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger">Tolak</button>
+                                    <button type="submit" class="btn btn-danger"
+                                        onclick="return confirm('Anda yakin?')">Tolak</button>
                                 </form>
                                 <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
                                     @csrf
