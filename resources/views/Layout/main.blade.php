@@ -63,7 +63,6 @@
 
             </ul>
             <ul class="navbar-nav ml-auto text-light">
-
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="nav-link btn">
@@ -85,18 +84,12 @@
 
             <!-- Sidebar -->
             <div class="sidebar" style="background-color: #272A37;">
-
-
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-
-
                         <li class="nav-header">MENU</li>
 
                         <li class="nav-item ">
@@ -107,7 +100,6 @@
 
                             </a>
                         </li>
-
                         <li class="nav-item ">
                             <a href="{{ url('/admin/pendaftar') }}"
                                 class="nav-link @if ($active === 'pendaftar') active @endif">
@@ -133,20 +125,15 @@
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
-
-
-
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="{{ auth()->user()->image }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+                        <a class="d-block">{{ auth()->user()->name }}</a>
                     </div>
                 </div>
-
-
             </div>
             <!-- /.sidebar -->
         </aside>
