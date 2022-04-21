@@ -3,6 +3,7 @@
 @section('title', "D'AsLab | Pendaftar")
 @section('head', 'Data Mahasiswa yang Mendaftar Sebagai Asisten')
 @section('active', 'active')
+@section('link', 'Pendaftar')
 
 
 @section('container')
@@ -49,7 +50,7 @@
                             @elseif ($register['status'] == 1)
                                 <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
                             @else
-                                <p class="btn btn-danger">Ditolak</p>
+                                <p class="btn btn-sm btn-block bg-gradient-danger">Ditolak</p>
                             @endif
                         </td>
                     </tr>
