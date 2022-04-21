@@ -38,16 +38,16 @@
                                     style="margin-right: 1rem;">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger"
+                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-danger"
                                         onclick="return confirm('Anda yakin?')">Tolak</button>
                                 </form>
                                 <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="btn btn-primary">Terima</button>
+                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary">Terima</button>
                                 </form>
                             @elseif ($register['status'] == 1)
-                                <p class="btn btn-success">Diterima</p>
+                                <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
                             @else
                                 <p class="btn btn-danger">Ditolak</p>
                             @endif
