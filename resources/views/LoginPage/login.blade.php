@@ -86,9 +86,15 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if (session('status'))
         <script>
-            swal({
+            // swal({
+            //     title: "Login gagal!",
+            //     text: "NPM atau Password Salah!",
+
+            // });
+            swal("NPM atau Password Salah!!", {
+                buttons: false,
                 title: "Login gagal!",
-                text: "NPM atau Password Salah!",
+                timer: 3000,
                 icon: "error",
             });
         </script>
