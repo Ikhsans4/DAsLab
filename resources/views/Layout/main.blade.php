@@ -42,12 +42,12 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        @if (!session('status'))
+        {{-- @if (!session('status'))
             <div class="preloader flex-column justify-content-center align-items-center"
                 style="background-color: #272A37;">
                 <img class="animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
             </div>
-        @endif
+        @endif --}}
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-dark" style="background-color: #272A37;">
@@ -180,7 +180,7 @@
             <strong>Copyright &copy; 2022 <a href=" #">Ikhsan&Daffa</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
+                <b>Version</b> 1.0.0
             </div>
         </footer>
 

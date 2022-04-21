@@ -35,6 +35,11 @@
     <link rel="stylesheet" href="{{ url('plugins/summernote/summernote-bs4.min.css') }}">
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ url('css/app.css') }}">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{ url('/plugins/toastr/toastr.min.css') }}">
+
 
 </head>
 
@@ -181,7 +186,7 @@
             <strong>Copyright &copy; 2022 <a href=" #">Ikhsan&Daffa</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
+                <b>Version</b> 1.0.0
             </div>
         </footer>
 
