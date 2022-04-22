@@ -213,6 +213,7 @@
     <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ url('js/script.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @yield('table')
 </body>
 
