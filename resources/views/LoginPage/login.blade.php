@@ -55,10 +55,11 @@
                             <input type="password" class="form-control r-10" id="password" name="password"
                                 placeholder="Password" required>
                         </div>
-                        <div class="text-center" style="margin-top: 2em;">
+                        <div class="text-center login" style="margin-top: 2em;">
                             <button type="submit" class="btn btn-primary padd-button rounded-pill ">LOGIN</button>
                         </div>
                     </form>
+
                 </div>
                 <!-- End Content -->
                 {{-- <div class="d-flex justify-content-center col">
@@ -84,16 +85,43 @@
     <script src="{{ url('/plugins/toastr/toastr.min.js') }}"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @if (session('status'))
+    @if (session('status') === 'Login gagal')
         <script>
             swal("NPM atau Password Salah!!", {
                 buttons: false,
                 title: "Login gagal!",
-                timer: 3000,
+                timer: 1500,
                 icon: "error",
             });
         </script>
     @endif
+
+    <script>
+        $('.login').click(function() {
+            let timerInterval
+            Swal.fire({
+                title: 'Proses Login!',
+                // html: 'I will close in <b></b> milliseconds.',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
+        });
+    </script>
 
 
 
