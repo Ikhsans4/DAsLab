@@ -78,7 +78,7 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-    {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+    <!-- Sweet Alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @if (session('status'))
