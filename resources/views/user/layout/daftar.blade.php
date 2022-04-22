@@ -78,8 +78,9 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+    {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if (session('status'))
         <script>
             Swal.fire({
@@ -92,5 +93,5 @@
         </script>
     @endif
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @endsection
