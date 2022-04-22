@@ -88,7 +88,8 @@
                 icon: 'success',
                 title: 'Pendaftaran Berhasil!',
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1500,
+                toast: true,
             })
         </script>
     @endif
