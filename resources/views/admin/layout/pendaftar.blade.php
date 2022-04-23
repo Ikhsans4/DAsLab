@@ -44,7 +44,8 @@
                                 <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary">Terima</button>
+                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary "
+                                        onclick="confirm()">Terima</button>
                                 </form>
                             @elseif ($register['status'] == 1)
                                 <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
@@ -77,6 +78,8 @@
         <script src="{{ url('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
         <script src="{{ url('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
         <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+        <!-- Sweet Alert -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <!-- Page specific script -->
         <script>
@@ -91,5 +94,23 @@
                     "responsive": true,
                 });
             });
+        </script>
+
+        <script>
+            function confirm() {
+                Swal.fire({
+                    title: 'Do you want to save the changes?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Save',
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        Swal.fire('Saved!', '', 'success')
+                    } else if (result.isDenied) {
+                        Swal.fire('Changes are not saved', '', 'info')
+                    }
+                })
+            }
         </script>
     @endsection
