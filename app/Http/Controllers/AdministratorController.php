@@ -160,12 +160,12 @@ class AdministratorController extends Controller
     {
         $temp = Register::find($id);
         $temp->update(['status' => True]);
-        return redirect('/admin/pendaftar');
+        return redirect('/admin/pendaftar')->with('accept', true);
     }
     public function tolak($id)
     {
         Register::destroy($id);
-        return redirect('/admin/pendaftar');
+        return redirect('/admin/pendaftar')->with('reject', true);
     }
 
     public function mataKuliah()

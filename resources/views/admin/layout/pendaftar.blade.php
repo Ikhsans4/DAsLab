@@ -38,8 +38,7 @@
                                     style="margin-right: 1rem;">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-danger"
-                                        onclick="return confirm('Anda yakin?')">Tolak</button>
+                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-danger">Tolak</button>
                                 </form>
                                 <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
                                     @csrf
@@ -96,21 +95,34 @@
         });
     </script>
 
-    <script>
-        function confirm() {
+    @if (session('accept'))
+        <script>
             Swal.fire({
-                title: 'Do you want to save the changes?',
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: 'Save',
-            }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                    Swal.fire('Saved!', '', 'success')
-                } else if (result.isDenied) {
-                    Swal.fire('Changes are not saved', '', 'info')
-                }
+                position: 'top-end',
+                icon: 'success',
+                iconColor: '#fff',
+                title: 'Asisten Diterima!',
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+                color: '#fff',
+                background: '#218838',
             })
-        }
-    </script>
+        </script>
+    @endif
+    @if (session('reject'))
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                iconColor: '#fff',
+                title: 'Asisten Ditolak!',
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+                color: '#fff',
+                background: '#C82333',
+            })
+        </script>
+    @endif
 @endsection
