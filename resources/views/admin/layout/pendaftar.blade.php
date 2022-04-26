@@ -38,13 +38,12 @@
                                     style="margin-right: 1rem;">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-danger"
-                                        onclick="return confirm('Anda yakin?')">Tolak</button>
+                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-danger">Tolak</button>
                                 </form>
                                 <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary">Terima</button>
+                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
                                 </form>
                             @elseif ($register['status'] == 1)
                                 <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
@@ -58,38 +57,72 @@
             </tbody>
 
         </table>
+    </section>
 
-        <!-- /.tabel -->
-    @endsection
+    <!-- /.tabel -->
+@endsection
 
-    @section('table')
+@section('table')
 
-        <!-- DataTables  & Plugins -->
-        <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-        <script src="{{ url('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-        <script src="{{ url('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-        <script src="{{ url('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-        <script src="{{ url('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-        <script src="{{ url('plugins/jszip/jszip.min.js') }}"></script>
-        <script src="{{ url('plugins/pdfmake/pdfmake.min.js') }}"></script>
-        <script src="{{ url('plugins/pdfmake/vfs_fonts.js') }}"></script>
-        <script src="{{ url('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-        <script src="{{ url('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-        <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ url('plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ url('plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <!-- Page specific script -->
-        <script>
-            $(function() {
-                $('#example1').DataTable({
-                    "paging": true,
-                    "lengthChange": false,
-                    "searching": true,
-                    "ordering": true,
-                    "info": true,
-                    "autoWidth": true,
-                    "responsive": true,
-                });
+    <!-- Page specific script -->
+    <script>
+        $(function() {
+            $('#example1').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "responsive": true,
             });
+        });
+    </script>
+
+    @if (session('accept'))
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                iconColor: '#fff',
+                title: 'Asisten Diterima!',
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+                color: '#fff',
+                background: '#218838',
+            })
         </script>
-    @endsection
+    @endif
+    @if (session('reject'))
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                iconColor: '#fff',
+                title: 'Asisten Ditolak!',
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+                color: '#fff',
+                background: '#C82333',
+            })
+        </script>
+    @endif
+@endsection

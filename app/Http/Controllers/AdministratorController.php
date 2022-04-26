@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Matakuliah;
 use App\Models\Register;
+use App\Models\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -149,7 +150,7 @@ class AdministratorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
         $temp = Register::find($id);
         $temp->update(['status' => True]);
@@ -159,33 +160,23 @@ class AdministratorController extends Controller
     {
         $temp = Register::find($id);
         $temp->update(['status' => True]);
-        return redirect('/admin/pendaftar');
+        return redirect('/admin/pendaftar')->with('accept', true);
     }
     public function tolak($id)
     {
         Register::destroy($id);
-
-        return redirect('/admin/pendaftar');
+        return redirect('/admin/pendaftar')->with('reject', true);
     }
 
     public function mataKuliah()
     {
-
-        // $response = Http::post('http://127.0.0.1:8000/api/login');
-        // $response = Http::withBasicAuth('ikhsan@gmail.com', '123')->post('http://127.0.0.1:8000/api/login');
-        // $response = Http::post('http://127.0.0.1:8000/api/login', [
-        //     'npm' => '123457',
-        //     'password' => '123',
-        // ]);
-        // $response = $response->json();
-        // $response = $response['token'];
-        // // return dd($response);
-        // $response = Http::withToken($response)->get('http://127.0.0.1:8000/api/data');
-        // $response = $response->json();
-        // return dd($response->json());
-        $response = Matakuliah::all();
-        // return dd($response);
-
+        $response = Http::post('https://apidatamahasiswa.000webhostapp.com/api/login', [
+            'npm' => '123458',
+            'password' => '123',
+        ]);
+        $token = $response['token'];
+        $response = Http::withToken($token)->get('https://apidatamahasiswa.000webhostapp.com/api/data');
+        $response = $response->json();
 
         return view('admin.layout.mataKuliah', ['mata_kuliah' => $response,  'asisten' => Register::all(), 'active' => 'matakuliah']);
     }

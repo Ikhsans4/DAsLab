@@ -38,16 +38,16 @@
     <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse">
     <div class="wrapper">
 
         <!-- Preloader -->
-        {{-- @if (!session('status'))
+        @if (!session('status'))
             <div class="preloader flex-column justify-content-center align-items-center"
                 style="background-color: #272A37;">
                 <img class="animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
             </div>
-        @endif --}}
+        @endif
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-dark" style="background-color: #272A37;">
@@ -66,7 +66,7 @@
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="nav-link btn">
-                        <i class="fas fa-sign-out-alt"></i> Logout</button>
+                        Logout <i class="nav-item fas fa-door-open"></i></button>
                 </form>
             </ul>
         </nav>
