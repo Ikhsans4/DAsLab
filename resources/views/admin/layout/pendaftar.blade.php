@@ -44,8 +44,7 @@
                                 <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary "
-                                        onclick="confirm()">Terima</button>
+                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
                                 </form>
                             @elseif ($register['status'] == 1)
                                 <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
