@@ -41,7 +41,7 @@
 
 </head>
 
-<body class="hold-transition sidebar-mini sidebar-collapse">
+<body class="hold-transition sidebar-mini layout-fixed bg-main">
     <div class="wrapper">
 
         <!-- Preloader -->
