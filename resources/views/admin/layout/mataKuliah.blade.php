@@ -7,9 +7,6 @@
 
 <!-- Main content -->
 @section('container')
-
-
-
     <section class="content text-dark " id=" list-mk" style="background-color: #272A37;">
         <div class="d-flex flex-wrap justify-content-center ">
             @foreach ($mata_kuliah as $mk)
@@ -29,7 +26,6 @@
                                 $status = 0;
                             @endphp
                             @foreach ($asisten as $aslab)
-
                                 @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] === 1)
                                     {{ $i }}. {{ $aslab['nama'] }}
                                     @php
@@ -37,21 +33,14 @@
                                         $status = 1;
                                     @endphp
                                 @endif
-
                             @endforeach
                             @if ($status !== 1)
                                 Tidak ada Asisten
                             @endif
                         </p>
-
                     </div>
                 </div>
             @endforeach
         </div>
-
-
-
-
-
     </section>
 @endsection
