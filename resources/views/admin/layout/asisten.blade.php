@@ -1,5 +1,4 @@
 @extends('main/layout.admin')
-
 @section('title', "D'AsLab | Asisten Laboratorium")
 @section('head', 'Daftar Asisten Laboratorium')
 @section('link', 'Asisten')

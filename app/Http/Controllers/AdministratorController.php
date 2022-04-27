@@ -30,12 +30,6 @@ class AdministratorController extends Controller
             'active' => 'home',
 
         ]);
-
-        return view('admin.layout.dashboard', [
-            'pendaftar' => Register::count(),
-            'asisten' => Register::where('status', 1)->count(),
-            'active' => 'home'
-        ]);
     }
 
     /**
