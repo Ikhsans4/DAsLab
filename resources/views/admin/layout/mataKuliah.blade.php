@@ -9,7 +9,7 @@
     <section class="content text-dark " id=" list-mk" style="background-color: #272A37;">
         <div class="d-flex flex-wrap justify-content-center ">
             @foreach ($mata_kuliah as $mk)
-                <div class="card mx-2 p-2" style="width: 17rem;">
+                <div class="card mx-2 p-2" style="width: 14rem;">
                     <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
