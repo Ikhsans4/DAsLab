@@ -1,10 +1,6 @@
-@extends('Layout.main')
-
+@extends('main.layout.admin')
 @section('title', 'Tambah Asisten')
 @section('head', 'Tambah Asisten Laboratorium')
-@section('active', 'active')
-@section('user', $data['image'])
-@section('username', $data['username'])
 @section('link', 'Tambah Asisten')
 
 @section('container')
@@ -17,7 +13,6 @@
                     <!-- start form tambah data -->
                     <form action="{{ url('/admin/tambah') }}" method="post">
                         @csrf
-                        {{-- @method('PUT') --}}
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control @if ($errors->has('nama')) is-invalid @endif"
@@ -58,7 +53,7 @@
                             <label for="exampleFormControlSelect1">Mata Kuliah</label>
                             <select class="form-control" name="mataKuliah" id="exampleFormControlSelect1">
                                 <option value="Pemrograman Dasar">Pemrograman Dasar</option>
-                                <option value="Pemrograman Berbasis WEB">Pemrograman Berbasis WEB</option>
+                                <option value="Pemrograman Berbasis Web">Pemrograman Berbasis Web</option>
                                 <option value="Pemrograman OOP">OOP</option>
                                 <option value="Fisika">Fisika</option>
                                 <option value="Statistika">Statistika</option>

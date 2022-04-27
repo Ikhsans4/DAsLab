@@ -1,6 +1,4 @@
 @extends('Layout.user')
-
-
 @section('title', "D'AsLab | Dashboard")
 @section('head', 'Dashboard')
 

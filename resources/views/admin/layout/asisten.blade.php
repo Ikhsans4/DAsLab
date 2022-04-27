@@ -1,18 +1,19 @@
-@extends('Layout.main')
-
+@extends('main/layout.admin')
 @section('title', "D'AsLab | Asisten Laboratorium")
 @section('head', 'Daftar Asisten Laboratorium')
-@section('active', 'active')
 @section('link', 'Asisten')
 
 @section('container')
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <div class="mb-2"><a href="{{ url('admin/tambah') }}" type="button"
+                    class="btn btn-info bg-gradient-info">Tambah
+                    Asisten</a>
+            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card" style="background-color: #38393e;">
-
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-striped table-dark">

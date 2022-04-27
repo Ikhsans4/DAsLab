@@ -30,12 +30,6 @@ class AdministratorController extends Controller
             'active' => 'home',
 
         ]);
-
-        return view('admin.layout.dashboard', [
-            'pendaftar' => Register::count(),
-            'asisten' => Register::where('status', 1)->count(),
-            'active' => 'home'
-        ]);
     }
 
     /**
@@ -150,7 +144,8 @@ class AdministratorController extends Controller
     }
     public function tolak($id)
     {
-        Register::destroy($id);
+        $temp = Register::find($id);
+        $temp->update(['status' => False]);
         return redirect('/admin/pendaftar')->with('reject', true);
     }
 
