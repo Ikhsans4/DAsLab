@@ -150,7 +150,8 @@ class AdministratorController extends Controller
     }
     public function tolak($id)
     {
-        Register::destroy($id);
+        $temp = Register::find($id);
+        $temp->update(['status' => False]);
         return redirect('/admin/pendaftar')->with('reject', true);
     }
 

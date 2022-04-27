@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="{{ url('/plugins/toastr/toastr.min.css') }}">
 
 
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed bg-main">
@@ -68,7 +69,7 @@
 
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="nav-link btn">
+                    <button type="submit" class="nav-link btn logout">
                         <i class="fas fa-sign-out-alt"></i> Logout</button>
                 </form>
             </ul>
@@ -227,6 +228,26 @@
     <script src="{{ url('dist/js/adminlte.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
+    <!-- SweetAlert2 -->
+    <script src="{{ url('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+
+    <script>
+        $(function() {
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            $('.logout').click(function() {
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Logout Success.'
+                })
+            });
+        });
+    </script>
 </body>
 
 </html>

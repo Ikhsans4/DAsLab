@@ -36,6 +36,9 @@
     <link rel="stylesheet" href="{{ url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+
 </head>
 
 <body class="hold-transition sidebar-mini sidebar-collapse">
@@ -65,7 +68,7 @@
             <ul class="navbar-nav ml-auto text-light">
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="nav-link btn">
+                    <button type="submit" class="nav-link btn logout">
                         Logout <i class="nav-item fas fa-door-open"></i></button>
                 </form>
             </ul>
@@ -211,8 +214,26 @@
     <script src="{{ url('dist/js/adminlte.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
-
+    <!-- SweetAlert2 -->
+    <script src="{{ url('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ url('js/script.js') }}"></script>
+    <script>
+        $(function() {
+            var Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            $('.logout').click(function() {
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Logout Success.'
+                })
+            });
+        });
+    </script>
     @yield('table')
 </body>
 
