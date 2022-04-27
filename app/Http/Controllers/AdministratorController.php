@@ -156,8 +156,7 @@ class AdministratorController extends Controller
 
     public function mataKuliah()
     {
-        $response = Http::GET('http://127.0.0.1:8000/api/data');
-        // return dd($response->json());
+        $response = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data');
         $response = $response->json();
 
         return view('admin.layout.mataKuliah', ['mata_kuliah' => $response,  'asisten' => Register::all(), 'active' => 'matakuliah']);
