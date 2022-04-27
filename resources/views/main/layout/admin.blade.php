@@ -53,7 +53,7 @@
         @endif
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-dark" style="background-color: #272A37;">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-dark" style="background-color: #393e54;">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -77,7 +77,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #272A37;">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #393e54;">
             <!-- Brand Logo -->
             <a href="{{ url('/admin/dashboard') }}" class="brand-link">
                 <img src="{{ url('img/icon/uskLogo.png') }}" alt="usk logo"
@@ -86,7 +86,7 @@
             </a>
 
             <!-- Sidebar -->
-            <div class="sidebar" style="background-color: #272A37;">
+            <div class="sidebar" style="background-color: #393e54;">
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"

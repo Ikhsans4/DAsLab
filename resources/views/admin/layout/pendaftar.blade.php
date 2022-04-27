@@ -89,7 +89,7 @@
                 "ordering": true,
                 "info": true,
                 "autoWidth": true,
-                "responsive": true,
+                "responsive": false,
             });
         });
     </script>
