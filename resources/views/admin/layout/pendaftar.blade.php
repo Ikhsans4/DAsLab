@@ -1,7 +1,6 @@
 @extends('main.layout.admin')
 @section('title', "D'AsLab | Pendaftar")
 @section('head', 'Data Mahasiswa yang Mendaftar Sebagai Asisten')
-@section('active', 'active')
 @section('link', 'Pendaftar')
 
 

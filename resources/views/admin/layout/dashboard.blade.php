@@ -2,7 +2,6 @@
 
 @section('title', "D'AsLab | Admin")
 @section('head', 'Dashboard')
-@section('active', 'active')
 @section('link', 'Dashboard')
 
 @section('container')

@@ -2,7 +2,6 @@
 
 @section('title', "D'AsLab | Asisten Laboratorium")
 @section('head', 'Daftar Asisten Laboratorium')
-@section('active', 'active')
 @section('link', 'Asisten')
 
 @section('container')

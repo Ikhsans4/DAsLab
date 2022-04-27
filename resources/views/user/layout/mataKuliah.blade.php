@@ -1,5 +1,4 @@
 @extends('Layout.user')
-
 @section('title', "D'AsLab | Mata Kuliah")
 @section('head', 'Mata Kuliah')
 @section('container')
