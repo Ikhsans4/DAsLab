@@ -10,9 +10,10 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="ms-4 mb-2"><button type="button" class="btn btn-info bg-gradient-info">Tambah
+                        Asisten</button></div>
                 <div class="col-12">
                     <div class="card" style="background-color: #38393e;">
-
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-striped table-dark">
