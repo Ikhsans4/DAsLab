@@ -1,4 +1,4 @@
-@extends('Layout.main')
+@extends('main/layout.admin')
 
 @section('title', "D'AsLab | Asisten Laboratorium")
 @section('head', 'Daftar Asisten Laboratorium')

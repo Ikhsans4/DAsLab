@@ -1,5 +1,4 @@
-@extends('Layout/main')
-
+@extends('main.layout.admin')
 @section('title', "D'AsLab | Mata Kuliah")
 @section('head', 'Mata Kuliah')
 @section('active', 'active')
