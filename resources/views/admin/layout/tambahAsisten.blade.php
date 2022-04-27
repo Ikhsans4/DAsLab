@@ -2,8 +2,6 @@
 @section('title', 'Tambah Asisten')
 @section('head', 'Tambah Asisten Laboratorium')
 @section('active', 'active')
-@section('user', $data['image'])
-@section('username', $data['username'])
 @section('link', 'Tambah Asisten')
 
 @section('container')
@@ -16,7 +14,6 @@
                     <!-- start form tambah data -->
                     <form action="{{ url('/admin/tambah') }}" method="post">
                         @csrf
-                        {{-- @method('PUT') --}}
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control @if ($errors->has('nama')) is-invalid @endif"
