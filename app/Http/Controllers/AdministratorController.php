@@ -21,27 +21,14 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        // $response = Http::get('https://dummyjson.com/users/1');
-        $response = [
-            'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
-        ];
-
         $mk = Matakuliah::paginate(4);
         return view('admin.layout.dashboard', [
             'pendaftar' => Register::count(),
             'jumlahAsisten' => Register::where('status', 1)->count(),
             'mata_kuliah' => $mk,
-            'data' => $response,
             'asisten' => Register::all(),
             'active' => 'home',
 
-        ]);
-
-        return view('admin.layout.dashboard', [
-            'pendaftar' => Register::count(),
-            'asisten' => Register::where('status', 1)->count(),
-            'data' => $response,
-            'active' => 'home'
         ]);
     }
 
@@ -52,13 +39,9 @@ class AdministratorController extends Controller
      */
     public function pendaftar()
     {
-        $response = [
-            'username' => 'Admin',
-            'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
-        ];
+
         return view('admin.layout.pendaftar', [
             'registers' => Register::all(),
-            'data' => $response,
             'active' => 'pendaftar'
         ]);
     }
@@ -69,14 +52,11 @@ class AdministratorController extends Controller
      */
     public function asisten()
     {
-        $response = [
-            'username' => 'Admin',
-            'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png'
-        ];
+
         $data = Register::where('status', 1)->get();
         // return dd(now());
         // return dd($data);
-        return view('admin.layout.asisten', ['registers' => $data, 'data' => $response, 'active' => 'asisten']);
+        return view('admin.layout.asisten', ['registers' => $data, 'active' => 'asisten']);
     }
 
     /**
@@ -164,18 +144,14 @@ class AdministratorController extends Controller
     }
     public function tolak($id)
     {
-        Register::destroy($id);
+        $temp = Register::find($id);
+        $temp->update(['status' => False]);
         return redirect('/admin/pendaftar')->with('reject', true);
     }
 
     public function mataKuliah()
     {
-        $response = Http::post('https://apidatamahasiswa.000webhostapp.com/api/login', [
-            'npm' => '123458',
-            'password' => '123',
-        ]);
-        $token = $response['token'];
-        $response = Http::withToken($token)->get('https://apidatamahasiswa.000webhostapp.com/api/data');
+        $response = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data');
         $response = $response->json();
 
         return view('admin.layout.mataKuliah', ['mata_kuliah' => $response,  'asisten' => Register::all(), 'active' => 'matakuliah']);
