@@ -128,8 +128,6 @@ class AdministratorController extends Controller
         return view('admin.layout.mataKuliah', ['mata_kuliah' => $response,  'asisten' => Register::all(), 'active' => 'matakuliah']);
     }
 
-
-
     /**
      * Remove the specified resource from storage.
      *
