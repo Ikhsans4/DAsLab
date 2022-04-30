@@ -139,13 +139,10 @@
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                iconColor: '#fff',
                 title: 'Asisten Diterima!',
                 showConfirmButton: false,
                 timer: 1500,
                 toast: true,
-                color: '#fff',
-                background: '#218838',
             })
         </script>
     @endif
@@ -153,14 +150,11 @@
         <script>
             Swal.fire({
                 position: 'top-end',
-                icon: 'success',
-                iconColor: '#fff',
+                icon: 'error',
                 title: 'Asisten Ditolak!',
                 showConfirmButton: false,
                 timer: 1500,
                 toast: true,
-                color: '#fff',
-                background: '#C82333',
             })
         </script>
     @endif

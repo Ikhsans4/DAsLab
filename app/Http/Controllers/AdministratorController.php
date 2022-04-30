@@ -138,14 +138,14 @@ class AdministratorController extends Controller
     }
     public function terima($id)
     {
-        $temp = Register::find($id);
-        $temp->update(['status' => True]);
+        // $temp = Register::find($id);
+        // $temp->update(['status' => True]);
         return redirect('/admin/pendaftar')->with('accept', true);
     }
     public function tolak($id)
     {
-        $temp = Register::find($id);
-        $temp->update(['status' => False]);
+        // $temp = Register::find($id);
+        // $temp->update(['status' => False]);
         return redirect('/admin/pendaftar')->with('reject', true);
     }
 
