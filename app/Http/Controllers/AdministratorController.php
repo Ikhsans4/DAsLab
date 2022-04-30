@@ -4,12 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Matakuliah;
 use App\Models\Register;
-use App\Models\User;
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Http\Client\Response;
 
 
 class AdministratorController extends Controller
@@ -52,10 +48,7 @@ class AdministratorController extends Controller
      */
     public function asisten()
     {
-
         $data = Register::where('status', 1)->get();
-        // return dd(now());
-        // return dd($data);
         return view('admin.layout.asisten', ['registers' => $data, 'active' => 'asisten']);
     }
 
@@ -99,28 +92,6 @@ class AdministratorController extends Controller
         // menambah data ke dalam database
         Register::create($credentials);
         return redirect('/admin/asisten')->with('status', 'Berhasil');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
