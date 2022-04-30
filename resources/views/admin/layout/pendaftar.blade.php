@@ -32,17 +32,22 @@
                         <td>{{ $register['mataKuliah'] }}</td>
                         <td class="row justify-content-center">
                             @if ($register['status'] === null)
-                                <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST"
-                                    style="margin-right: 1rem;">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-danger">Tolak</button>
-                                </form>
-                                <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
-                                </form>
+                                <a data-id="{{ $register->id }}"
+                                    class="btn btn-sm btn-block bg-gradient-danger confirm-delete">Tolak
+                                    <form action="{{ url('/admin/pendaftar/' . $register['id']) }}"
+                                        id="delete{{ $register->id }}" method="POST" style="margin-right: 1rem;">
+                                        @csrf
+                                        @method('delete')
+                                    </form>
+                                </a>
+                                <a data-id="{{ $register->id }} "
+                                    class="btn btn-sm btn-block bg-gradient-primary confirm-accept ">Terima
+                                    <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST"
+                                        id="accept{{ $register->id }}">
+                                        @csrf
+                                        @method('PUT')
+                                    </form>
+                                </a>
                             @elseif ($register['status'] == 1)
                                 <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
                             @else
@@ -92,19 +97,52 @@
             });
         });
     </script>
+    <script>
+        $('.confirm-delete').click(function(e) {
+            id = e.target.dataset.id;
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, reject!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(`#delete${id}`).submit();
+                }
+            })
+        });
+    </script>
+    <script>
+        $('.confirm-accept').click(function(e) {
+            id = e.target.dataset.id;
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#008000',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, accept!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(`#accept${id}`).submit();
+                }
+            })
+        });
+    </script>
 
     @if (session('accept'))
         <script>
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                iconColor: '#fff',
                 title: 'Asisten Diterima!',
                 showConfirmButton: false,
                 timer: 1500,
                 toast: true,
-                color: '#fff',
-                background: '#218838',
             })
         </script>
     @endif
@@ -112,14 +150,11 @@
         <script>
             Swal.fire({
                 position: 'top-end',
-                icon: 'success',
-                iconColor: '#fff',
+                icon: 'error',
                 title: 'Asisten Ditolak!',
                 showConfirmButton: false,
                 timer: 1500,
                 toast: true,
-                color: '#fff',
-                background: '#C82333',
             })
         </script>
     @endif
