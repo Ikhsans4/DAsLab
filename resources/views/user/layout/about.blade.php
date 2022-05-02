@@ -1,4 +1,4 @@
-@extends('Layout.user')
+@extends('main.layout.user')
 @section('title', "D'AsLab | About")
 @section('head')
 

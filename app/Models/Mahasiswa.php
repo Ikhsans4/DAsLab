@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class Mahasiswa extends Model
 {
     use HasFactory;
-    protected $fillable = ['nip', 'nama'];
+    protected $fillable = ['nip', 'nama', 'jurusan'];
 
     public function akun() {
         return $this->hasOne(Account::class);
