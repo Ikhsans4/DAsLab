@@ -63,7 +63,7 @@ class DosenSeeder extends Seeder
             'email' => 'iqbal@unsyiah.ac.id'
         ]);
 
-        Dosen::crete([
+        Dosen::create([
             'nip' => '198003262014041001',
             'nama' => 'Kurnia Saputra, S.T., M.Sc.',
             'email' => 'kurnia.saputra@unsyiah.ac.id'

@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('nip')->primary();
             $table->string('nama');
             $table->string('email')->unique();
+            $table->timestamps();
+        });
+
+        Schema::table('matakuliahs', function (Blueprint $table) {
+            $table->foreign('nip_dosen')->references('nip')->on('dosens');
         });
     }
 
