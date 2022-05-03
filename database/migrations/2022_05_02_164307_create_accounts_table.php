@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('nip');
             $table->string('image')->default('https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-user-interface-kiranshastry-lineal-kiranshastry.png');
             $table->string('password');
-            $table->foreign('nim')->references('nim')->on('mahasiswas');
-            $table->foreign('nip')->references('nip')->on('admins');
             $table->timestamps();
         });
     }
