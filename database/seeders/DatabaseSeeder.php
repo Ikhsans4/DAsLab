@@ -19,6 +19,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            DosenSeeder::class
+        ]);
+
+        $this->call([
             MatkulSeeder::class
         ]);
     }

@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('matakuliahs', function (Blueprint $table) {
-            $table->string('nip_dosen');
-            $table->string('kode_mk')->primary();
-            $table->string('nama_mk');
-            $table->integer('sks');
-            $table->integer('semester');
-            $table->string('jurusan');
+        Schema::create('dosens', function (Blueprint $table) {
+            $table->string('nip')->primary();
+            $table->string('nama');
+            $table->string('email')->unique();
             $table->timestamps();
+        });
+
+        Schema::table('matakuliahs', function (Blueprint $table) {
+            $table->foreign('nip_dosen')->references('nip')->on('dosens');
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matakuliahs');
+        Schema::dropIfExists('dosens');
     }
 };

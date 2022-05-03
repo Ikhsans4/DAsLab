@@ -4,12 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Matakuliah;
 use App\Models\Register;
-use App\Models\User;
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Http\Client\Response;
 
 
 class AdministratorController extends Controller
@@ -52,10 +48,7 @@ class AdministratorController extends Controller
      */
     public function asisten()
     {
-
         $data = Register::where('status', 1)->get();
-        // return dd(now());
-        // return dd($data);
         return view('admin.layout.asisten', ['registers' => $data, 'active' => 'asisten']);
     }
 
@@ -102,28 +95,6 @@ class AdministratorController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -157,8 +128,6 @@ class AdministratorController extends Controller
         return view('admin.layout.mataKuliah', ['mata_kuliah' => $response,  'asisten' => Register::all(), 'active' => 'matakuliah']);
     }
 
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -167,22 +136,5 @@ class AdministratorController extends Controller
      */
     public function destroy($id)
     {
-        //// $response = Http::get('http://localhost/PBW/DAsLab/public/admin/matakuliah');
-        // // $response = $this->getJson('/api/matakuliah');
-        // return $response;
-        // return dd($response->body());
-        // return dd($response->json());
-        // $curl = curl_init();
-        // curl_setopt($curl, CURLOPT_URL, 'http://localhost/PBW/dummy-api/public/api/matakuliah');
-        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        // $result = curl_exec($curl);
-        // curl_close($curl);
-        // // return dd($result);
-        // $result = json_decode($result, true);
-        // return dd($result);
-        // // return dd($result);
-        // // return dd($result['mata_kuliah'][0]['mata_kuliah']);
-        // $asisten = Register::where('mataKuliah', $result['mata_kuliah'][0]['mata_kuliah'])->get();
-        // // return dd($asisten);
     }
 }
