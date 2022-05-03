@@ -30,8 +30,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::GET('/admin/pendaftar', [AdministratorController::class, 'pendaftar']);
     Route::GET('/admin/tambah', [AdministratorController::class, 'create']);
     Route::POST('/admin/tambah', [AdministratorController::class, 'store']);
-    Route::PUT('/admin/pendaftar/{id}', [AdministratorController::class, 'terima']);
-    Route::DELETE('/admin/pendaftar/{id}', [AdministratorController::class, 'tolak']);
+    Route::PUT('/admin/pendaftar', [AdministratorController::class, 'terima']);
+    Route::DELETE('/admin/pendaftar', [AdministratorController::class, 'tolak']);
     Route::GET('/admin/matakuliah', [AdministratorController::class, 'mataKuliah']);
 });
 
