@@ -34,18 +34,20 @@
                             @if ($register['status'] === null)
                                 <a data-id="{{ $register->id }}"
                                     class="btn btn-sm btn-block bg-gradient-danger confirm-delete">Tolak
-                                    <form action="{{ url('/admin/pendaftar/' . $register['id']) }}"
-                                        id="delete{{ $register->id }}" method="POST" style="margin-right: 1rem;">
+                                    <form action="{{ url('/admin/pendaftar') }}" id="delete{{ $register->id }}"
+                                        method="POST" style="margin-right: 1rem;">
                                         @csrf
                                         @method('delete')
+                                        <input type="hidden" name="id" value="{{ $register['id'] }}">
                                     </form>
                                 </a>
                                 <a data-id="{{ $register->id }} "
                                     class="btn btn-sm btn-block bg-gradient-primary confirm-accept ">Terima
-                                    <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST"
+                                    <form action="{{ url('/admin/pendaftar/') }}" method="POST"
                                         id="accept{{ $register->id }}">
                                         @csrf
                                         @method('PUT')
+                                        <input type="hidden" name="id" value="{{ $register['id'] }}">
                                     </form>
                                 </a>
                             @elseif ($register['status'] == 1)
