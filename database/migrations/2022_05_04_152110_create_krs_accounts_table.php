@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswas', function (Blueprint $table) {
-            $table->string('nim')->primary();
-            $table->string('nama');
-            $table->string('jurusan');
+        Schema::create('krs_accounts', function (Blueprint $table) {
+            $table->id();
+            $table->string('nim_mhs');
+            $table->string('password');
+            $table->string('image')->default('https://img.icons8.com/color/48/000000/user.png')->nullable();
+            $table->foreign('nim_mhs')->references('nim')->on('mahasiswas');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswas');
+        Schema::dropIfExists('krs_accounts');
     }
 };
