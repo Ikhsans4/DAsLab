@@ -25,5 +25,13 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MatkulSeeder::class
         ]);
+
+        $this->call([
+            MahasiswaSeeder::class
+        ]);
+
+        $this->call([
+            AccountSeeder::class
+        ]);
     }
 }
