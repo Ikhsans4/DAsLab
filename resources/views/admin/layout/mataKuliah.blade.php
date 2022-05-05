@@ -13,7 +13,15 @@
                     <div class="card-body">
                         <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
                         <p class="card-text">
-                            Dosen Pengampu : <br>{{ $mk['dosen_pengampu'] }}
+                            @foreach ($dosen as $dos)
+                                @if ($dos['nip'] === $mk['nip_dosen'])
+                                    Dosen Pengampu : <br>
+                                    {{ $dos['nama'] }}
+                                    @php
+                                        break;
+                                    @endphp
+                                @endif
+                            @endforeach
                         </p>
                         <p>
                             Asisten :

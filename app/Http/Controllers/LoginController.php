@@ -23,7 +23,7 @@ class LoginController extends Controller
                 return redirect()->intended('admin/dashboard');
             }
         } else {
-            $response = Http::post('http://127.0.0.1:8000/api/login', [
+            $response = Http::post('https://apidatamahasiswa.000webhostapp.com/api/login', [
                 'nip' => $request->npm,
                 'password' => $request->password,
             ]);
