@@ -110,13 +110,15 @@
                             </a>
                         </li>
 
-                        <li class="nav-item ">
-                            <a href="{{ url('daftar') }}"
-                                class="nav-link @if ($active === 'daftar') active @endif">
-                                <i class="nav-icon fas fa-clipboard-list"></i>
-                                <p>Daftar</p>
-                            </a>
-                        </li>
+                        @if (auth()->user()->jurusan)
+                            <li class="nav-item ">
+                                <a href="{{ url('daftar') }}"
+                                    class="nav-link @if ($active === 'daftar') active @endif">
+                                    <i class="nav-icon fas fa-clipboard-list"></i>
+                                    <p>Daftar</p>
+                                </a>
+                            </li>
+                        @endif
 
                         <li class="nav-item">
                             <a href="{{ url('matakuliah') }}"
@@ -143,7 +145,8 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ auth()->user()->image }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ auth()->user()->image }}" class=" img-circle elevation-2" alt="User Image"
+                            style="width: 30px">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ auth()->user()->name }}</a>

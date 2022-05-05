@@ -17,9 +17,6 @@ class LoginController extends Controller
 
     public function authentication(Request $request)
     {
-
-
-
         if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
             if ((User::where('npm', $request->npm)->first()->is_admin) === 1) {
                 $request->session()->regenerate();
@@ -27,7 +24,7 @@ class LoginController extends Controller
             }
         } else {
             $response = Http::post('https://apidatamahasiswa.000webhostapp.com/api/login', [
-                'npm' => $request->npm,
+                'nip' => $request->npm,
                 'password' => $request->password,
             ]);
             $response = $response->json();
@@ -39,8 +36,9 @@ class LoginController extends Controller
                 );
             }
             User::create([
-                'name' => $response['user']['name'],
-                'npm' => $response['user']['npm'],
+                'name' => $response['user']['nama'],
+                'npm' => $response['user']['nip'],
+                'email' => $response['user']['email'],
                 'token' => $response['token'],
                 'password' => $response['password'],
                 'image' => $response['user']['image'],
