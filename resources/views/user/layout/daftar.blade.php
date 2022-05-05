@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control @if ($errors->has('email')) is-invalid @endif"
-                                id="email" name="email" placeholder="Email" value="">
+                                id="email" name="email" placeholder="Email" value="{{ auth()->user()->email }}">
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 {{ $errors->first('email') }}
                             </div>
