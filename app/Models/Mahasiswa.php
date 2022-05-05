@@ -11,6 +11,6 @@ class Mahasiswa extends Model
     protected $fillable = ['nip', 'nama', 'jurusan'];
 
     public function akunKrs() {
-        return $this->hasOne(Account::class);
+        return $this->hasOne(KrsAccount::class);
     }
 }

@@ -122,5 +122,14 @@ class MatkulSeeder extends Seeder
             'semester' => 4,
             'jurusan' => 'Informatika'
         ]);
+
+        Matakuliah::create([
+            'nip_dosen' => '197203181995121001',
+            'kode_mk' => 'MPA105',
+            'nama_mk' => 'Pengantar Kimia',
+            'sks' => 3,
+            'semester' => 1,
+            'jurusan' => 'Kimia'
+        ]);
     }
 }

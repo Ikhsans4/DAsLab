@@ -15,6 +15,6 @@ class Dosen extends Model
     }
 
     public function akunDosen() {
-        return $this->hasOne(Account::class);
+        return $this->hasOne(SimpegAccount::class);
     }
 }
