@@ -36,7 +36,7 @@ class LoginController extends Controller
                 );
             }
             User::create([
-                'name' => $response['user']['name'],
+                'name' => $response['user']['nama'],
                 'npm' => $response['user']['nip'],
                 'email' => $response['user']['email'],
                 'token' => $response['token'],

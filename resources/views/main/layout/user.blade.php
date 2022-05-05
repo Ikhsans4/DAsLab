@@ -110,13 +110,15 @@
                             </a>
                         </li>
 
-                        <li class="nav-item ">
-                            <a href="{{ url('daftar') }}"
-                                class="nav-link @if ($active === 'daftar') active @endif">
-                                <i class="nav-icon fas fa-clipboard-list"></i>
-                                <p>Daftar</p>
-                            </a>
-                        </li>
+                        @if (auth()->user()->jurusan)
+                            <li class="nav-item ">
+                                <a href="{{ url('daftar') }}"
+                                    class="nav-link @if ($active === 'daftar') active @endif">
+                                    <i class="nav-icon fas fa-clipboard-list"></i>
+                                    <p>Daftar</p>
+                                </a>
+                            </li>
+                        @endif
 
                         <li class="nav-item">
                             <a href="{{ url('matakuliah') }}"
