@@ -13,4 +13,8 @@ class Dosen extends Model
     public function matakuliah() {
         return $this->belongsTo(Matakuliah::class);
     }
+
+    public function akunDosen() {
+        return $this->hasOne(Account::class);
+    }
 }
