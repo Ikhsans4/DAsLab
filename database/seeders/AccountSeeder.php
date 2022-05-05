@@ -27,6 +27,11 @@ class AccountSeeder extends Seeder
             'password' => Hash::make('123'),
         ]);
 
+        KrsAccount::create([
+            'nim_mhs' => '2008103010038',
+            'password' => Hash::make('123'),
+        ]);
+
         SimpegAccount::create([
             'nip_dosen' => '198103152003121003',
             'password' => Hash::make('123'),

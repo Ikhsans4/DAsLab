@@ -27,5 +27,11 @@ class MahasiswaSeeder extends Seeder
             'nama' => 'M. Ikhsan Fikri',
             'jurusan' => 'Informatika',
         ]);
+
+        Mahasiswa::create([
+            'nim' => '2008103010038',
+            'nama' => 'Al-Karim',
+            'jurusan' => 'Kimia',
+        ]);
     }
 }
