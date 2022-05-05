@@ -10,7 +10,7 @@ class Mahasiswa extends Model
     use HasFactory;
     protected $fillable = ['nip', 'nama', 'jurusan'];
 
-    public function akun() {
+    public function akunKrs() {
         return $this->hasOne(Account::class);
     }
 }

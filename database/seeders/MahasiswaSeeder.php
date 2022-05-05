@@ -17,20 +17,15 @@ class MahasiswaSeeder extends Seeder
     public function run()
     {
         Mahasiswa::create([
-            'nip' => '2008107010013',
+            'nim' => '2008107010013',
             'nama' => 'Daffa Mudhaffar',
             'jurusan' => 'Informatika',
         ]);
 
         Mahasiswa::create([
-            'nip' => '2008107010020',
+            'nim' => '2008107010020',
             'nama' => 'M. Ikhsan Fikri',
             'jurusan' => 'Informatika',
-        ]);
-
-        Admin::create([
-            'nip' => '198103152003121003',
-            'nama' => 'Irvanizam Zamanhuri, S.Si, M.Sc'
         ]);
     }
 }

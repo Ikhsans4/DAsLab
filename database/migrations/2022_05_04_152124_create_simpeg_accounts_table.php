@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswas', function (Blueprint $table) {
-            $table->string('nim')->primary();
-            $table->string('nama');
-            $table->string('jurusan');
+        Schema::create('simpeg_accounts', function (Blueprint $table) {
+            $table->id();
+            $table->string('nip_dosen');
+            $table->string('password');
+            $table->string('image')->default('https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png')->nullable();
+            $table->foreign('nip_dosen')->references('nip')->on('dosens');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswas');
+        Schema::dropIfExists('simpeg_accounts');
     }
 };
