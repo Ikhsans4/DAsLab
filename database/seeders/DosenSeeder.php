@@ -68,5 +68,11 @@ class DosenSeeder extends Seeder
             'nama' => 'Kurnia Saputra, S.T., M.Sc.',
             'email' => 'kurnia.saputra@unsyiah.ac.id'
         ]);
+
+        Dosen::create([
+            'nip' => '197002212000032002',
+            'nama' => 'Dr. Lelifajri, S.Si, M.Si',
+            'email' => 'lelifajri@unsyiah.ac.id'
+        ]);
     }
 }

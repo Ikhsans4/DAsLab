@@ -11,6 +11,6 @@ class KrsAccount extends Model
     protected $guarded = ['id'];
 
     public function mahasiswa() {
-        return $this->belongsTo(Mahasiswa::class);
+        return $this->belongsTo(Mahasiswa::class, 'nim_mhs', 'nim');
     }
 }

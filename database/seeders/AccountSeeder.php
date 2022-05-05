@@ -71,5 +71,10 @@ class AccountSeeder extends Seeder
             'nip_dosen' => '198003262014041001',
             'password' => Hash::make('123'),
         ]);
+
+        SimpegAccount::create([
+            'nip_dosen' => '197002212000032002',
+            'password' => Hash::make('123'),
+        ]);
     }
 }
