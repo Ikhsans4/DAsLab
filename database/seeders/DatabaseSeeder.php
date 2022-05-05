@@ -30,5 +30,8 @@ class DatabaseSeeder extends Seeder
             MahasiswaSeeder::class
         ]);
 
+        $this->call([
+            AccountSeeder::class
+        ]);
     }
 }
