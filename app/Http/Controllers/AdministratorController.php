@@ -128,7 +128,7 @@ class AdministratorController extends Controller
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
         $dosen = $dosen->json();
         // return dd($dosen);
-        return view('admin.layout.mataKuliah', ['mata_kuliah' => $response, 'dosen' => $dosen,  'asisten' => Register::all(), 'active' => 'matakuliah']);
+        return view('admin.layout.mataKuliah', ['mata_kuliah' => $response, 'lecturers' => $dosen,  'asisten' => Register::all(), 'active' => 'matakuliah']);
     }
 
     /**
