@@ -5,48 +5,157 @@
 
 <!-- Main content -->
 @section('container')
-    <section class="content text-dark " id=" list-mk" style="background-color: #272A37;">
-        <div class="d-flex flex-wrap justify-content-center ">
-            @foreach ($mata_kuliah as $mk)
-                <div class="card mx-2 p-2" style="width: 14rem;">
-                    <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
-                        <p class="card-text">
-                            @foreach ($dosen as $dos)
-                                @if ($dos['nip'] === $mk['nip_dosen'])
-                                    Dosen Pengampu : <br>
-                                    {{ $dos['nama'] }}
-                                    @php
-                                        break;
-                                    @endphp
+    <section class="content" style="background-color: #272A37;">
+        <!-- tabel -->
+        <table id="example1" class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Kode</th>
+                    <th>Mata Kuliah</th>
+                    <th>SKS</th>
+                    <th>Semester</th>
+                    <th>Jurusan</th>
+                    <th>Dosen Pengampu</th>
+                    <th>Asisten</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach ($mata_kuliah as $mk)
+                    <tr>
+                        <td scope="row">{{ $loop->iteration }}</td>
+                        <td>{{ $mk['kode_mk'] }}</td>
+                        <td>{{ $mk['nama_mk'] }}</td>
+                        <td>{{ $mk['sks'] }}</td>
+                        <td>{{ $mk['semester'] }}</td>
+                        <td>{{ $mk['jurusan'] }}</td>
+                        <td>
+                            @foreach ($lecturers as $lecturer)
+                                @if ($mk['nip_dosen'] === $lecturer['nip'])
+                                    {{ $lecturer['nama'] }}
                                 @endif
                             @endforeach
-                        </p>
-                        <p>
-                            Asisten :
-                        </p>
-                        <p>
+                        </td>
+                        <td>
                             @php
-                                $i = 1;
-                                $status = 0;
+                                $data = false;
                             @endphp
                             @foreach ($asisten as $aslab)
-                                @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] === 1)
-                                    {{ $i }}. {{ $aslab['nama'] }}
+                                @if ($aslab->mataKuliah === $mk['nama_mk'] && $aslab->status === 1)
+                                    {{ $aslab->nama }}
                                     @php
-                                        $i += 1;
-                                        $status = 1;
+                                        $data = true;
                                     @endphp
                                 @endif
                             @endforeach
-                            @if ($status !== 1)
+                            @if ($data === false)
                                 Tidak ada Asisten
                             @endif
-                        </p>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+
+                        </td>
+                    </tr>
+                @endforeach
+
+            </tbody>
+
+        </table>
     </section>
+
+    <!-- /.tabel -->
+@endsection
+
+@section('table')
+
+    <!-- DataTables  & Plugins -->
+    <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ url('plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ url('plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ url('plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Page specific script -->
+    <script>
+        $(function() {
+            $('#example1').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true,
+                "responsive": false,
+            });
+        });
+    </script>
+    <script>
+        $('.confirm-delete').click(function(e) {
+            id = e.target.dataset.id;
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, reject!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(`#delete${id}`).submit();
+                }
+            })
+        });
+    </script>
+    <script>
+        $('.confirm-accept').click(function(e) {
+            id = e.target.dataset.id;
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#008000',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, accept!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(`#accept${id}`).submit();
+                }
+            })
+        });
+    </script>
+
+    @if (session('accept'))
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Asisten Diterima!',
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+            })
+        </script>
+    @endif
+    @if (session('reject'))
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Asisten Ditolak!',
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+            })
+        </script>
+    @endif
 @endsection
