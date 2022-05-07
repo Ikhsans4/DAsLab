@@ -44,16 +44,12 @@
                                 @endphp
                                 @foreach ($lessons as $lesson)
                                     @if ($temp !== $lesson['jurusan'])
-                                        <option value={{ $lesson['jurusan'] }}>{{ $lesson['jurusan'] }}</option>
+                                        <option value="{{ $lesson['jurusan'] }}">{{ $lesson['jurusan'] }}</option>
                                     @endif
                                     @php
                                         $temp = $lesson['jurusan'];
                                     @endphp
                                 @endforeach
-                                {{-- <option value="Matematika">Matematika</option>
-                                <option value="Kimia">Kimia</option>
-                                <option value="Fisika">Fisika</option>
-                                <option value="Statistika">Statistika</option> --}}
                             </select>
                         </div>
                         <!-- end jurusan -->
@@ -64,13 +60,8 @@
                             <select class="form-control" name="mataKuliah" id="exampleFormControlSelect1">
 
                                 @foreach ($lessons as $lesson)
-                                    <option value={{ $lesson['nama_mk'] }}>{{ $lesson['nama_mk'] }}</option>
+                                    <option value="{{ $lesson['nama_mk'] }}">{{ $lesson['nama_mk'] }}</option>
                                 @endforeach
-                                {{-- <option value="Pemrograman Dasar">Pemrograman Dasar</option>
-                                <option value="Pemrograman Berbasis Web">Pemrograman Berbasis Web</option>
-                                <option value="Pemrograman OOP">OOP</option>
-                                <option value="Fisika">Fisika</option>
-                                <option value="Statistika">Statistika</option> --}}
                             </select>
 
                         </div>

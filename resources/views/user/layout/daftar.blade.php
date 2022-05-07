@@ -52,7 +52,7 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Jurusan</label>
                             <input type="text" class="form-control" id="jurusan" name="jurusan"
-                                value="{{ 'informatika' }}" readonly>
+                                value="{{ auth()->user()->jurusan }}" readonly>
                         </div>
                         <!-- end jurusan -->
 
