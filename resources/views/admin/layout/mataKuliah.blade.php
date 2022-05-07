@@ -85,77 +85,24 @@
 
     <!-- Page specific script -->
     <script>
+        // $(function() {
+        //     $('#example1').DataTable({
+        //         "paging": true,
+        //         "lengthChange": false,
+        //         "searching": true,
+        //         "ordering": true,
+        //         "info": true,
+        //         "autoWidth": true,
+        //         "responsive": false,
+        //     });
+        // });
         $(function() {
-            $('#example1').DataTable({
-                "paging": true,
+            $("#example1").DataTable({
+                "responsive": true,
                 "lengthChange": false,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": true,
-                "responsive": false,
-            });
+                "autoWidth": false,
+                "buttons": ["excel", "pdf", ]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
     </script>
-    <script>
-        $('.confirm-delete').click(function(e) {
-            id = e.target.dataset.id;
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Yes, reject!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $(`#delete${id}`).submit();
-                }
-            })
-        });
-    </script>
-    <script>
-        $('.confirm-accept').click(function(e) {
-            id = e.target.dataset.id;
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#008000',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, accept!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $(`#accept${id}`).submit();
-                }
-            })
-        });
-    </script>
-
-    @if (session('accept'))
-        <script>
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Asisten Diterima!',
-                showConfirmButton: false,
-                timer: 1500,
-                toast: true,
-            })
-        </script>
-    @endif
-    @if (session('reject'))
-        <script>
-            Swal.fire({
-                position: 'top-end',
-                icon: 'error',
-                title: 'Asisten Ditolak!',
-                showConfirmButton: false,
-                timer: 1500,
-                toast: true,
-            })
-        </script>
-    @endif
 @endsection
