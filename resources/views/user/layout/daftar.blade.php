@@ -61,7 +61,9 @@
                             <label for="exampleFormControlSelect1">Mata Kuliah</label>
                             <select class="form-control text-dark" name="mataKuliah" id="exampleFormControlSelect1">
                                 @foreach ($lessons as $lesson)
-                                    <option value="{{ $lesson['nama_mk'] }}">{{ $lesson['nama_mk'] }}</option>
+                                    @if ($lesson['jurusan'] === auth()->user()->jurusan)
+                                        <option value="{{ $lesson['nama_mk'] }}">{{ $lesson['nama_mk'] }}</option>
+                                    @endif
                                 @endforeach
                             </select>
 

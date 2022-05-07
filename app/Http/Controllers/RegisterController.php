@@ -6,6 +6,7 @@ use App\Models\Matakuliah;
 use Illuminate\Http\Request;
 use App\Models\Register;
 use App\Models\User;
+use Illuminate\Support\Facades\Http;
 
 class RegisterController extends Controller
 {
@@ -25,7 +26,10 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('user.layout.daftar', ['active' => 'daftar', 'lessons' => MataKuliah::all()]);
+        $mataKuliah = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
+        $mataKuliah = $mataKuliah->json();
+        // return dd($mataKuliah);
+        return view('user.layout.daftar', ['active' => 'daftar', 'lessons' => $mataKuliah]);
     }
 
     /**
