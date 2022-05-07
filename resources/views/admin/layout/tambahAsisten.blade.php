@@ -39,11 +39,21 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Jurusan</label>
                             <select class="form-control" name="jurusan" id="exampleFormControlSelect1">
-                                <option value="Informatika">Informatika</option>
-                                <option value="Matematika">Matematika</option>
+                                @php
+                                    $temp = null;
+                                @endphp
+                                @foreach ($lessons as $lesson)
+                                    @if ($temp !== $lesson['jurusan'])
+                                        <option value={{ $lesson['jurusan'] }}>{{ $lesson['jurusan'] }}</option>
+                                    @endif
+                                    @php
+                                        $temp = $lesson['jurusan'];
+                                    @endphp
+                                @endforeach
+                                {{-- <option value="Matematika">Matematika</option>
                                 <option value="Kimia">Kimia</option>
                                 <option value="Fisika">Fisika</option>
-                                <option value="Statistika">Statistika</option>
+                                <option value="Statistika">Statistika</option> --}}
                             </select>
                         </div>
                         <!-- end jurusan -->
@@ -52,11 +62,15 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Mata Kuliah</label>
                             <select class="form-control" name="mataKuliah" id="exampleFormControlSelect1">
-                                <option value="Pemrograman Dasar">Pemrograman Dasar</option>
+
+                                @foreach ($lessons as $lesson)
+                                    <option value={{ $lesson['nama_mk'] }}>{{ $lesson['nama_mk'] }}</option>
+                                @endforeach
+                                {{-- <option value="Pemrograman Dasar">Pemrograman Dasar</option>
                                 <option value="Pemrograman Berbasis Web">Pemrograman Berbasis Web</option>
                                 <option value="Pemrograman OOP">OOP</option>
                                 <option value="Fisika">Fisika</option>
-                                <option value="Statistika">Statistika</option>
+                                <option value="Statistika">Statistika</option> --}}
                             </select>
 
                         </div>
