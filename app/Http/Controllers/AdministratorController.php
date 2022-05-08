@@ -49,7 +49,8 @@ class AdministratorController extends Controller
     public function asisten()
     {
         $data = Register::where('status', 1)->get();
-        return view('admin.layout.asisten', ['registers' => $data, 'active' => 'asisten']);
+
+        return view('admin.layout.asisten', ['registers' => $data, 'active' => 'asisten',]);
     }
 
     /**
@@ -59,7 +60,9 @@ class AdministratorController extends Controller
      */
     public function create()
     {
-        return view('admin.layout.tambahAsisten', ['active' => 'asisten']);
+        $lessons = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
+        $lessons = $lessons->json();
+        return view('admin.layout.tambahAsisten', ['active' => 'asisten', 'lessons' => $lessons]);
     }
 
     /**
