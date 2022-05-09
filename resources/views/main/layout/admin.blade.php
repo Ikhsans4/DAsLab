@@ -11,15 +11,13 @@
 
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ url('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet"
-        href="{{ url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->
@@ -46,10 +44,9 @@
 
         <!-- Preloader -->
         @if (!session('status'))
-            <div class="preloader flex-column justify-content-center align-items-center"
-                style="background-color: #272A37;">
-                <img class="animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
-            </div>
+        <div class="preloader flex-column justify-content-center align-items-center" style="background-color: #272A37;">
+            <img class="animation__shake" src="{{ url('/img/icon/uskLogo.png') }}" alt="D'AsLab" width="400">
+        </div>
         @endif
 
         <!-- Navbar -->
@@ -57,8 +54,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
-                            class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ url('admin/dashboard') }}" class="nav-link">Home</a>
@@ -80,8 +76,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #393e54;">
             <!-- Brand Logo -->
             <a href="{{ url('/admin/dashboard') }}" class="brand-link">
-                <img src="{{ url('img/icon/uskLogo.png') }}" alt="usk logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{ url('img/icon/uskLogo.png') }}" alt="usk logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">D'AsLab</span>
             </a>
 
@@ -89,37 +84,32 @@
             <div class="sidebar" style="background-color: #393e54;">
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-header">MENU</li>
 
                         <li class="nav-item ">
-                            <a href="{{ url('/admin/dashboard') }}"
-                                class="nav-link @if ($active === 'home') active @endif">
+                            <a href="{{ url('/admin/dashboard') }}" class="nav-link @if ($active === 'home') active @endif">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>Home</p>
 
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="{{ url('/admin/pendaftar') }}"
-                                class="nav-link @if ($active === 'pendaftar') active @endif">
+                            <a href="{{ url('/admin/pendaftar') }}" class="nav-link @if ($active === 'pendaftar') active @endif">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
                                 <p>Pendaftar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/admin/asisten') }}"
-                                class="nav-link @if ($active === 'asisten') active @endif">
+                            <a href="{{ url('/admin/asisten') }}" class="nav-link @if ($active === 'asisten') active @endif">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Asisten</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/admin/matakuliah') }}"
-                                class="nav-link @if ($active === 'matakuliah') active @endif">
+                            <a href="{{ url('/admin/matakuliah') }}" class="nav-link @if ($active === 'matakuliah') active @endif">
                                 <i class="nav-icon fas fa-swatchbook"></i>
                                 <p>Mata Kuliah</p>
                             </a>
@@ -131,7 +121,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ auth()->user()->image }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ auth()->user()->image }}" class="img-circle elevation-2" alt="User Image" style="width: 30px; height: 30px">
                     </div>
                     <div class="info">
                         <a class="d-block">{{ auth()->user()->name }}</a>

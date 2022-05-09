@@ -21,7 +21,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Pemrograman',
             'sks' => 4,
             'semester' => 2,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://wallup.net/wp-content/uploads/2017/11/16/170803-Python_programming-Linux.jpg'
         ]);
 
         Matakuliah::create([
@@ -30,7 +31,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Jaringan Komputer',
             'sks' => 3,
             'semester' => 2,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://wallpapercave.com/wp/wp9501490.jpg'
         ]);
 
         Matakuliah::create([
@@ -39,7 +41,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Basis Data',
             'sks' => 3,
             'semester' => 2,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://cdn.wallpapersafari.com/2/36/bOoCKX.jpg'
         ]);
 
         Matakuliah::create([
@@ -48,7 +51,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Pemrograman Berorientasi Objek',
             'sks' => 3,
             'semester' => 3,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://www.techfry.com/images/articles/php/object-oriented-programming.jpg'
         ]);
 
         Matakuliah::create([
@@ -57,7 +61,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Basis Data Lanjut',
             'sks' => 3,
             'semester' => 3,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://www.snti.in/images/plsql-card.png'
         ]);
 
         Matakuliah::create([
@@ -66,7 +71,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Sistem Operasi',
             'sks' => 3,
             'semester' => 3,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://wallpapercave.com/wp/wp7553379.png'
         ]);
 
         Matakuliah::create([
@@ -75,7 +81,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Komputasi Numerik',
             'sks' => 3,
             'semester' => 3,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://www.gatescambridge.org/wp-content/uploads/2015/09/32742maths.jpg'
         ]);
 
         Matakuliah::create([
@@ -84,7 +91,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Rekayasa Perangkat Lunak',
             'sks' => 3,
             'semester' => 4,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://static.vecteezy.com/system/resources/previews/000/180/409/large_2x/software-engineers-vector.png'
         ]);
 
         Matakuliah::create([
@@ -93,7 +101,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Sistem Informasi Geografis',
             'sks' => 3,
             'semester' => 4,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://gisgeography.com/wp-content/uploads/2014/07/What-Is-Geographic-Information-Systems-Featured-1265x727.jpg'
         ]);
 
         Matakuliah::create([
@@ -102,7 +111,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Struktur Data dan Algoritma',
             'sks' => 3,
             'semester' => 4,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://matheusrumetna.com/wp-content/uploads/2019/07/datastructureandalgorithms.jpg'
         ]);
 
         Matakuliah::create([
@@ -111,7 +121,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Komunikasi Data',
             'sks' => 3,
             'semester' => 4,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://media.istockphoto.com/vectors/wifi-router-icon-flat-vector-id1203428339?b=1&k=20&m=1203428339&s=612x612&w=0&h=1SYNTFnzK_wJ9D3GapRzBGU1RMXDPDEiWerey-UcVCo='
         ]);
 
         Matakuliah::create([
@@ -120,7 +131,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Pemrograman Berbasis Web',
             'sks' => 3,
             'semester' => 4,
-            'jurusan' => 'Informatika'
+            'jurusan' => 'Informatika',
+            'link_pic' => 'https://www.wallpaperkiss.com/wimg/b/160-1605037_big.jpg'
         ]);
 
         Matakuliah::create([
@@ -129,7 +141,8 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Pengantar Kimia',
             'sks' => 3,
             'semester' => 1,
-            'jurusan' => 'Kimia'
+            'jurusan' => 'Kimia',
+            'link_pic' => 'https://u7.uidownload.com/vector/138/420/vector-beaker-vector-design-svg.jpg'
         ]);
     }
 }

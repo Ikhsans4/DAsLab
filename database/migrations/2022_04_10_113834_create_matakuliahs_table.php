@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('sks');
             $table->integer('semester');
             $table->string('jurusan');
+            $table->text('link_pic');
             $table->timestamps();
         });
     }
