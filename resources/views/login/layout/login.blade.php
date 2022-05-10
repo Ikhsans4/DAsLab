@@ -94,6 +94,15 @@
                 icon: "error",
             });
         </script>
+    @elseif (session('status') === 'network error')
+        <script>
+            swal("Sinyal bermasalah!!", {
+                buttons: false,
+                title: "Login gagal!",
+                timer: 1500,
+                icon: "error",
+            });
+        </script>
     @endif
 
     <script>
