@@ -7,7 +7,7 @@
 
         <div class="container-fluid d-flex flex-wrap justify-content-center text-dark mt-3">
             @foreach ($mata_kuliah as $mk)
-                @if ($mk['jurusan'] === auth()->user()->jurusan)
+                @if ($mk['jurusan'] === auth()->user()->jurusan || $mk['nip_dosen'] === auth()->user()->npm)
                     <!-- card -->
                     <div class="card mb-2" style="width: 18rem; padding: 1rem; margin: 5px;">
                         <img src="{{ url($mk['link_pic']) }}" class="card-img-top" alt="mk_picture"
