@@ -34,6 +34,11 @@ class LoginController extends Controller
                     'status',
                     'Login gagal'
                 );
+            } else if ($response === null) {
+                return back()->with(
+                    'status',
+                    'network error'
+                );
             }
             User::create([
                 'name' => $response['user']['nama'],

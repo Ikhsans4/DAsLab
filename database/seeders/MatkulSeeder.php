@@ -136,7 +136,7 @@ class MatkulSeeder extends Seeder
         ]);
 
         Matakuliah::create([
-            'nip_dosen' => '197203181995121001',
+            'nip_dosen' => '197002212000032002',
             'kode_mk' => 'MPA105',
             'nama_mk' => 'Pengantar Kimia',
             'sks' => 3,
