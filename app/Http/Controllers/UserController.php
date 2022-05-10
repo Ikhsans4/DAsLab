@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\Matakuliah;
+use App\Models\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -21,6 +22,7 @@ class UserController extends Controller
         return view('user.layout.mataKuliah', [
             'mata_kuliah' => $matkul,
             'dosen' => $dosen,
+            'asisten' => Register::all(),
             'active' => 'matakuliah'
         ]);
     }
