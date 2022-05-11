@@ -32,7 +32,7 @@
                                 </div>
                                 @foreach ($asisten as $aslab)
                                     @if ($aslab['status'] === 1 && $mk['nama_mk'] === $aslab['mataKuliah'])
-                                        {{ $i }}. {{ $aslab['nama'] }}
+                                        {{ $i }}. {{ $aslab['nama'] }} {!! "<br>" !!}
                                         @php
                                             $i += 1;
                                             $status = 1;
