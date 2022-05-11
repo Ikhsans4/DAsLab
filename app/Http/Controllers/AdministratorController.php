@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dosen;
 use App\Models\Matakuliah;
 use App\Models\Register;
 use Illuminate\Http\Request;
@@ -18,13 +19,14 @@ class AdministratorController extends Controller
     public function index()
     {
         $mk = Matakuliah::paginate(4);
+        $dosen = Dosen::all();
         return view('admin.layout.dashboard', [
             'pendaftar' => Register::count(),
             'jumlahAsisten' => Register::where('status', 1)->count(),
             'mata_kuliah' => $mk,
+            'dosen' => $dosen,
             'asisten' => Register::all(),
             'active' => 'home',
-
         ]);
     }
 

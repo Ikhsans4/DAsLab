@@ -50,15 +50,21 @@
         <section class="content text-dark " id=" list-mk" style="background-color: #272A37;">
             <div class="d-flex flex-wrap justify-content-center ">
                 @foreach ($mata_kuliah as $mk)
-                    <div class="card mx-2 p-2" style="width: 14rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px;">
+                    <div class="card mx-2" style="width: 14rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px;">
                         <img src="{{ url($mk['link_pic']) }}" class="customCard" alt="mk_picture">
                         <div class="card-body">
                             <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
                             <h5 class="card-title"> <b>{{ $mk['nama_mk'] }}</b> </h5>
                             <p class="card-text">
-                                Dosen Pengampu : <br>{{ $mk['dosen_pengampu'] }}
-                                <br>
-                                Asisten : <br>
+                                <h6>Dosen Pengampu : <br>
+                                @foreach ($dosen as $dsn)
+                                @if ($mk['nip_dosen'] === $dsn['nip'])
+                                    {{ $dsn['nama'] }}
+                                @endif
+                                @endforeach
+                                <div class="mt-3">
+                                    Asisten :
+                                </div>
 
                                 @php
                                     $i = 1;
@@ -76,15 +82,12 @@
                                 @if ($status !== 1)
                                     Tidak ada Asisten
                                 @endif
-
+                                </h6>
                             </p>
-
                         </div>
                     </div>
                 @endforeach
             </div>
-
-
         </section>
         <!-- /.content -->
     @endsection
