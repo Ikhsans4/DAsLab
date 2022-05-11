@@ -8,62 +8,47 @@
     <!-- Main content -->
     <section class="content text-dark">
         <div class="container-fluid d-flex flex-wrap justify-content-center">
-            <!-- card 1 -->
-            <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the
-                        bulk of the card's content.</p>
-                </div>
-            </div>
-            <!-- card 2 -->
-            <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the
-                        bulk of the card's content.</p>
-                </div>
-            </div>
-            <!-- card 3-->
-            <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the
-                        bulk of the card's content.</p>
-                </div>
-            </div>
-            <!-- card 4 -->
-            <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the
-                        bulk of the card's content.</p>
-                </div>
-            </div>
-            <!-- card 5 -->
-            <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                <img src="{{ url('img/matakuliah/python.jpeg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the
-                        bulk of the card's content.</p>
-                </div>
-            </div>
-            <!-- end card 5 -->
-            <!-- card 6 -->
-            <div class="card" style="width: 18rem; padding: 1rem; margin: 5px;">
-                <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the
-                        bulk of the card's content.</p>
-                </div>
-            </div>
-            <!-- card 6 -->
+        @foreach ($mata_kuliah as $mk)
+                @if ($mk['jurusan'] === auth()->user()->jurusan || $mk['nip_dosen'] === auth()->user()->npm)
+                    <div class="card mb-2" style="width: 18rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px;">
+                        <img src="{{ url($mk['link_pic']) }}" alt="mk_picture" class="customCard">
+                    
+                        <div class="card-body">
+                            <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
+                            <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
+                            <p class="card-text">
+                                <h6>Dosen Pengampu : <br>
+                                @foreach ($dosen as $dsn)
+                                    @if ($mk['nip_dosen'] === $dsn['nip'])
+                                        {{ $dsn['nama'] }}
+                                    @endif
+                                @endforeach
+                                @php
+                                    $i = 1;
+                                    $status = 0;
+                                @endphp
+                                <div class="mt-3">
+                                    Asisten :
+                                </div>
+                                @foreach ($asisten as $aslab)
+                                    @if ($aslab['status'] === 1 && $mk['nama_mk'] === $aslab['mataKuliah'])
+                                        {{ $i }}. {{ $aslab['nama'] }}
+                                        @php
+                                            $i += 1;
+                                            $status = 1;
+                                        @endphp
+                                    @endif
+                                @endforeach
+
+                                @if ($status !== 1)
+                                    Tidak ada Asisten
+                                @endif
+                                </h6>
+                            </p>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
 
         </div><!-- /.container-fluid -->
     </section>

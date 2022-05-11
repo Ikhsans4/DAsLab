@@ -10,12 +10,13 @@
             @foreach ($mata_kuliah as $mk)
                 @if ($mk['jurusan'] === auth()->user()->jurusan || $mk['nip_dosen'] === auth()->user()->npm)
                     <div class="card mb-2" style="width: 18rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px;">
-                        <img src="{{ url($mk['link_pic']) }}" alt="mk_picture" style="height: 150px; width: 100%; object-fit:cover; border-radius: 10px 10px 0px 0px;">
+                        <img src="{{ url($mk['link_pic']) }}" alt="mk_picture" class="customCard">
                     
                         <div class="card-body">
+                            <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
                             <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
                             <p class="card-text">
-                                Dosen Pengampu : <br>
+                                <h6>Dosen Pengampu : <br>
                                 @foreach ($dosen as $dsn)
                                     @if ($mk['nip_dosen'] === $dsn['nip'])
                                         {{ $dsn['nama'] }}
@@ -25,7 +26,9 @@
                                     $i = 1;
                                     $status = 0;
                                 @endphp
-                                <br>Asisten : <br>
+                                <div class="mt-3">
+                                    Asisten :
+                                </div>
                                 @foreach ($asisten as $aslab)
                                     @if ($aslab['status'] === 1 && $mk['nama_mk'] === $aslab['mataKuliah'])
                                         {{ $i }}. {{ $aslab['nama'] }}
@@ -39,6 +42,7 @@
                                 @if ($status !== 1)
                                     Tidak ada Asisten
                                 @endif
+                                </h6>
                             </p>
                         </div>
                     </div>

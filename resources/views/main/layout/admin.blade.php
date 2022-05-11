@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="{{ url('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <!-- My css -->
+    <link rel="stylesheet" href="{{ url('css/app.css') }}">
 
 </head>
 

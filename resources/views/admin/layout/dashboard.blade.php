@@ -50,9 +50,10 @@
         <section class="content text-dark " id=" list-mk" style="background-color: #272A37;">
             <div class="d-flex flex-wrap justify-content-center ">
                 @foreach ($mata_kuliah as $mk)
-                    <div class="card mx-2 p-2" style="width: 14rem;">
-                        <img src="{{ url('img/matakuliah/tag.jpeg') }}" class="card-img-top" alt="...">
+                    <div class="card mx-2 p-2" style="width: 14rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px;">
+                        <img src="{{ url($mk['link_pic']) }}" class="customCard" alt="mk_picture">
                         <div class="card-body">
+                            <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
                             <h5 class="card-title"> <b>{{ $mk['nama_mk'] }}</b> </h5>
                             <p class="card-text">
                                 Dosen Pengampu : <br>{{ $mk['dosen_pengampu'] }}

@@ -12,7 +12,14 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('user.layout.dashboard', ['active' => 'home',]);
+        $matkul = Matakuliah::limit(5)->get();
+        $dosen = Dosen::all();
+        return view('user.layout.dashboard', [
+            'active' => 'home',
+            'mata_kuliah' => $matkul,
+            'dosen' => $dosen,
+            'asisten' => Register::all(),
+        ]);
     }
 
     public function mataKuliah()
