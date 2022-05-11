@@ -9,9 +9,9 @@
             <!-- card -->
             @foreach ($mata_kuliah as $mk)
                 @if ($mk['jurusan'] === auth()->user()->jurusan || $mk['nip_dosen'] === auth()->user()->npm)
-                    <div class="card mb-2" style="width: 18rem; padding: 1rem; margin: 5px;">
-                        <img src="{{ url($mk['link_pic']) }}" class="card-img-top" alt="mk_picture"
-                            style="height: 150px; width: auto">
+                    <div class="card mb-2" style="width: 18rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px;">
+                        <img src="{{ url($mk['link_pic']) }}" alt="mk_picture" style="height: 150px; width: 100%; object-fit:cover; border-radius: 10px 10px 0px 0px;">
+                    
                         <div class="card-body">
                             <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
                             <p class="card-text">
