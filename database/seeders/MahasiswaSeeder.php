@@ -29,9 +29,39 @@ class MahasiswaSeeder extends Seeder
         ]);
 
         Mahasiswa::create([
-            'nim' => '2008103010038',
-            'nama' => 'Al-Karim',
+            'nim' => '2008101010014',
+            'nama' => 'Yazid Zinedine Zidan',
+            'jurusan' => 'Matematika',
+        ]);
+
+        Mahasiswa::create([
+            'nim' => '2008103010049',
+            'nama' => 'Saifullah',
             'jurusan' => 'Kimia',
+        ]);
+
+        Mahasiswa::create([
+            'nim' => '2008108010034',
+            'nama' => 'Tiara Putri Adlina',
+            'jurusan' => 'Statistika',
+        ]);
+
+        Mahasiswa::create([
+            'nim' => '2008109010012',
+            'nama' => 'Tengku Delviza',
+            'jurusan' => 'Farmasi',
+        ]);
+
+        Mahasiswa::create([
+            'nim' => '2008102010043',
+            'nama' => 'Muhammad Izam',
+            'jurusan' => 'Fisika',
+        ]);
+
+        Mahasiswa::create([
+            'nim' => '2008104010084',
+            'nama' => 'Nurul Hidayah Putri Nasution',
+            'jurusan' => 'Biologi',
         ]);
     }
 }
