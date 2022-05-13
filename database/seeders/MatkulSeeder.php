@@ -144,5 +144,205 @@ class MatkulSeeder extends Seeder
             'jurusan' => 'Kimia',
             'link_pic' => 'https://u7.uidownload.com/vector/138/420/vector-beaker-vector-design-svg.jpg'
         ]);
+
+        Matakuliah::create([
+            'nip_dosen' => '197303311998021001',
+            'kode_mk' => 'MBI106',
+            'nama_mk' => 'Biologi Sel',
+            'sks' => '3',
+            'semester' => '2',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197507172000122001',
+            'kode_mk' => 'MBI114',
+            'nama_mk' => 'Genetika',
+            'sks' => '3',
+            'semester' => '2',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198202032008122001',
+            'kode_mk' => 'MBI110',
+            'nama_mk' => 'Biokimia',
+            'sks' => '3',
+            'semester' => '2',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197112121998032001',
+            'kode_mk' => 'MBI209',
+            'nama_mk' => 'Struktur Hewan',
+            'sks' => '3',
+            'semester' => '3',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198207282006042002',
+            'kode_mk' => 'MBI207',
+            'nama_mk' => 'Struktur Tumbuhan',
+            'sks' => '3',
+            'semester' => '3',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197503212008121001',
+            'kode_mk' => 'MBI221',
+            'nama_mk' => 'Biogeomatika',
+            'sks' => '3',
+            'semester' => '3',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197303311998021001',
+            'kode_mk' => 'MBI215',
+            'nama_mk' => 'Biologi Molekular',
+            'sks' => '3',
+            'semester' => '3',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197507172000122001',
+            'kode_mk' => 'MBI219',
+            'nama_mk' => 'Dasar-Dasar Ekologi',
+            'sks' => '3',
+            'semester' => '3',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198202032008122001',
+            'kode_mk' => 'MBI217',
+            'nama_mk' => 'Mikrobiologi Dasar',
+            'sks' => '3',
+            'semester' => '3',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197112121998032001',
+            'kode_mk' => 'MBI222',
+            'nama_mk' => 'Fisiologi Mikroba',
+            'sks' => '2',
+            'semester' => '4',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198207282006042002',
+            'kode_mk' => 'MBI226',
+            'nama_mk' => 'Pengantar Bioinformatika',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197503212008121001',
+            'kode_mk' => 'MBI218',
+            'nama_mk' => 'Fisiologi Tumbuhan',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197303311998021001',
+            'kode_mk' => 'MBI228',
+            'nama_mk' => 'Fisiologi Hewan',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197507172000122001',
+            'kode_mk' => 'MBI216',
+            'nama_mk' => 'Biosistematika Hewan',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198202032008122001',
+            'kode_mk' => 'MBI214',
+            'nama_mk' => 'Biosistematika Tumbuhan',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197112121998032001',
+            'kode_mk' => 'MBI224',
+            'nama_mk' => 'Biologi Konservasi',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198207282006042002',
+            'kode_mk' => 'MBI325',
+            'nama_mk' => 'Perkembangan Hewan',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197503212008121001',
+            'kode_mk' => 'MBI327',
+            'nama_mk' => 'Biologi Hutan Tropis',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197303311998021001',
+            'kode_mk' => 'MBI329',
+            'nama_mk' => 'Biologi Laut',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197507172000122001',
+            'kode_mk' => 'MBI323',
+            'nama_mk' => 'Perkembangan Tumbuhan',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Biologi',
+            'link_pic' => ' ',
+        ]);
     }
 }
