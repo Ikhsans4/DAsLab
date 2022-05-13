@@ -522,5 +522,59 @@ class MatkulSeeder extends Seeder
             'semester' => '5',
             'jurusan' => 'Fisika'
         ]);
+
+        Matakuliah::create([
+            'nip_dosen' => '198508142014042001',
+            'kode_mk' => 'MMT114',
+            'nama_mk' => 'Algoritma Dan Pemrograman',
+            'sks' => '1',
+            'semester' => '2',
+            'jurusan' => 'Matematika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197010121995122002',
+            'kode_mk' => 'MMT227',
+            'nama_mk' => 'Etnomatematika',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Matematika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197506091999032001',
+            'kode_mk' => 'MMT217',
+            'nama_mk' => 'Pengantar Metode Numerik',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Matematika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197006081994122001',
+            'kode_mk' => 'MMT216',
+            'nama_mk' => 'Metode Numerik',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Matematika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197004071995121001',
+            'kode_mk' => 'MMT226',
+            'nama_mk' => 'Pengantar Optimasi',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Matematika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198006072008122001',
+            'kode_mk' => 'MMT321',
+            'nama_mk' => 'Program Linier',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Matematika'
+        ]);
     }
 }
