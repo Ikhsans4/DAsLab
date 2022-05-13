@@ -146,6 +146,114 @@ class MatkulSeeder extends Seeder
         ]);
 
         Matakuliah::create([
+            'nip_dosen' => '197209271999032001',
+            'kode_mk' => 'MKM116',
+            'nama_mk' => 'Kimia Dasar',
+            'sks' => '1',
+            'semester' => '2',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197006211997031002',
+            'kode_mk' => 'MKM213',
+            'nama_mk' => 'Kimia Fisika I',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197202171999032001',
+            'kode_mk' => 'MKM203',
+            'nama_mk' => 'Kimia Organik I',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197303011998021001',
+            'kode_mk' => 'MKM215',
+            'nama_mk' => 'Biokimia I',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197209271999032002',
+            'kode_mk' => 'MKM207',
+            'nama_mk' => 'Kimia Analitik I',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197002212000032002',
+            'kode_mk' => 'MKM214',
+            'nama_mk' => 'Kimia Anorganik II',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197209271999032001',
+            'kode_mk' => 'MKM202',
+            'nama_mk' => 'Kimia Organik II',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197006211997031002',
+            'kode_mk' => 'MKM218',
+            'nama_mk' => 'Biokimia II',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197202171999032001',
+            'kode_mk' => 'MKM216',
+            'nama_mk' => 'Kimia Analitik II',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197303011998021001',
+            'kode_mk' => 'MKM204',
+            'nama_mk' => 'Kimia Fisika II',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197209271999032002',
+            'kode_mk' => 'MKM325',
+            'nama_mk' => 'Analisis Instrumentasi',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Kimia'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197002212000032002',
+            'kode_mk' => 'MKM317',
+            'nama_mk' => 'Kimia Anorganik III',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Kimia'
+        ]);        
+
+        Matakuliah::create([
             'nip_dosen' => '197303311998021001',
             'kode_mk' => 'MBI106',
             'nama_mk' => 'Biologi Sel',
