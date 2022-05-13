@@ -12,8 +12,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        $matkul = Matakuliah::limit(5)->get();
-        $dosen = Dosen::all();
+        $matkul = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
+        $matkul = $matkul->json();
+        $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
+        $dosen = $dosen->json();
         return view('user.layout.dashboard', [
             'active' => 'home',
             'mata_kuliah' => $matkul,
@@ -24,8 +26,10 @@ class UserController extends Controller
 
     public function mataKuliah()
     {
-        $matkul = Matakuliah::all();
-        $dosen = Dosen::all();
+        $matkul = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
+        $matkul = $matkul->json();
+        $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
+        $dosen = $dosen -> json();
         return view('user.layout.mataKuliah', [
             'mata_kuliah' => $matkul,
             'dosen' => $dosen,
