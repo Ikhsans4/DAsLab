@@ -12,7 +12,6 @@
                     <div class="card mb-2 " style="width: 18rem;  margin: 5px;">
                         <img src="{{ url($mk['link_pic']) }}" alt="mk_picture" class="m-2 rounded"
                             style="height: 10rem">
-
                         <div class="card-body">
                             <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
                             <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
@@ -32,14 +31,13 @@
                                 </div>
                                 @foreach ($asisten as $aslab)
                                     @if ($aslab['status'] === 1 && $mk['nama_mk'] === $aslab['mataKuliah'])
-                                        {{ $i }}. {{ $aslab['nama'] }} {!! "<br>" !!}
+                                        {{ $i }}. {{ $aslab['nama'] }} {!! '<br>' !!}
                                         @php
                                             $i += 1;
                                             $status = 1;
                                         @endphp
                                     @endif
                                 @endforeach
-
                                 @if ($status !== 1)
                                     Tidak ada Asisten
                                 @endif
