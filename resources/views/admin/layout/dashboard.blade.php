@@ -51,7 +51,7 @@
             <div class="d-flex flex-wrap justify-content-center ">
                 @foreach ($mata_kuliah as $mk)
                     <div class="card mx-2" style="width: 14rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px;">
-                        <img src="{{ url($mk['link_pic']) }}" class="customCard" alt="mk_picture">
+                        <img src="{{ url($mk['link_pic']) }}" class="m-2 rounded" alt="mk_picture">
                         <div class="card-body">
                             <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
                             <h5 class="card-title"> <b>{{ $mk['nama_mk'] }}</b> </h5>
@@ -72,7 +72,7 @@
                                 @endphp
                                 @foreach ($asisten as $aslab)
                                     @if ($aslab['mataKuliah'] === $mk['nama_mk'] && $aslab['status'] === 1)
-                                        {{ $i }}. {{ $aslab['nama'] }}
+                                        {{ $i }}. {{ $aslab['nama'] }} {!! "<br>" !!}
                                         @php
                                             $i += 1;
                                             $status = 1;

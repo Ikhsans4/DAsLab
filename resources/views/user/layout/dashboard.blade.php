@@ -11,7 +11,7 @@
         @foreach ($mata_kuliah as $mk)
                 @if ($mk['jurusan'] === auth()->user()->jurusan || $mk['nip_dosen'] === auth()->user()->npm)
                     <div class="card mb-2" style="width: 17rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px;">
-                        <img src="{{ url($mk['link_pic']) }}" alt="mk_picture" class="customCard">
+                        <img src="{{ url($mk['link_pic']) }}" alt="mk_picture" class="m-2 rounded" style="height: 10rem;">
                         <div class="card-body">
                             <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
                             <h5 class="card-title"><b>{{ $mk['nama_mk'] }}</b></h5>
