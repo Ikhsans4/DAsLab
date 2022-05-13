@@ -151,7 +151,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biologi Sel',
             'sks' => '3',
             'semester' => '2',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -160,7 +160,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Genetika',
             'sks' => '3',
             'semester' => '2',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -169,7 +169,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biokimia',
             'sks' => '3',
             'semester' => '2',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -178,7 +178,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Struktur Hewan',
             'sks' => '3',
             'semester' => '3',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -187,7 +187,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Struktur Tumbuhan',
             'sks' => '3',
             'semester' => '3',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -196,7 +196,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biogeomatika',
             'sks' => '3',
             'semester' => '3',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -205,7 +205,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biologi Molekular',
             'sks' => '3',
             'semester' => '3',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -214,7 +214,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Dasar-Dasar Ekologi',
             'sks' => '3',
             'semester' => '3',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -223,7 +223,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Mikrobiologi Dasar',
             'sks' => '3',
             'semester' => '3',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -232,7 +232,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Fisiologi Mikroba',
             'sks' => '2',
             'semester' => '4',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -241,7 +241,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Pengantar Bioinformatika',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -250,7 +250,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Fisiologi Tumbuhan',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -259,7 +259,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Fisiologi Hewan',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -268,7 +268,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biosistematika Hewan',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -277,7 +277,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biosistematika Tumbuhan',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -286,7 +286,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biologi Konservasi',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -295,7 +295,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Perkembangan Hewan',
             'sks' => '1',
             'semester' => '5',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -304,7 +304,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biologi Hutan Tropis',
             'sks' => '1',
             'semester' => '5',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -313,7 +313,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biologi Laut',
             'sks' => '1',
             'semester' => '5',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
         
         Matakuliah::create([
@@ -322,7 +322,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Perkembangan Tumbuhan',
             'sks' => '1',
             'semester' => '5',
-            'jurusan' => 'Biologi',
+            'jurusan' => 'Biologi'
         ]);
 
         Matakuliah::create([
@@ -331,7 +331,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Anatomi Dan Fisiologi Manusia',
             'sks' => '1',
             'semester' => '2',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -340,7 +340,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Farmasetika',
             'sks' => '1',
             'semester' => '2',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -349,7 +349,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Kimia Organik',
             'sks' => '1',
             'semester' => '2',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -358,7 +358,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Farmasi Fisika',
             'sks' => '1',
             'semester' => '3',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -367,7 +367,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biokimia',
             'sks' => '1',
             'semester' => '3',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -376,7 +376,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Kimia Analisa',
             'sks' => '1',
             'semester' => '3',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -385,7 +385,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Mikrobiologi Dan Virologi',
             'sks' => '1',
             'semester' => '3',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -394,7 +394,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Botani Farmasi',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -403,7 +403,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Analisa Farmasi',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -412,7 +412,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Teknologi Sediaan Farmasi Solid',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -421,7 +421,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Farmakologi II',
             'sks' => '1',
             'semester' => '4',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -430,7 +430,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Analisa Sediaan Farmasi',
             'sks' => '1',
             'semester' => '5',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -439,7 +439,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Teknologi Sediaan Farmasi Likuida Dan Semisolid',
             'sks' => '1',
             'semester' => '5',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -448,7 +448,7 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Farmakognosi',
             'sks' => '1',
             'semester' => '5',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
         ]);
         
         Matakuliah::create([
@@ -457,7 +457,70 @@ class MatkulSeeder extends Seeder
             'nama_mk' => 'Biofarmasi Dan Farmakokinetika',
             'sks' => '1',
             'semester' => '5',
-            'jurusan' => 'Farmasi',
+            'jurusan' => 'Farmasi'
+        ]);
+
+        Matakuliah::create([
+            'nip_dosen' => '197107061994121001',
+            'kode_mk' => 'PHY104',
+            'nama_mk' => 'Fisika Dasar',
+            'sks' => '1',
+            'semester' => '2',
+            'jurusan' => 'Fisika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '196712241994031001',
+            'kode_mk' => 'PHY205',
+            'nama_mk' => 'Termodinamika',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Fisika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '196609281994031014',
+            'kode_mk' => 'PHY207',
+            'nama_mk' => 'Elektronika',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Fisika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197208311998021001',
+            'kode_mk' => 'PHY209',
+            'nama_mk' => 'Eksperimen Fisika I',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Fisika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197312072003121002',
+            'kode_mk' => 'PHY210',
+            'nama_mk' => 'Eksperimen Fisika II',
+            'sks' => '2',
+            'semester' => '4',
+            'jurusan' => 'Fisika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '196102011997021001',
+            'kode_mk' => 'PHY309',
+            'nama_mk' => 'Eksperimen Fisika III',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Fisika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197107061994121001',
+            'kode_mk' => 'PHY301',
+            'nama_mk' => 'Algoritma Dan Pemrograman',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Fisika'
         ]);
     }
 }
