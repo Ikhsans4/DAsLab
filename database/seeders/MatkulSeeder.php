@@ -576,5 +576,95 @@ class MatkulSeeder extends Seeder
             'semester' => '5',
             'jurusan' => 'Matematika'
         ]);
+
+        Matakuliah::create([
+            'nip_dosen' => '197410152006042002',
+            'kode_mk' => 'STK108',
+            'nama_mk' => 'Algoritma Dan Pemrograman',
+            'sks' => '1',
+            'semester' => '2',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '196805191994031012',
+            'kode_mk' => 'STK116',
+            'nama_mk' => 'Analisis Data Eksploratif',
+            'sks' => '1',
+            'semester' => '2',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197405252000031004',
+            'kode_mk' => 'STK217',
+            'nama_mk' => 'Analisis Regresi',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198409282015042002',
+            'kode_mk' => 'STK223',
+            'nama_mk' => 'Pengantar Sains Data',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197309281998022001',
+            'kode_mk' => 'STK225',
+            'nama_mk' => 'Basis Data & Penelusuran Data-SQL',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197603172006041001',
+            'kode_mk' => 'STK212',
+            'nama_mk' => 'Rancangan Percobaan I',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197410152006042002',
+            'kode_mk' => 'STK214',
+            'nama_mk' => 'Teknik Sampling',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '196805191994031012',
+            'kode_mk' => 'STK216',
+            'nama_mk' => 'Data Mining',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197405252000031004',
+            'kode_mk' => 'STK305',
+            'nama_mk' => 'Analisis Peubah Ganda',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Statistika'
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198409282015042002',
+            'kode_mk' => 'STK315',
+            'nama_mk' => 'Statistika Pengendalian Mutu I',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Statistika'
+        ]);
     }
 }
