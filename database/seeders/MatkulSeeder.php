@@ -152,7 +152,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '2',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -162,7 +161,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '2',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -172,7 +170,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '2',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -182,7 +179,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '3',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -192,7 +188,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '3',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -202,7 +197,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '3',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -212,7 +206,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '3',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -222,7 +215,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '3',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -232,7 +224,6 @@ class MatkulSeeder extends Seeder
             'sks' => '3',
             'semester' => '3',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -242,7 +233,6 @@ class MatkulSeeder extends Seeder
             'sks' => '2',
             'semester' => '4',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -252,7 +242,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '4',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -262,7 +251,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '4',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -272,7 +260,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '4',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -282,7 +269,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '4',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -292,7 +278,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '4',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -302,7 +287,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '4',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -312,7 +296,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '5',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -322,7 +305,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '5',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -332,7 +314,6 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '5',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
         ]);
         
         Matakuliah::create([
@@ -342,7 +323,141 @@ class MatkulSeeder extends Seeder
             'sks' => '1',
             'semester' => '5',
             'jurusan' => 'Biologi',
-            'link_pic' => ' ',
+        ]);
+
+        Matakuliah::create([
+            'nip_dosen' => '198109252008122002',
+            'kode_mk' => 'MFI108',
+            'nama_mk' => 'Anatomi Dan Fisiologi Manusia',
+            'sks' => '1',
+            'semester' => '2',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198101182006042001',
+            'kode_mk' => 'MFI114',
+            'nama_mk' => 'Farmasetika',
+            'sks' => '1',
+            'semester' => '2',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197711072010122001',
+            'kode_mk' => 'MFI110',
+            'nama_mk' => 'Kimia Organik',
+            'sks' => '1',
+            'semester' => '2',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197602062009121002',
+            'kode_mk' => 'MFI227',
+            'nama_mk' => 'Farmasi Fisika',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198203232012122001',
+            'kode_mk' => 'MFI229',
+            'nama_mk' => 'Biokimia',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198505022014042002',
+            'kode_mk' => 'MFI219',
+            'nama_mk' => 'Kimia Analisa',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198109252008122002',
+            'kode_mk' => 'MFI239',
+            'nama_mk' => 'Mikrobiologi Dan Virologi',
+            'sks' => '1',
+            'semester' => '3',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198101182006042001',
+            'kode_mk' => 'MFI256',
+            'nama_mk' => 'Botani Farmasi',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197711072010122001',
+            'kode_mk' => 'MFI258',
+            'nama_mk' => 'Analisa Farmasi',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197602062009121002',
+            'kode_mk' => 'MFI206',
+            'nama_mk' => 'Teknologi Sediaan Farmasi Solid',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198203232012122001',
+            'kode_mk' => 'MFI210',
+            'nama_mk' => 'Farmakologi II',
+            'sks' => '1',
+            'semester' => '4',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198505022014042002',
+            'kode_mk' => 'MFI317',
+            'nama_mk' => 'Analisa Sediaan Farmasi',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198109252008122002',
+            'kode_mk' => 'MFI329',
+            'nama_mk' => 'Teknologi Sediaan Farmasi Likuida Dan Semisolid',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '198101182006042001',
+            'kode_mk' => 'MFI323',
+            'nama_mk' => 'Farmakognosi',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Farmasi',
+        ]);
+        
+        Matakuliah::create([
+            'nip_dosen' => '197711072010122001',
+            'kode_mk' => 'MFI325',
+            'nama_mk' => 'Biofarmasi Dan Farmakokinetika',
+            'sks' => '1',
+            'semester' => '5',
+            'jurusan' => 'Farmasi',
         ]);
     }
 }
