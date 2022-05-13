@@ -52,13 +52,10 @@
                             @if ($data === false)
                                 Tidak ada Asisten
                             @endif
-
                         </td>
                     </tr>
                 @endforeach
-
             </tbody>
-
         </table>
     </section>
 
