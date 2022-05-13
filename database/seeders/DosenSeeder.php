@@ -76,6 +76,36 @@ class DosenSeeder extends Seeder
         ]);
 
         Dosen::create([
+            'nip' => '197209271999032001',
+            'nama' => 'Dr. Rahmi, S.Si, M.Si',
+            'email' => 'rahmi@unsyiah.ac.id ',
+        ]);
+        
+        Dosen::create([
+            'nip' => '197006211997031002',
+            'nama' => 'Dr. Nazaruddin, S.Si, M.Si',
+            'email' => 'nazar@unsyiah.ac.id',
+        ]);
+        
+        Dosen::create([
+            'nip' => '197202171999032001',
+            'nama' => 'Dr. Febriani, S.Si, M.Si',
+            'email' => 'febriani@unsyiah.ac.id',
+        ]);
+        
+        Dosen::create([
+            'nip' => '197303011998021001',
+            'nama' => 'Dr. Muliadi Ramli, S.Si., M.Si',
+            'email' => 'muliadiramli@unsyiah.ac.id',
+        ]);
+        
+        Dosen::create([
+            'nip' => '197209271999032002',
+            'nama' => 'Dr. Binawati Ginting, S.Si., M.Si',
+            'email' => 'binawati@chem.unsyiah.ac.id',
+        ]);
+
+        Dosen::create([
             'nip' => '197303311998021001',
             'nama' => 'Muhammad Nasir, S.Si., M.Sc',
             'email' => 'm_nasir@unsyiah.ac.id',
