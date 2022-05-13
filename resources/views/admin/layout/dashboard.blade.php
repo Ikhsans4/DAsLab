@@ -52,7 +52,7 @@
                 @foreach ($mata_kuliah as $mk)
                     <div class="card mx-2"
                         style="width: 15rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px; height: 26rem;">
-                        <img src="{{ url($mk['link_pic']) }}" class="m-2 rounded" alt="mk_picture"
+                        <img src="{{ url($mk['link_picture']) }}" class="m-2 rounded" alt="mk_picture"
                             style="height: 10rem">
                         <div class="card-body">
                             <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
