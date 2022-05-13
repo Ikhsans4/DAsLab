@@ -257,5 +257,30 @@ class AccountSeeder extends Seeder
             'nip_dosen' => '197603172006041001',
             'password' => Hash::make('123'),
         ]);
+
+        SimpegAccount::create([
+            'nip_dosen' => '197209271999032001',
+            'password' => Hash::make('123'),
+        ]);
+        
+        SimpegAccount::create([
+            'nip_dosen' => '197006211997031002',
+            'password' => Hash::make('123'),
+        ]);
+        
+        SimpegAccount::create([
+            'nip_dosen' => '197202171999032001',
+            'password' => Hash::make('123'),
+        ]);
+        
+        SimpegAccount::create([
+            'nip_dosen' => '197303011998021001',
+            'password' => Hash::make('123'),
+        ]);
+        
+        SimpegAccount::create([
+            'nip_dosen' => '197209271999032002',
+            'password' => Hash::make('123'),
+        ]);        
     }
 }
