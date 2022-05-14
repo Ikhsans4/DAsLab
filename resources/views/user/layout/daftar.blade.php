@@ -7,7 +7,6 @@
     <!-- Main content -->
     <section class="content pb-5">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-4 ml-4">
                     <!-- start form pendaftaran -->
@@ -66,7 +65,6 @@
                                     @endif
                                 @endforeach
                             </select>
-
                         </div>
                         <!-- end matakuliah -->
 
@@ -95,6 +93,4 @@
             })
         </script>
     @endif
-
-
 @endsection

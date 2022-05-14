@@ -2,8 +2,6 @@
 @section('title', "D'AsLab | Dashboard")
 @section('head', 'Dashboard')
 
-
-
 @section('container')
     <!-- Main content -->
     <section class="content text-dark">
@@ -48,7 +46,6 @@
                     </div>
                 @endif
             @endforeach
-
         </div><!-- /.container-fluid -->
     </section>
 @endsection

@@ -44,5 +44,6 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::POST('/daftar', [RegisterController::class, 'store']);
     Route::GET('/daftar', [RegisterController::class, 'create']);
 });
+
 // logout
 Route::POST('logout', [LoginController::class, 'logout'])->middleware('auth');

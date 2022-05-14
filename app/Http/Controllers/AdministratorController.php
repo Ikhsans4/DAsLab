@@ -84,6 +84,7 @@ class AdministratorController extends Controller
             'jurusan' => 'required',
             'mataKuliah' => 'required',
         ]);
+
         // mengisi data ke dalam database
         $credentials = [
             'nama' => $request->nama,
@@ -94,6 +95,7 @@ class AdministratorController extends Controller
             'mataKuliah' => $request->mataKuliah,
             'status' => True,
         ];
+
         // menambah data ke dalam database
         Register::create($credentials);
         return redirect('/admin/asisten')->with('status', 'Berhasil');
@@ -112,12 +114,14 @@ class AdministratorController extends Controller
         $temp->update(['status' => True]);
         return Register::all();
     }
+
     public function terima(Request $request)
     {
         $temp = Register::find($request->id);
         $temp->update(['status' => True]);
         return redirect('/admin/pendaftar')->with('accept', true);
     }
+    
     public function tolak(Request $request)
     {
         $temp = Register::find($request->id);

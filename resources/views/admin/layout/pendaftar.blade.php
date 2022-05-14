@@ -5,7 +5,6 @@
 
 
 @section('container')
-
     <section class="content" style="background-color: #272A37;">
         <!-- tabel -->
         <table id="example1" class="table table-striped table-dark">
@@ -21,7 +20,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 @foreach ($registers as $register)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
@@ -58,12 +56,9 @@
                         </td>
                     </tr>
                 @endforeach
-
             </tbody>
-
         </table>
     </section>
-
     <!-- /.tabel -->
 @endsection
 

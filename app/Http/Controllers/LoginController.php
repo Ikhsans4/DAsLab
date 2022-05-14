@@ -40,6 +40,7 @@ class LoginController extends Controller
                     'network error'
                 );
             }
+
             User::create([
                 'name' => $response['user']['nama'],
                 'npm' => $response['user']['nip'],
@@ -49,6 +50,7 @@ class LoginController extends Controller
                 'image' => $response['user']['image'],
                 'jurusan' => $response['user']['jurusan'],
             ]);
+            
             if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
 
                 $request->session()->regenerate();

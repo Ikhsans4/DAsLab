@@ -3,7 +3,6 @@
 @section('head', 'Mata Kuliah')
 
 @section('container')
-
     <section class="content" style="background-color: #272A37;">
         <div class="container-fluid d-flex flex-wrap justify-content-center text-dark mt-3">
             <!-- card -->

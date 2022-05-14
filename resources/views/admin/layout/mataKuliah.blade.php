@@ -21,7 +21,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 @foreach ($mata_kuliah as $mk)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
@@ -58,7 +57,6 @@
             </tbody>
         </table>
     </section>
-
     <!-- /.tabel -->
 @endsection
 
