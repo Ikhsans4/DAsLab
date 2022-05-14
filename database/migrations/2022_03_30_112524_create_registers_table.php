@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('jurusan');
             $table->string('mataKuliah');
             $table->boolean('status')->nullable();
+            $table->string('register_date')->default(date('Y-m-d'));
             $table->timestamps();
         });
     }

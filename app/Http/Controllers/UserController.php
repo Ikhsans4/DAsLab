@@ -29,17 +29,23 @@ class UserController extends Controller
         $matkul = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
         $matkul = $matkul->json();
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
-        $dosen = $dosen -> json();
+        $dosen = $dosen->json();
         return view('user.layout.mataKuliah', [
             'mata_kuliah' => $matkul,
             'dosen' => $dosen,
             'asisten' => Register::all(),
-            'active' => 'matakuliah'
+            'active' => 'matakuliah',
+            'semesterBerjalan' => (date('Y') % 2)
         ]);
     }
 
     public function about()
     {
         return view('user.layout.about', ['active' => 'about']);
+    }
+
+    public function history()
+    {
+        return view('user.layout.history', ['active' => 'history']);
     }
 }

@@ -16,12 +16,12 @@
                     <th>SKS</th>
                     <th>Semester</th>
                     <th>Jurusan</th>
-                    <th>Dosen Pengampu</th>
                     <th>Asisten</th>
+                    <th>Tahun</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($mata_kuliah as $mk)
+                {{-- @foreach ($mata_kuliah as $mk)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{ $mk['kode_mk'] }}</td>
@@ -53,7 +53,8 @@
                             @endif
                         </td>
                     </tr>
-                @endforeach
+                @endforeach --}}
+                <td>{{ $date }}</td>
             </tbody>
         </table>
     </section>
