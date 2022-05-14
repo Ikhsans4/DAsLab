@@ -9,4 +9,5 @@ class Register extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    // protected $dateFormat = 'Y';
 }
