@@ -21,40 +21,42 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($mata_kuliah as $mk)
-                    <tr>
-                        <td scope="row">{{ $loop->iteration }}</td>
-                        <td>{{ $mk['kode_mk'] }}</td>
-                        <td>{{ $mk['nama_mk'] }}</td>
-                        <td>{{ $mk['sks'] }}</td>
-                        <td>{{ $mk['semester'] }}</td>
-                        <td>{{ $mk['jurusan'] }}</td>
-                        <td>
-                            @foreach ($lecturers as $lecturer)
-                                @if ($mk['nip_dosen'] === $lecturer['nip'])
-                                    {{ $lecturer['nama'] }}
+                @foreach ($lessons as $lesson)
+                    @if ($lesson['nip_dosen'] === auth()->user()->npm)
+                        <tr>
+                            <td scope="row">{{ $loop->iteration }}</td>
+                            <td>{{ $lesson['kode_mk'] }}</td>
+                            <td>{{ $lesson['nama_mk'] }}</td>
+                            <td>{{ $lesson['sks'] }}</td>
+                            <td>{{ $lesson['semester'] }}</td>
+                            <td>{{ $lesson['jurusan'] }}</td>
+                            <td>
+                                @php
+                                    $data = false;
+                                    $year = null;
+                                @endphp
+                                @foreach ($asisten as $aslab)
+                                    @if ($aslab->mataKuliah === $lesson['nama_mk'] && $aslab->status === 1)
+                                        {{ $aslab->nama }}
+                                        @php
+                                            $data = true;
+                                            $year = $aslab->created_at;
+                                        @endphp
+                                    @endif
+                                @endforeach
+                                @if ($data === false)
+                                    Tidak ada Asisten
                                 @endif
-                            @endforeach
-                        </td>
-                        <td>
-                            @php
-                                $data = false;
-                            @endphp
-                            @foreach ($asisten as $aslab)
-                                @if ($aslab->mataKuliah === $mk['nama_mk'] && $aslab->status === 1)
-                                    {{ $aslab->nama }}
-                                    @php
-                                        $data = true;
-                                    @endphp
-                                @endif
-                            @endforeach
-                            @if ($data === false)
-                                Tidak ada Asisten
-                            @endif
-                        </td>
-                    </tr>
-                @endforeach --}}
-                <td>{{ $date }}</td>
+                            </td>
+                            <td>
+                                {{-- @php
+                                    $year = explode('-', $year);
+                                @endphp --}}
+                                {{ $year->format('Y') }}
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
             </tbody>
         </table>
     </section>

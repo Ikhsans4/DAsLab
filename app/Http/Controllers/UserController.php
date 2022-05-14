@@ -46,6 +46,14 @@ class UserController extends Controller
 
     public function history()
     {
-        return view('user.layout.history', ['active' => 'history']);
+        $matkul = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
+        $matkul = $matkul->json();
+        $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
+        $dosen = $dosen->json();
+        return view('user.layout.history', [
+            'active' => 'history',
+            'lessons' => $matkul,
+            'asisten' => Register::all(),
+        ]);
     }
 }
