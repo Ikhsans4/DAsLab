@@ -127,6 +127,15 @@
                                 <p>Mata Kuliah</p>
                             </a>
                         </li>
+                        @if (!auth()->user()->jurusan)
+                            <li class="nav-item ">
+                                <a href="{{ url('history') }}"
+                                    class="nav-link @if ($active === 'history') active @endif">
+                                    <i class="nav-icon fas fas fa-history"></i>
+                                    <p>History</p>
+                                </a>
+                            </li>
+                        @endif
                         <li class="nav-item">
                             <a href="{{ url('about') }}"
                                 class="nav-link @if ($active === 'about') active @endif">
