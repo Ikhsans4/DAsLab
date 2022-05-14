@@ -49,6 +49,7 @@ class RegisterController extends Controller
             'jurusan' => 'required',
             'mataKuliah' => 'required',
         ]);
+        
         $credentials = [
             'nama' => $request->nama,
             'npm' => $request->npm,

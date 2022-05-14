@@ -28,7 +28,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     @foreach ($registers as $register)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
@@ -39,9 +38,7 @@
                                             <td>{{ $register['mataKuliah'] }}</td>
                                         </tr>
                                     @endforeach
-
                                 </tbody>
-
                             </table>
                         </div>
                         <!-- /.card-body -->

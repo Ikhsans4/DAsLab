@@ -7,7 +7,6 @@
     <!-- Main content -->
     <section class="content pb-5">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-4 ml-4">
                     <!-- start form tambah data -->
@@ -34,7 +33,6 @@
                             <label for="noHP">No HP</label>
                             <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Nomor HP">
                         </div>
-
                         <!-- jurusan -->
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Jurusan</label>
@@ -58,12 +56,10 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Mata Kuliah</label>
                             <select class="form-control" name="mataKuliah" id="exampleFormControlSelect1">
-
                                 @foreach ($lessons as $lesson)
                                     <option value="{{ $lesson['nama_mk'] }}">{{ $lesson['nama_mk'] }}</option>
                                 @endforeach
                             </select>
-
                         </div>
                         <!-- end matakuliah -->
 
@@ -77,6 +73,4 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-
-
 @endsection

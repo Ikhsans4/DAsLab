@@ -5,20 +5,16 @@
 @section('link', 'Dashboard')
 
 @section('container')
-
     <!-- Main content -->
-
     <section class="content" style="background-color: #272A37;">
         <!-- head -->
         <div class="row">
-
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
                         <h3>{{ $jumlahAsisten }}<sup style="font-size: 20px"></sup></h3>
-
                         <p>Jumlah Asisten</p>
                     </div>
                     <div class="icon">
@@ -34,7 +30,6 @@
                 <div class="small-box bg-info">
                     <div class="inner">
                         <h3>{{ $pendaftar }}</h3>
-
                         <p>User Registrations</p>
                     </div>
                     <div class="icon">
@@ -44,7 +39,6 @@
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-
         </div>
         <!-- end head -->
         <section class="content text-dark " id=" list-mk" style="background-color: #272A37;">
@@ -52,7 +46,7 @@
                 @foreach ($mata_kuliah as $mk)
                     <div class="card mx-2"
                         style="width: 15rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px; height: 26rem;">
-                        <img src="{{ url($mk['link_picture']) }}" class="m-2 rounded" alt="mk_picture"
+                        <img src="{{ url($mk['link_pic']) }}" class="m-2 rounded" alt="mk_picture"
                             style="height: 10rem">
                         <div class="card-body">
                             <h6 class="tag tag-teal mb-1">{{ $mk['jurusan'] }}</h6>
@@ -92,4 +86,5 @@
             </div>
         </section>
         <!-- /.content -->
-    @endsection
+    </section>
+@endsection
