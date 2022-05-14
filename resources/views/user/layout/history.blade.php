@@ -21,41 +21,29 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($lessons as $lesson)
-                    @if ($lesson['nip_dosen'] === auth()->user()->npm)
-                        <tr>
-                            <td scope="row">{{ $loop->iteration }}</td>
-                            <td>{{ $lesson['kode_mk'] }}</td>
-                            <td>{{ $lesson['nama_mk'] }}</td>
-                            <td>{{ $lesson['sks'] }}</td>
-                            <td>{{ $lesson['semester'] }}</td>
-                            <td>{{ $lesson['jurusan'] }}</td>
-                            <td>
-                                @php
-                                    $data = false;
-                                    $year = null;
-                                @endphp
-                                @foreach ($asisten as $aslab)
-                                    @if ($aslab->mataKuliah === $lesson['nama_mk'] && $aslab->status === 1)
-                                        {{ $aslab->nama }}
-                                        @php
-                                            $data = true;
-                                            $year = $aslab->created_at;
-                                        @endphp
-                                    @endif
-                                @endforeach
-                                @if ($data === false)
-                                    Tidak ada Asisten
+                @foreach ($asisten as $aslab)
+                    @foreach ($lessons as $lesson)
+                        @if ($aslab->mataKuliah === $lesson['nama_mk'] && $aslab->status === 1)
+                            @if ($thisYear !== $aslab->created_at->format('Y'))
+                                @if ($lesson['nip_dosen'] === auth()->user()->npm)
+                                    <tr>
+                                        <td scope="row">{{ $loop->iteration }}</td>
+                                        <td>{{ $lesson['kode_mk'] }}</td>
+                                        <td>{{ $lesson['nama_mk'] }}</td>
+                                        <td>{{ $lesson['sks'] }}</td>
+                                        <td>{{ $lesson['semester'] }}</td>
+                                        <td>{{ $lesson['jurusan'] }}</td>
+                                        <td>
+                                            {{ $aslab->nama }}
+                                        </td>
+                                        <td>
+                                            {{ $year->format('Y') }}
+                                        </td>
+                                    </tr>
                                 @endif
-                            </td>
-                            <td>
-                                {{-- @php
-                                    $year = explode('-', $year);
-                                @endphp --}}
-                                {{ $year->format('Y') }}
-                            </td>
-                        </tr>
-                    @endif
+                            @endif
+                        @endif
+                    @endforeach
                 @endforeach
             </tbody>
         </table>

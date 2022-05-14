@@ -54,6 +54,7 @@ class UserController extends Controller
             'active' => 'history',
             'lessons' => $matkul,
             'asisten' => Register::all(),
+            'thisYear' => date('Y'),
         ]);
     }
 }
