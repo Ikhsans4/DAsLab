@@ -131,7 +131,7 @@
                             <li class="nav-item ">
                                 <a href="{{ url('history') }}"
                                     class="nav-link @if ($active === 'history') active @endif">
-                                    <i class="nav-icon fas fas fa-history"></i>
+                                    <i class="nav-icon fas fa-history"></i>
                                     <p>History</p>
                                 </a>
                             </li>
