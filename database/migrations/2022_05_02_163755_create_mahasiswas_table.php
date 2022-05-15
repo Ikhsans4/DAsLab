@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nim')->primary();
             $table->string('nama');
             $table->string('jurusan');
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }
