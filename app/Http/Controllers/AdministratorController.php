@@ -18,8 +18,12 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        $mk = Matakuliah::paginate(4);
-        $dosen = Dosen::all();
+        // $mk = Matakuliah::paginate(4);
+        $response = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
+        $mk = $response->json();
+        // return dd($response);
+        $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
+        $dosen = $dosen->json();
         return view('admin.layout.dashboard', [
             'pendaftar' => Register::count(),
             'jumlahAsisten' => Register::where('status', 1)->count(),
@@ -121,7 +125,7 @@ class AdministratorController extends Controller
         $temp->update(['status' => True]);
         return redirect('/admin/pendaftar')->with('accept', true);
     }
-    
+
     public function tolak(Request $request)
     {
         $temp = Register::find($request->id);

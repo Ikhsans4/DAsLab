@@ -29,17 +29,35 @@ class UserController extends Controller
         $matkul = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
         $matkul = $matkul->json();
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
-        $dosen = $dosen -> json();
+        $dosen = $dosen->json();
+        $semesterBerjalan = (date('m') < 6) ? 0 : 1;
         return view('user.layout.mataKuliah', [
             'mata_kuliah' => $matkul,
             'dosen' => $dosen,
             'asisten' => Register::all(),
-            'active' => 'matakuliah'
+            'active' => 'matakuliah',
+            'semesterBerjalan' => $semesterBerjalan,
         ]);
     }
 
     public function about()
     {
         return view('user.layout.about', ['active' => 'about']);
+    }
+
+    public function history()
+    {
+        $matkul = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
+        $matkul = $matkul->json();
+        $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
+        $dosen = $dosen->json();
+        $semesterBerjalan = (date('m') < 6) ? 0 : 1;
+        return view('user.layout.history', [
+            'active' => 'history',
+            'lessons' => $matkul,
+            'asisten' => Register::all(),
+            'thisYear' => date('Y'),
+            'semesterBerjalan' => $semesterBerjalan,
+        ]);
     }
 }

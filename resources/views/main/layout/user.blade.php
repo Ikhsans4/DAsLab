@@ -69,7 +69,7 @@
 
                 <form action="{{ url('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="nav-link btn logout">
+                    <button type="submit" class="nav-link btn">
                         <i class="fas fa-sign-out-alt"></i> Logout</button>
                 </form>
             </ul>
@@ -127,6 +127,15 @@
                                 <p>Mata Kuliah</p>
                             </a>
                         </li>
+                        @if (!auth()->user()->jurusan)
+                            <li class="nav-item ">
+                                <a href="{{ url('history') }}"
+                                    class="nav-link @if ($active === 'history') active @endif">
+                                    <i class="nav-icon fas fas fa-history"></i>
+                                    <p>History</p>
+                                </a>
+                            </li>
+                        @endif
                         <li class="nav-item">
                             <a href="{{ url('about') }}"
                                 class="nav-link @if ($active === 'about') active @endif">
@@ -233,24 +242,6 @@
     <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
     <!-- SweetAlert2 -->
     <script src="{{ url('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
-
-    <script>
-        $(function() {
-            var Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-
-            $('.logout').click(function() {
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Logout Success.'
-                })
-            });
-        });
-    </script>
 </body>
 
 </html>
