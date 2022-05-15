@@ -21,9 +21,10 @@
     <link rel="stylesheet"
         href="{{ url('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{ url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="{{ url('plugins/jqvmap/jqvmap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url('dist/css/adminlte.min.css') }}">
     <!-- overlayScrollbars -->
