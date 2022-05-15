@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mahasiswa extends Model
 {
     use HasFactory;
-    protected $fillable = ['nip', 'nama', 'jurusan'];
+    protected $fillable = ['nip', 'nama', 'jurusan', 'email'];
 
     public function akunKrs() {
         return $this->hasOne(KrsAccount::class);

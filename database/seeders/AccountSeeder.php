@@ -23,6 +23,11 @@ class AccountSeeder extends Seeder
         ]);
 
         KrsAccount::create([
+            'nim_mhs' => '1908107010013',
+            'password' => Hash::make('123'),
+        ]);
+
+        KrsAccount::create([
             'nim_mhs' => '2008107010020',
             'password' => Hash::make('123'),
         ]);

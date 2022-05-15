@@ -17,15 +17,6 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('users')->insert(
-        //     [
-        //         'name' => 'daffa',
-        //         'npm' => '123457',
-        //         'password' => Hash::make('123'),
-        //         'image' => 'https://img.icons8.com/color/48/000000/user.png',
-        //     ]
-
-        // );
         DB::table('users')->insert(
             [
                 'name' => 'ikhsan',
@@ -38,13 +29,16 @@ class UsersSeeder extends Seeder
 
         );
 
-        // DB::table('users')->insert(
-        //     [
-        //         'name' => 'al-karim',
-        //         'npm' => '123789',
-        //         'password' => Hash::make('123'),
-        //         'image' => 'https://img.icons8.com/color/48/000000/user.png',
-        //     ]
-        // );
+        DB::table('registers')->insert(
+            [
+                'nama' => 'Mudhaffar',
+                'npm' => '1908107010013',
+                'email' => 'daffa@gmail.com',
+                'nohp' => '081212121212',
+                'jurusan' => 'Informatika',
+                'mataKuliah' => 'Basis Data',
+                'status' => True,
+            ]
+        );
     }
 }
