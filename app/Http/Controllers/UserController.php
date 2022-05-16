@@ -16,12 +16,14 @@ class UserController extends Controller
         $matkul = $matkul->json();
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
         $dosen = $dosen->json();
+        $semesterBerjalan = (date('m') < 6) ? 0 : 1;
         return view('user.layout.dashboard', [
             'active' => 'home',
             'mata_kuliah' => $matkul,
             'year' => date('Y'),
             'dosen' => $dosen,
             'asisten' => Register::all(),
+            'semesterBerjalan' => $semesterBerjalan,
         ]);
     }
 
