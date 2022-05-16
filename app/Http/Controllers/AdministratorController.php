@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Dosen;
 use App\Models\Matakuliah;
 use App\Models\Register;
@@ -18,10 +19,8 @@ class AdministratorController extends Controller
      */
     public function index()
     {
-        // $mk = Matakuliah::paginate(4);
         $response = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
         $mk = $response->json();
-        // return dd($response);
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
         $dosen = $dosen->json();
         return view('admin.layout.dashboard', [

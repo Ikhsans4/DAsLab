@@ -47,6 +47,7 @@
                     $j = 1;
                 @endphp
                 @foreach ($mata_kuliah as $mk)
+                    @if($mk['jurusan'] === auth()->user()->jurusan)
                     <div class="card mx-2"
                         style="width: 15rem; padding-bottom: 1rem; margin: 5px; border-radius: 10px; height: 26rem;">
                         <img src="{{ url($mk['link_picture']) }}" class="m-2 rounded" alt="mk_picture"
@@ -89,7 +90,8 @@
                         $j += 1;
                     @endphp
 
-                    @break($j > 4)
+                        @break($j > 4)
+                    @endif
                 @endforeach
             </div>
         </section>

@@ -25,8 +25,20 @@ class UsersSeeder extends Seeder
                 'password' => Hash::make('123'),
                 'is_admin' => True,
                 'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png',
+                'jurusan' => 'Informatika'
             ]
+        );
 
+        DB::table('users')->insert(
+            [
+                'name' => 'alan',
+                'npm' => '1234567',
+                'email' => 'adminstat@gmail.com',
+                'password' => Hash::make('123'),
+                'is_admin' => True,
+                'image' => 'https://img.icons8.com/color/48/000000/administrator-male-skin-type-7.png',
+                'jurusan' => 'Statistika'
+            ]
         );
 
         DB::table('registers')->insert(

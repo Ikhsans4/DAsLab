@@ -21,6 +21,7 @@
             </thead>
             <tbody>
                 @foreach ($registers as $register)
+                    @if($register['jurusan'] === auth()->user()->jurusan)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{ $register['nama'] }}</td>
@@ -55,6 +56,7 @@
                             @endif
                         </td>
                     </tr>
+                    @endif
                 @endforeach
             </tbody>
         </table>
