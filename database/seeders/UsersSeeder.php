@@ -38,6 +38,22 @@ class UsersSeeder extends Seeder
                 'jurusan' => 'Informatika',
                 'mataKuliah' => 'Basis Data',
                 'status' => True,
+                'created_at' => '2021-05-15 11:09:57',
+                'updated_at' => '2021-05-15 11:09:58',
+            ]
+        );
+
+        DB::table('registers')->insert(
+            [
+                'nama' => 'Fikri',
+                'npm' => '1908107010020',
+                'email' => 'fikri@gmail.com',
+                'nohp' => '081212121212',
+                'jurusan' => 'Informatika',
+                'mataKuliah' => 'Basis Data',
+                'status' => True,
+                'created_at' => '2021-05-15 11:09:57',
+                'updated_at' => '2021-05-15 11:09:58',
             ]
         );
     }

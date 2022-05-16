@@ -28,7 +28,7 @@
                                     Asisten :
                                 </div>
                                 @foreach ($asisten as $aslab)
-                                    @if ($aslab['status'] === 1 && $mk['nama_mk'] === $aslab['mataKuliah'])
+                                    @if ($aslab['status'] === 1 && $mk['nama_mk'] === $aslab['mataKuliah'] && $year === $aslab['created_at']->format('Y'))
                                         {{ $i }}. {{ $aslab['nama'] }}
                                         @php
                                             $i += 1;

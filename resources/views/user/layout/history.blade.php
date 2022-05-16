@@ -21,13 +21,16 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $i = 1;
+                @endphp
                 @foreach ($asisten as $aslab)
                     @foreach ($lessons as $lesson)
                         @if ($aslab->mataKuliah === $lesson['nama_mk'] && $aslab->status === 1)
                             @if ($thisYear !== $aslab->created_at->format('Y') && $lesson['semester'] !== $semesterBerjalan)
                                 @if ($lesson['nip_dosen'] === auth()->user()->npm)
                                     <tr>
-                                        <td scope="row">{{ $loop->iteration }}</td>
+                                        <td scope="row">{{ $i }}</td>
                                         <td>{{ $lesson['kode_mk'] }}</td>
                                         <td>{{ $lesson['nama_mk'] }}</td>
                                         <td>{{ $lesson['sks'] }}</td>
@@ -37,9 +40,12 @@
                                             {{ $aslab->nama }}
                                         </td>
                                         <td>
-                                            {{ $year->format('Y') }}
+                                            {{ $aslab->created_at->format('Y') }}
                                         </td>
                                     </tr>
+                                    @php
+                                        $i += 1;
+                                    @endphp
                                 @endif
                             @endif
                         @endif
