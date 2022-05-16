@@ -23,9 +23,13 @@ class AdministratorController extends Controller
         $mk = $response->json();
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
         $dosen = $dosen->json();
+        // menghitung jumlah asisten berdasarkan jurusan admin
+        if (Register::where('status', 1)) {
+            $jumlahAsisten =  Register::where('jurusan', auth()->user()->jurusan)->count();
+        }
         return view('admin.layout.dashboard', [
-            'pendaftar' => Register::count(),
-            'jumlahAsisten' => Register::where('status', 1)->count(),
+            'pendaftar' => Register::where('jurusan', auth()->user()->jurusan)->count(),
+            'jumlahAsisten' => $jumlahAsisten,
             'mata_kuliah' => $mk,
             'dosen' => $dosen,
             'asisten' => Register::all(),
@@ -53,9 +57,13 @@ class AdministratorController extends Controller
      */
     public function asisten()
     {
-        $data = Register::where('status', 1)->get();
+        $data = Register::where('status', 1)->where('jurusan', auth()->user()->jurusan)->get();
 
-        return view('admin.layout.asisten', ['registers' => $data, 'active' => 'asisten',]);
+        return view('admin.layout.asisten', [
+            'registers' => $data, 
+            'active' => 'asisten',
+            'thisYear' => date('Y'),
+    ]);
     }
 
     /**
