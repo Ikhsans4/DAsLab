@@ -21,9 +21,13 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $i = 1;
+                @endphp
                 @foreach ($mata_kuliah as $mk)
+                    @if($mk['jurusan'] === auth()->user()->jurusan)
                     <tr>
-                        <td scope="row">{{ $loop->iteration }}</td>
+                        <td scope="row">{{ $i }}</td>
                         <td>{{ $mk['kode_mk'] }}</td>
                         <td>{{ $mk['nama_mk'] }}</td>
                         <td>{{ $mk['sks'] }}</td>
@@ -53,6 +57,10 @@
                             @endif
                         </td>
                     </tr>
+                    @php
+                        $i++;
+                    @endphp
+                    @endif
                 @endforeach
             </tbody>
         </table>

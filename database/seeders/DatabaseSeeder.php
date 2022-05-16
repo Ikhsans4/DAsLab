@@ -17,21 +17,5 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsersSeeder::class
         ]);
-
-        $this->call([
-            DosenSeeder::class
-        ]);
-
-        $this->call([
-            MatkulSeeder::class
-        ]);
-
-        $this->call([
-            MahasiswaSeeder::class
-        ]);
-
-        $this->call([
-            AccountSeeder::class
-        ]);
     }
 }
