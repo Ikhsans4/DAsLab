@@ -2,6 +2,25 @@
 @section('title', "D'AsLab | Daftar Asisten")
 @section('head', 'Pendaftaran Asisten Laboratorium')
 
+@php
+    $userYear = auth()->user()->npm;
+    $userYear = substr(date('Y'), 2, 2) - substr($userYear, 0, 2);
+    $semester = 0;
+    
+    // User masih tahun pertama
+    if ($userYear == 1) {
+        // Tidak bisa menjadi asisten di tahun pertama
+        $semester = (date('m') < 6) ? 0 : 1;
+    } 
+    // User tahun kedua
+    else if($userYear == 2) {
+        $semester = (date('m') < 6) ? 2 : 3;
+    } 
+    // User tahun ketiga
+    else if ($userYear == 3) {
+        $semester = (date('m') < 6) ? 4 : 5;
+    }
+@endphp
 
 @section('container')
     <!-- Main content -->
@@ -60,14 +79,16 @@
                             <label for="exampleFormControlSelect1">Mata Kuliah</label>
                             <select class="form-control text-dark" name="mataKuliah" id="exampleFormControlSelect1">
                                 @foreach ($lessons as $lesson)
-                                    @if ($lesson['jurusan'] === auth()->user()->jurusan)
+                                    @if ($lesson['jurusan'] === auth()->user()->jurusan && $lesson['semester'] === $semester)
                                         <option value="{{ $lesson['nama_mk'] }}">{{ $lesson['nama_mk'] }}</option>
+                                    @elseif ($semester <= 1)
+                                        <option>Tidak bisa menjadi asisten</option>
+                                        @break
                                     @endif
                                 @endforeach
                             </select>
                         </div>
                         <!-- end matakuliah -->
-
                         <!-- button submit -->
                         <button type="submit" class="btn btn-success">Kirim</button>
                         <!-- end button submit -->
