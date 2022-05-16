@@ -28,16 +28,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $i = 1;
+                                    @endphp
                                     @foreach ($registers as $register)
-                                        @if($register['jurusan'] === auth()->user()->jurusan)
+                                        @if($register['jurusan'] === auth()->user()->jurusan && $thisYear === $register->created_at->format('Y'))
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $i }}</td>
                                             <td>{{ $register['nama'] }}</td>
                                             <td>{{ $register['npm'] }} </td>
                                             <td>{{ $register['email'] }}</td>
                                             <td>{{ $register['jurusan'] }}</td>
                                             <td>{{ $register['mataKuliah'] }}</td>
                                         </tr>
+                                        @php
+                                            $i += 1;
+                                        @endphp
                                         @endif
                                     @endforeach
                                 </tbody>
