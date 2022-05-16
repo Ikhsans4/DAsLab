@@ -28,8 +28,11 @@ class RegisterController extends Controller
     {
         $mataKuliah = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-mk');
         $mataKuliah = $mataKuliah->json();
-        // return dd($mataKuliah);
-        return view('user.layout.daftar', ['active' => 'daftar', 'lessons' => $mataKuliah]);
+
+        return view('user.layout.daftar', [
+            'active' => 'daftar',
+            'lessons' => $mataKuliah
+        ]);
     }
 
     /**
