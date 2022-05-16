@@ -7,11 +7,17 @@
     $userYear = substr(date('Y'), 2, 2) - substr($userYear, 0, 2);
     $semester = 0;
     
+    // User masih tahun pertama
     if ($userYear == 1) {
+        // Tidak bisa menjadi asisten di tahun pertama
         $semester = (date('m') < 6) ? 0 : 1;
-    } else if($userYear == 2) {
+    } 
+    // User tahun kedua
+    else if($userYear == 2) {
         $semester = (date('m') < 6) ? 2 : 3;
-    } else if ($userYear == 3) {
+    } 
+    // User tahun ketiga
+    else if ($userYear == 3) {
         $semester = (date('m') < 6) ? 4 : 5;
     }
 @endphp
