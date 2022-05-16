@@ -19,6 +19,7 @@ class UserController extends Controller
         return view('user.layout.dashboard', [
             'active' => 'home',
             'mata_kuliah' => $matkul,
+            'year' => date('Y'),
             'dosen' => $dosen,
             'asisten' => Register::all(),
         ]);
@@ -35,6 +36,7 @@ class UserController extends Controller
             'mata_kuliah' => $matkul,
             'dosen' => $dosen,
             'asisten' => Register::all(),
+            'year' => date('Y'),
             'active' => 'matakuliah',
             'semesterBerjalan' => $semesterBerjalan,
         ]);
