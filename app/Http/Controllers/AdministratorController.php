@@ -23,17 +23,21 @@ class AdministratorController extends Controller
         $mk = $response->json();
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
         $dosen = $dosen->json();
+        $asisten = Register::all();
         // menghitung jumlah asisten berdasarkan jurusan admin
         $jumlahAsisten = 0;
-        if (Register::where('status', 1)) {
-            $jumlahAsisten =  Register::where('jurusan', auth()->user()->jurusan)->count();
+        foreach ($asisten as $aslab) {
+            if ($aslab['status'] === 1 && $aslab['jurusan'] === auth()->user()->jurusan) {
+                $jumlahAsisten += 1;
+            }
         }
+        $registration = 0;
         return view('admin.layout.dashboard', [
             'pendaftar' => Register::where('jurusan', auth()->user()->jurusan)->count(),
             'jumlahAsisten' => $jumlahAsisten,
             'mata_kuliah' => $mk,
             'dosen' => $dosen,
-            'asisten' => Register::all(),
+            'asisten' => $asisten,
             'active' => 'home',
         ]);
     }
