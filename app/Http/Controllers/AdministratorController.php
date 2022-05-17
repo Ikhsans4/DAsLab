@@ -24,6 +24,7 @@ class AdministratorController extends Controller
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
         $dosen = $dosen->json();
         // menghitung jumlah asisten berdasarkan jurusan admin
+        $jumlahAsisten = 0;
         if (Register::where('status', 1)) {
             $jumlahAsisten =  Register::where('jurusan', auth()->user()->jurusan)->count();
         }

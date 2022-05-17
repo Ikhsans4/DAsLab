@@ -20,42 +20,48 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $i = 0;
+                @endphp
                 @foreach ($registers as $register)
-                    @if($register['jurusan'] === auth()->user()->jurusan)
-                    <tr>
-                        <td scope="row">{{ $loop->iteration }}</td>
-                        <td>{{ $register['nama'] }}</td>
-                        <td>{{ $register['npm'] }}</td>
-                        <td>{{ $register['email'] }}</td>
-                        <td>{{ $register['jurusan'] }}</td>
-                        <td>{{ $register['mataKuliah'] }}</td>
-                        <td class="row justify-content-center">
-                            @if ($register['status'] === null)
-                                <a data-id="{{ $register->id }}"
-                                    class="btn btn-sm btn-block bg-gradient-danger confirm-delete">Tolak
-                                    <form action="{{ url('/admin/pendaftar') }}" id="delete{{ $register->id }}"
-                                        method="POST" style="margin-right: 1rem;">
-                                        @csrf
-                                        @method('delete')
-                                        <input type="hidden" name="id" value="{{ $register['id'] }}">
-                                    </form>
-                                </a>
-                                <a data-id="{{ $register->id }} "
-                                    class="btn btn-sm btn-block bg-gradient-primary confirm-accept ">Terima
-                                    <form action="{{ url('/admin/pendaftar/') }}" method="POST"
-                                        id="accept{{ $register->id }}">
-                                        @csrf
-                                        @method('PUT')
-                                        <input type="hidden" name="id" value="{{ $register['id'] }}">
-                                    </form>
-                                </a>
-                            @elseif ($register['status'] == 1)
-                                <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
-                            @else
-                                <p class="btn btn-sm btn-block bg-gradient-danger">Ditolak</p>
-                            @endif
-                        </td>
-                    </tr>
+                    @if ($register['jurusan'] === auth()->user()->jurusan)
+                        @php
+                            $i += 1;
+                        @endphp
+                        <tr>
+                            <td scope="row">{{ $i }}</td>
+                            <td>{{ $register['nama'] }}</td>
+                            <td>{{ $register['npm'] }}</td>
+                            <td>{{ $register['email'] }}</td>
+                            <td>{{ $register['jurusan'] }}</td>
+                            <td>{{ $register['mataKuliah'] }}</td>
+                            <td class="row justify-content-center">
+                                @if ($register['status'] === null)
+                                    <a data-id="{{ $register->id }}"
+                                        class="btn btn-sm btn-block bg-gradient-danger confirm-delete">Tolak
+                                        <form action="{{ url('/admin/pendaftar') }}" id="delete{{ $register->id }}"
+                                            method="POST" style="margin-right: 1rem;">
+                                            @csrf
+                                            @method('delete')
+                                            <input type="hidden" name="id" value="{{ $register['id'] }}">
+                                        </form>
+                                    </a>
+                                    <a data-id="{{ $register->id }} "
+                                        class="btn btn-sm btn-block bg-gradient-primary confirm-accept ">Terima
+                                        <form action="{{ url('/admin/pendaftar/') }}" method="POST"
+                                            id="accept{{ $register->id }}">
+                                            @csrf
+                                            @method('PUT')
+                                            <input type="hidden" name="id" value="{{ $register['id'] }}">
+                                        </form>
+                                    </a>
+                                @elseif ($register['status'] == 1)
+                                    <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
+                                @else
+                                    <p class="btn btn-sm btn-block bg-gradient-danger">Ditolak</p>
+                                @endif
+                            </td>
+                        </tr>
                     @endif
                 @endforeach
             </tbody>

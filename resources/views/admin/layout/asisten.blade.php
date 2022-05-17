@@ -28,16 +28,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $i = 0;
+                                    @endphp
                                     @foreach ($registers as $register)
-                                        @if($register['jurusan'] === auth()->user()->jurusan)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $register['nama'] }}</td>
-                                            <td>{{ $register['npm'] }} </td>
-                                            <td>{{ $register['email'] }}</td>
-                                            <td>{{ $register['jurusan'] }}</td>
-                                            <td>{{ $register['mataKuliah'] }}</td>
-                                        </tr>
+                                        @if ($register['jurusan'] === auth()->user()->jurusan)
+                                            @php
+                                                $i += 1;
+                                            @endphp
+                                            <tr>
+                                                <td>{{ $i }}</td>
+                                                <td>{{ $register['nama'] }}</td>
+                                                <td>{{ $register['npm'] }} </td>
+                                                <td>{{ $register['email'] }}</td>
+                                                <td>{{ $register['jurusan'] }}</td>
+                                                <td>{{ $register['mataKuliah'] }}</td>
+                                            </tr>
                                         @endif
                                     @endforeach
                                 </tbody>
