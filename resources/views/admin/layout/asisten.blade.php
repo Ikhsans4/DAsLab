@@ -29,6 +29,7 @@
                                 </thead>
                                 <tbody>
                                     @php
+
                                         $i = 0;
                                     @endphp
                                     @foreach ($registers as $register)
@@ -44,7 +45,7 @@
                                                 <td>{{ $register['jurusan'] }}</td>
                                                 <td>{{ $register['mataKuliah'] }}</td>
                                             </tr>
-                                        @endif
+
                                     @endforeach
                                 </tbody>
                             </table>

@@ -62,9 +62,13 @@ class AdministratorController extends Controller
      */
     public function asisten()
     {
-        $data = Register::where('status', 1)->get();
+        $data = Register::where('status', 1)->where('jurusan', auth()->user()->jurusan)->get();
 
-        return view('admin.layout.asisten', ['registers' => $data, 'active' => 'asisten',]);
+        return view('admin.layout.asisten', [
+            'registers' => $data, 
+            'active' => 'asisten',
+            'thisYear' => date('Y'),
+    ]);
     }
 
     /**
