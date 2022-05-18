@@ -65,10 +65,10 @@ class AdministratorController extends Controller
         $data = Register::where('status', 1)->where('jurusan', auth()->user()->jurusan)->get();
 
         return view('admin.layout.asisten', [
-            'registers' => $data, 
+            'registers' => $data,
             'active' => 'asisten',
             'thisYear' => date('Y'),
-    ]);
+        ]);
     }
 
     /**
@@ -152,15 +152,5 @@ class AdministratorController extends Controller
         $dosen = Http::GET('https://apidatamahasiswa.000webhostapp.com/api/data-user');
         $dosen = $dosen->json();
         return view('admin.layout.mataKuliah', ['mata_kuliah' => $response, 'lecturers' => $dosen,  'asisten' => Register::all(), 'active' => 'matakuliah']);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
     }
 }
