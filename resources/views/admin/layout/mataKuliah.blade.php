@@ -25,41 +25,43 @@
                     $i = 1;
                 @endphp
                 @foreach ($mata_kuliah as $mk)
-                    @if($mk['jurusan'] === auth()->user()->jurusan)
-                    <tr>
-                        <td scope="row">{{ $i }}</td>
-                        <td>{{ $mk['kode_mk'] }}</td>
-                        <td>{{ $mk['nama_mk'] }}</td>
-                        <td>{{ $mk['sks'] }}</td>
-                        <td>{{ $mk['semester'] }}</td>
-                        <td>{{ $mk['jurusan'] }}</td>
-                        <td>
-                            @foreach ($lecturers as $lecturer)
-                                @if ($mk['nip_dosen'] === $lecturer['nip'])
-                                    {{ $lecturer['nama'] }}
+                    @if ($mk['jurusan'] === auth()->user()->jurusan)
+                        <tr>
+                            <td scope="row">{{ $i }}</td>
+                            <td>{{ $mk['kode_mk'] }}</td>
+                            <td>{{ $mk['nama_mk'] }}</td>
+                            <td>{{ $mk['sks'] }}</td>
+                            <td>{{ $mk['semester'] }}</td>
+                            <td>{{ $mk['jurusan'] }}</td>
+                            <td>
+                                @foreach ($lecturers as $lecturer)
+                                    @if ($mk['nip_dosen'] === $lecturer['nip'])
+                                        {{ $lecturer['nama'] }}
+                                    @endif
+                                @endforeach
+                            </td>
+                            <td>
+                                @php
+                                    $data = false;
+                                    $number = 1;
+                                @endphp
+                                @foreach ($asisten as $aslab)
+                                    @if ($aslab->mataKuliah === $mk['nama_mk'] && $aslab->status === 1)
+                                        {{ $number . '. ' . $aslab->nama }} <br>
+                                        @php
+                                            $data = true;
+                                            $number += 1;
+                                        @endphp
+                                    @endif
+                                @endforeach
+                                @if ($data === false)
+                                    Tidak ada Asisten
                                 @endif
-                            @endforeach
-                        </td>
-                        <td>
-                            @php
-                                $data = false;
-                            @endphp
-                            @foreach ($asisten as $aslab)
-                                @if ($aslab->mataKuliah === $mk['nama_mk'] && $aslab->status === 1)
-                                    {{ $aslab->nama }}
-                                    @php
-                                        $data = true;
-                                    @endphp
-                                @endif
-                            @endforeach
-                            @if ($data === false)
-                                Tidak ada Asisten
-                            @endif
-                        </td>
-                    </tr>
-                    @php
-                        $i++;
-                    @endphp
+                            </td>
+                        </tr>
+                        @php
+                            $i++;
+                        @endphp
                     @endif
                 @endforeach
             </tbody>

@@ -31,15 +31,15 @@
                                 @if ($lesson['nip_dosen'] === auth()->user()->npm)
                                     <tr>
                                         <td scope="row">{{ $i }}</td>
-                                        <td>{{ $lesson['kode_mk'] }}</td>
-                                        <td>{{ $lesson['nama_mk'] }}</td>
-                                        <td>{{ $lesson['sks'] }}</td>
-                                        <td>{{ $lesson['semester'] }}</td>
-                                        <td>{{ $lesson['jurusan'] }}</td>
-                                        <td>
+                                        <td scope="row">{{ $lesson['kode_mk'] }}</td>
+                                        <td scope="row">{{ $lesson['nama_mk'] }}</td>
+                                        <td scope="row">{{ $lesson['sks'] }}</td>
+                                        <td scope="row">{{ $lesson['semester'] }}</td>
+                                        <td scope="row">{{ $lesson['jurusan'] }}</td>
+                                        <td scope="row">
                                             {{ $aslab->nama }}
                                         </td>
-                                        <td>
+                                        <td scope="row">
                                             {{ $aslab->created_at->format('Y') }}
                                         </td>
                                     </tr>
