@@ -6,6 +6,9 @@
     <!-- Main content -->
     <section class="content text-dark">
         <div class="container-fluid d-flex flex-wrap justify-content-center">
+            @php
+                $j = 1;
+            @endphp
             @foreach ($mata_kuliah as $mk)
                 @if (($mk['jurusan'] === auth()->user()->jurusan || $mk['nip_dosen'] === auth()->user()->npm) && $mk['semester'] % 2 === $semesterBerjalan)
                     <div class="card mb-2"
@@ -46,6 +49,11 @@
                             </p>
                         </div>
                     </div>
+                    @php
+                        $j += 1;
+                    @endphp
+
+                    @break($j > 4)
                 @endif
             @endforeach
         </div><!-- /.container-fluid -->
