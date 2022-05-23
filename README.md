@@ -4,11 +4,11 @@
 
 # D'AsLab
 
-MengHeal menyediakan sarana untuk konsultasi mengenai permasalahan kesehatan mental pada remaja kisaran usia 12 sampai 18 tahun.
+D'AsLab memudahkan mahasiswa untuk melakukan pendaftaran sebagai asisten laboratorium.
 
 ## About
 
-Repositori ini berisi mengenai project matakuliah Rekayasa Perangkat Lunak, dengan nama project MengHeal. Project ini mengambil tema mengenai Mental Health dikalangan remaja.
+Repositori ini berisi mengenai project matakuliah PBW, dengan nama project D'AsLab.
 
 ## How to run
 
