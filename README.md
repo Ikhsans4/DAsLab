@@ -8,7 +8,7 @@ D'AsLab memudahkan mahasiswa untuk melakukan pendaftaran sebagai asisten laborat
 
 ## About
 
-Repositori ini berisi mengenai project matakuliah PBW, dengan nama project D'AsLab.
+Repositori ini berisi mengenai project matakuliah PBW, dengan nama project D'AsLab (Daftar Asisten Lab.
 
 ## How to run
 
